@@ -1,0 +1,49 @@
+
+% Table created by stargazer v.5.2.3 by Marek Hlavac, Social Policy Institute. E-mail: marek.hlavac at gmail.com
+% Date and time: Sat, Aug 19, 2023 - 11:06:35
+\begin{table}[!htbp] \centering 
+  \caption{Result from pooled longitudinal multilevel model for each of the outcomes} 
+  \label{} 
+\begin{tabular}{@{\extracolsep{5pt}} cccccccccccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+Outcome & FixedEffect & b(SE) & t.value & df & P(\textgreater \textbar t\textbar ) & CI & RandomEffect & var\_res & cor\_1 & cor\_2 & cor\_3 \\ 
+\hline \\[-1.8ex] 
+OASIS & Intercept & 2.24(0.04) & 57.56 & 3,442.81 & \textbackslash textless\{\}.001\textasteriskcentered \textasteriskcentered \textasteriskcentered  & [2.17, 2.32] & 1. Intercept & 0.38 & - &  &  \\ 
+ & time\$\_\{TR\}\$ & -0.15(0.01) & -14.90 &   641.02 & \textbackslash textless\{\}.001\textasteriskcentered \textasteriskcentered \textasteriskcentered  & [-0.17, -0.13] & 2. time\$\_\{TR\}\$ & 0.01 & -0.18 & - &  \\ 
+ & time\$\_\{FU\}\$ & 0.13(0.06) & 2.07 &   322.20 & .039\textasteriskcentered  & [0.01, 0.25] & 3. time\$\_\{FU\}\$ & 0.33 & -0.13 & -0.40 & - \\ 
+ & More Time Spent & 0.09(0.06) & 1.54 &   592.42 & .124 & [-0.02, 0.20] & Residual & 0.18 &  &  &  \\ 
+ & Training confidence & -0.02(0.03) & -0.47 &   541.09 & .636 & [-0.08, 0.05] &  &  &  &  &  \\ 
+ & More Time Spent \$	imes\$ time\$\_\{TR\}\$ & -0.01(0.02) & -0.85 &   451.63 & .396 & [-0.04, 0.02] &  &  &  &  &  \\ 
+ & More Time Spent \$	imes\$ time\$\_\{FU\}\$ & 0.00(0.09) & 0.00 &   257.35 & .996 & [-0.19, 0.19] &  &  &  &  &  \\ 
+DASS21 & Intercept & 1.63(0.03) & 54.71 & 1,810.74 & \textbackslash textless\{\}.001\textasteriskcentered \textasteriskcentered \textasteriskcentered  & [1.58, 1.69] & 1. Intercept & 0.17 & - &  &  \\ 
+ & time\$\_\{TR\}\$ & -0.15(0.01) & -16.91 &   332.66 & \textbackslash textless\{\}.001\textasteriskcentered \textasteriskcentered \textasteriskcentered  & [-0.17, -0.13] & 2. time\$\_\{TR\}\$ & 0.00 & 0.00 & - &  \\ 
+ & time\$\_\{FU\}\$ & -0.02(0.04) & -0.57 &   292.33 & .568 & [-0.10, 0.05] & 3. time\$\_\{FU\}\$ & 0.04 & -0.49 & 0.09 & - \\ 
+ & More Time Spent & -0.09(0.04) & -2.08 &   601.31 & .038\textasteriskcentered  & [-0.17, -0.00] & Residual & 0.12 &  &  &  \\ 
+ & Training confidence & -0.02(0.03) & -0.61 &   515.15 & .543 & [-0.06, 0.03] &  &  &  &  &  \\ 
+ & More Time Spent \$	imes\$ time\$\_\{TR\}\$ & -0.01(0.01) & -1.05 &   334.57 & .294 & [-0.04, 0.01] &  &  &  &  &  \\ 
+ & More Time Spent \$	imes\$ time\$\_\{FU\}\$ & 0.08(0.06) & 1.33 &   214.86 & .184 & [-0.04, 0.20] &  &  &  &  &  \\ 
+BBSIQ & Intercept & 1.58(0.05) & 34.40 & 1,839.45 & \textbackslash textless\{\}.001\textasteriskcentered \textasteriskcentered \textasteriskcentered  & [1.49, 1.67] & 1. Intercept & 0.52 & - &  &  \\ 
+ & time\$\_\{TR\}\$ & -0.17(0.01) & -13.32 &   442.06 & \textbackslash textless\{\}.001\textasteriskcentered \textasteriskcentered \textasteriskcentered  & [-0.20, -0.15] & 2. time\$\_\{TR\}\$ & 0.02 & -0.63 & - &  \\ 
+ & time\$\_\{FU\}\$ & 0.17(0.05) & 3.44 &   213.17 & .001\textasteriskcentered \textasteriskcentered  & [0.07, 0.27] & 3. time\$\_\{FU\}\$ & 0.03 & 0.06 & -0.75 & - \\ 
+ & More Time Spent & -0.12(0.07) & -1.78 &   611.80 & .075 & [-0.25, 0.01] & Residual & 0.18 &  &  &  \\ 
+ & Training confidence & 0.02(0.03) & 0.72 &   377.75 & .471 & [-0.04, 0.09] &  &  &  &  &  \\ 
+ & More Time Spent \$	imes\$ time\$\_\{TR\}\$ & 0.01(0.02) & 0.75 &   368.25 & .455 & [-0.02, 0.05] &  &  &  &  &  \\ 
+ & More Time Spent \$	imes\$ time\$\_\{FU\}\$ & -0.16(0.07) & -2.25 &   218.13 & .026\textasteriskcentered  & [-0.30, -0.02] &  &  &  &  &  \\ 
+RR Negative Bias & Intercept & 2.95(0.03) & 102.50 & 1,819.56 & \textbackslash textless\{\}.001\textasteriskcentered \textasteriskcentered \textasteriskcentered  & [2.89, 3.00] & 1. Intercept & 0.14 & - &  &  \\ 
+ & time\$\_\{TR\}\$ & -0.10(0.01) & -10.79 &   417.39 & \textbackslash textless\{\}.001\textasteriskcentered \textasteriskcentered \textasteriskcentered  & [-0.12, -0.08] & 2. time\$\_\{TR\}\$ & 0.01 & -0.26 & - &  \\ 
+ & time\$\_\{FU\}\$ & 0.14(0.04) & 3.33 &   223.86 & .001\textasteriskcentered \textasteriskcentered  & [0.06, 0.22] & 3. time\$\_\{FU\}\$ & 0.01 & -0.22 & -0.46 & - \\ 
+ & More Time Spent & -0.13(0.04) & -3.27 &   607.85 & .001\textasteriskcentered \textasteriskcentered  & [-0.22, -0.05] & Residual & 0.14 &  &  &  \\ 
+ & Training confidence & 0.00(0.02) & 0.16 &   439.96 & .872 & [-0.04, 0.05] &  &  &  &  &  \\ 
+ & More Time Spent \$	imes\$ time\$\_\{TR\}\$ & 0.03(0.01) & 2.21 &   347.87 & .028\textasteriskcentered  & [0.00, 0.06] &  &  &  &  &  \\ 
+ & More Time Spent \$	imes\$ time\$\_\{FU\}\$ & -0.17(0.06) & -2.73 &   220.90 & .007\textasteriskcentered \textasteriskcentered  & [-0.29, -0.05] &  &  &  &  &  \\ 
+RR Positive Bias & Intercept & 2.33(0.03) & 80.89 & 1,809.56 & \textbackslash textless\{\}.001\textasteriskcentered \textasteriskcentered \textasteriskcentered  & [2.28, 2.39] & 1. Intercept & 0.14 & - &  &  \\ 
+ & time\$\_\{TR\}\$ & 0.13(0.01) & 14.13 &   570.93 & \textbackslash textless\{\}.001\textasteriskcentered \textasteriskcentered \textasteriskcentered  & [0.11, 0.15] & 2. time\$\_\{TR\}\$ & 0.01 & -0.60 & - &  \\ 
+ & time\$\_\{FU\}\$ & -0.23(0.04) & -5.37 &   233.33 & \textbackslash textless\{\}.001\textasteriskcentered \textasteriskcentered \textasteriskcentered  & [-0.32, -0.15] & 3. time\$\_\{FU\}\$ & 0.03 & 0.47 & -0.86 & - \\ 
+ & More Time Spent & -0.01(0.04) & -0.28 &   601.89 & .778 & [-0.09, 0.07] & Residual & 0.14 &  &  &  \\ 
+ & Training confidence & 0.01(0.02) & 0.54 &   311.89 & .586 & [-0.03, 0.05] &  &  &  &  &  \\ 
+ & More Time Spent \$	imes\$ time\$\_\{TR\}\$ & 0.01(0.01) & 0.45 &   461.46 & .654 & [-0.02, 0.03] &  &  &  &  &  \\ 
+ & More Time Spent \$	imes\$ time\$\_\{FU\}\$ & -0.01(0.07) & -0.16 &   195.62 & .873 & [-0.14, 0.12] &  &  &  &  &  \\ 
+\hline \\[-1.8ex] 
+\end{tabular} 
+\end{table} 

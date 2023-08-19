@@ -269,22 +269,45 @@ outcomes_fixed_random_table_cor <- outcomes_fixed_random_table %>% select(-cov_1
 
 str(outcomes_fixed_random_table_cor)
 
-sink(here("Tables","9_outcomes_fixed_random_table.txt"))
-stargazer(outcomes_fixed_random_table_cor, type = "latex", title="Result from pooled longitudinal multilevel model for each of the outcomes", digits=2, summary = F,rownames = F)
+outcomes_fixed_random_table_cor_formatting = outcomes_fixed_random_table_cor
+
+# Formatting the P(>|t|) column
+outcomes_fixed_random_table_cor_formatting$`P(>|t|)` <- sapply(outcomes_fixed_random_table_cor_formatting$`P(>|t|)`, function(p) {
+  p_num <- as.numeric(p)
+  if (p_num < 0.001) {
+    return("\\textless{}.001***")
+  } else if (p_num < 0.01) {
+    return(paste0(substr(p, 2, nchar(p)), "**"))
+  } else if (p_num < 0.05) {
+    return(paste0(substr(p, 2, nchar(p)), "*"))
+  } else {
+    return(substr(p, 2, nchar(p)))
+  }
+})
+
+# Formatting the t.value column
+outcomes_fixed_random_table_cor_formatting$`t.value` <- sprintf("%.2f", as.numeric(outcomes_fixed_random_table_cor_formatting$`t.value`))
+
+# Formatting the df column
+outcomes_fixed_random_table_cor_formatting$df <- sprintf("%0.2f", as.numeric(outcomes_fixed_random_table_cor_formatting$df))
+outcomes_fixed_random_table_cor_formatting$df <- format(as.numeric(outcomes_fixed_random_table_cor_formatting$df), big.mark = ",", decimal.mark = ".", scientific = FALSE)
+
+sink(here("Tables","9_outcomes_fixed_random_table_formatted.txt"))
+stargazer(outcomes_fixed_random_table_cor_formatting, type = "latex", title="Result from pooled longitudinal multilevel model for each of the outcomes", digits=2, summary = F,rownames = F)
 sink()
 
 
 #results table simple effects
 #BBSIQ: modelList_bbsiq_lme_mod1, pooled_bbsiq_lme_mod1
-fixed_random_table_bbsiq_cluster_1 <- create_results_table_simple(modelList_bbsiq_lme_e_cluster_1,pooled_bbsiq_lme_e_cluster_1,"BBSIQ Less Time Spent")
+fixed_random_table_bbsiq_cluster_1 <- create_results_table_simple(modelList_bbsiq_lme_e_cluster_1,pooled_bbsiq_lme_e_cluster_1,"BBSIQ More Time Spent")
 
-fixed_random_table_bbsiq_cluster_2 <- create_results_table_simple(modelList_bbsiq_lme_e_cluster_2,pooled_bbsiq_lme_e_cluster_2,"BBSIQ More Time Spent")
+fixed_random_table_bbsiq_cluster_2 <- create_results_table_simple(modelList_bbsiq_lme_e_cluster_2,pooled_bbsiq_lme_e_cluster_2,"BBSIQ Less Time Spent")
 
 
 #RR NEG BIAS: modelList_rr_neg_lme, pooled_rr_neg_lme
-fixed_random_table_rr_neg_cluster_1 <- create_results_table_simple(modelList_rr_neg_lme_e_cluster_1,pooled_rr_neg_lme_e_cluster_1,"RR Negative Bias Less Time Spent")
+fixed_random_table_rr_neg_cluster_1 <- create_results_table_simple(modelList_rr_neg_lme_e_cluster_1,pooled_rr_neg_lme_e_cluster_1,"RR Negative Bias More Time Spent")
 
-fixed_random_table_rr_neg_cluster_2 <- create_results_table_simple(modelList_rr_neg_lme_e_cluster_2,pooled_rr_neg_lme_e_cluster_2,"RR Negative Bias More Time Spent")
+fixed_random_table_rr_neg_cluster_2 <- create_results_table_simple(modelList_rr_neg_lme_e_cluster_2,pooled_rr_neg_lme_e_cluster_2,"RR Negative Bias Less Time Spent")
 
 
 outcomes_fixed_random_simple_table <- rbind(fixed_random_table_bbsiq_cluster_1,fixed_random_table_bbsiq_cluster_2,fixed_random_table_rr_neg_cluster_1,fixed_random_table_rr_neg_cluster_2)
@@ -296,19 +319,33 @@ outcomes_fixed_random_simple_table_cor <- outcomes_fixed_random_simple_table %>%
 
 outcomes_fixed_random_simple_table_cor_no_random <- outcomes_fixed_random_simple_table_cor %>%  select(-RandomEffect,-var_res,-cor_1,-cor_2,-cor_3)
 
-sink(here("Tables","9_outcomes_fixed_simple_table.txt"))
-stargazer(outcomes_fixed_random_simple_table_cor_no_random, type = "latex", title="Simple effects of time from pooled longitudinal multilevel model for each of the outcomes", digits=2, summary = F,rownames = F)
+
+outcomes_fixed_random_simple_table_cor_no_random_formatting = outcomes_fixed_random_simple_table_cor_no_random
+
+outcomes_fixed_random_simple_table_cor_no_random_formatting$`P(>|t|)` <- sapply(outcomes_fixed_random_simple_table_cor_no_random_formatting$`P(>|t|)`, function(p) {
+  p_num <- as.numeric(p)
+  if (p_num < 0.001) {
+    return("\\textless{}.001***")
+  } else if (p_num < 0.01) {
+    return(paste0(substr(p, 2, nchar(p)), "**"))
+  } else if (p_num < 0.05) {
+    return(paste0(substr(p, 2, nchar(p)), "*"))
+  } else {
+    return(substr(p, 2, nchar(p)))
+  }
+})
+
+# Formatting the t.value column
+outcomes_fixed_random_simple_table_cor_no_random_formatting$`t.value` <- sprintf("%.2f", as.numeric(outcomes_fixed_random_simple_table_cor_no_random_formatting$`t.value`))
+
+# Formatting the df column
+outcomes_fixed_random_simple_table_cor_no_random_formatting$df <- sprintf("%0.2f", as.numeric(outcomes_fixed_random_simple_table_cor_no_random_formatting$df))
+outcomes_fixed_random_simple_table_cor_no_random_formatting$df <- format(as.numeric(outcomes_fixed_random_simple_table_cor_no_random_formatting$df), big.mark = ",", decimal.mark = ".", scientific = FALSE)
+
+
+
+sink(here("Tables","9_outcomes_fixed_simple_table_formatted.txt"))
+stargazer(outcomes_fixed_random_simple_table_cor_no_random_formatting, type = "latex", title="Simple effects of time from pooled longitudinal multilevel model for each of the outcomes", digits=2, summary = F,rownames = F)
 sink()
-
-
-# ---------------------------------------------------------------------------- #
-# correlations ----
-# ---------------------------------------------------------------------------- #
-
-#https://rpubs.com/yjunechoe/correlationsLMEM
-
-fixed_random_table_oa_corr <- create_results_list(modelList_oa_lme,pooled_oa_lme,3)
-
-fixed_random_table_dass21_corr <- create_results_list(modelList_dass21_lme,pooled_dass21_lme,3)
 
 
