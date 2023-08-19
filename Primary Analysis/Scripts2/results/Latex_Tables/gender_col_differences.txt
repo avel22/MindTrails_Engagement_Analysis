@@ -1,0 +1,13 @@
+ITT Sample (Unrestricted): 
+ 
+Analysis of Variance Table
+
+Response: compl_itt_iv$miss_session_assess_prop
+                          Df Sum Sq Mean Sq F value  Pr(>F)  
+compl_itt_iv$gender_col2   2  1.132 0.56597  4.5346 0.01105 *
+Residuals                694 86.619 0.12481                  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+-------------------- 
+ 

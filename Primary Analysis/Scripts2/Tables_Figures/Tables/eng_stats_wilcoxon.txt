@@ -1,0 +1,31 @@
+
+% Table created by stargazer v.5.2.3 by Marek Hlavac, Social Policy Institute. E-mail: marek.hlavac at gmail.com
+% Date and time: sáb., may. 14, 2022 - 09:20:02 p. m.
+\begin{table}[!htbp] \centering 
+  \caption{Descriptive statistics of engagement metrics by groups} 
+  \label{} 
+\begin{tabular}{@{\extracolsep{5pt}} ccccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+Engagement\_Metric & LessMedianIQR & MoreMedianIQR & W & pValue \\ 
+\hline \\[-1.8ex] 
+Completion Rate & 0.57 (0.75) & 0.49 (0.69) & 58520 & 0.5574 \\ 
+Average time spent on scenarios across sessions & 11.18 (6.19) & 13.88 (5.56) & 43202.5 & \textless 0.001 \\ 
+Time spent on lemon exercise & 0.88 (0.61) & 1.44 (0.91) & 31077 & \textless 0.001 \\ 
+Time spent on the anxiety imagery prime exercise & 1.66 (0.82) & 2.54 (1.40) & 25833 & \textless 0.001 \\ 
+Anxiety Identity & 0.19 (0.10) & 0.32 (0.16) & 18250 & \textless 0.001 \\ 
+Anxiety Triggers & 0.66 (0.33) & 1.23 (0.67) & 14713 & \textless 0.001 \\ 
+Comorbid & 0.43 (0.21) & 0.71 (0.30) & 16564.5 & \textless 0.001 \\ 
+Credibility & 0.26 (0.31) & 0.85 (0.65) & 19807 & \textless 0.001 \\ 
+DASS-21 AS & 0.53 (0.22) & 0.83 (0.42) & 17764.5 & \textless 0.001 \\ 
+Demographics & 1.05 (0.38) & 1.72 (0.76) & 15187 & \textless 0.001 \\ 
+Mechanisms & 0.55 (0.24) & 0.89 (0.45) & 14127.5 & \textless 0.001 \\ 
+Mental Health History & 1.07 (0.50) & 1.97 (1.07) & 13317.5 & \textless 0.001 \\ 
+OASIS & 0.45 (0.15) & 0.73 (0.31) & 11735.5 & \textless 0.001 \\ 
+Pre-Affect & 0.13 (0.06) & 0.21 (0.12) & 20579 & \textless 0.001 \\ 
+RR & 2.58 (0.91) & 4.16 (1.53) & 11246.5 & \textless 0.001 \\ 
+Technology Use & 0.25 (0.11) & 0.40 (0.19) & 21272 & \textless 0.001 \\ 
+Wellness & 0.70 (0.28) & 1.24 (0.50) & 9420.5 & \textless 0.001 \\ 
+\hline \\[-1.8ex] 
+\end{tabular} 
+\end{table} 

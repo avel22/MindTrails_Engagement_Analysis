@@ -1,0 +1,49 @@
+
+% Table created by stargazer v.5.2.3 by Marek Hlavac, Social Policy Institute. E-mail: marek.hlavac at gmail.com
+% Date and time: jue., may. 12, 2022 - 10:32:26 a. m.
+\begin{table}[!htbp] \centering 
+  \caption{Result from pooled longitudinal multilevel model for each of the outcomes} 
+  \label{} 
+\begin{tabular}{@{\extracolsep{5pt}} cccccccccccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+Outcome & FixedEffect & b(SE) & CI & df & t.value & P(\textgreater \textbar t\textbar ) & RandomEffect & var\_res & cov\_1 & cov\_2 & cov\_3 \\ 
+\hline \\[-1.8ex] 
+OASIS & Intercept & 2.25(0.04) & [2.18, 2.32] & 3492.21 & 62.49 & 0 & 1. Intercept & 0.38 & - &  &  \\ 
+ & Time1 & -0.15(0.01) & [-0.17, -0.13] & 320.5 & -14.07 & 0 & 2. Time1 & 0.01 & -0.01 & - &  \\ 
+ & Time2 & 0.12(0.06) & [0, 0.25] & 250.32 & 2.01 & 0.045 & 3. Time2 & 0.34 & -0.05 & -0.03 & - \\ 
+ & Less Time Spent & 0.07(0.05) & [-0.03, 0.18] & 641.69 & 1.38 & 0.169 & Residual & 0.18 &  &  &  \\ 
+ & Credibility Online GMC & 0.01(0.03) & [-0.05, 0.07] & 535.14 & 0.27 & 0.789 &  &  &  &  &  \\ 
+ & InteractionTime1 & -0.01(0.02) & [-0.04, 0.02] & 306.56 & -0.68 & 0.494 &  &  &  &  &  \\ 
+ & InteractionTime2 & 0(0.11) & [-0.21, 0.21] & 180.43 & 0.03 & 0.975 &  &  &  &  &  \\ 
+DASS21 & Intercept & 1.63(0.03) & [1.58, 1.69] & 2022.03 & 59.82 & 0 & 1. Intercept & 0.17 & - &  &  \\ 
+ & Time1 & -0.15(0.01) & [-0.16, -0.13] & 232.8 & -16.29 & 0 & 2. Time1 & 0 & 0 & - &  \\ 
+ & Time2 & -0.01(0.05) & [-0.11, 0.08] & 157.29 & -0.3 & 0.764 & 3. Time2 & 0.04 & -0.04 & 0 & - \\ 
+ & Less Time Spent & -0.09(0.04) & [-0.17, -0.01] & 673.94 & -2.15 & 0.032 & Residual & 0.12 &  &  &  \\ 
+ & Credibility Online GMC & 0.02(0.02) & [-0.03, 0.07] & 503.96 & 0.76 & 0.449 &  &  &  &  &  \\ 
+ & InteractionTime1 & -0.02(0.01) & [-0.04, 0.01] & 249.28 & -1.19 & 0.234 &  &  &  &  &  \\ 
+ & InteractionTime2 & 0.06(0.06) & [-0.06, 0.19] & 190.09 & 1 & 0.32 &  &  &  &  &  \\ 
+BBSIQ & Intercept & 1.57(0.04) & [1.49, 1.65] & 2033.33 & 37.09 & 0 & 1. Intercept & 0.52 & - &  &  \\ 
+ & Time1 & -0.17(0.01) & [-0.19, -0.14] & 353.23 & -13.46 & 0 & 2. Time1 & 0.02 & -0.06 & - &  \\ 
+ & Time2 & 0.16(0.05) & [0.07, 0.26] & 197.54 & 3.4 & 0.001 & 3. Time2 & 0.03 & 0 & -0.02 & - \\ 
+ & Less Time Spent & -0.13(0.06) & [-0.25, 0] & 677.37 & -2.03 & 0.043 & Residual & 0.18 &  &  &  \\ 
+ & Credibility Online GMC & 0.04(0.03) & [-0.03, 0.1] & 354.69 & 1.11 & 0.27 &  &  &  &  &  \\ 
+ & InteractionTime1 & 0.01(0.02) & [-0.02, 0.05] & 336.31 & 0.74 & 0.463 &  &  &  &  &  \\ 
+ & InteractionTime2 & -0.15(0.07) & [-0.29, -0.01] & 213.62 & -2.14 & 0.033 &  &  &  &  &  \\ 
+RR Negative Bias & Intercept & 2.92(0.03) & [2.87, 2.97] & 1969.37 & 110.2 & 0 & 1. Intercept & 0.14 & - &  &  \\ 
+ & Time1 & -0.1(0.01) & [-0.12, -0.08] & 275.16 & -10.3 & 0 & 2. Time1 & 0.01 & -0.01 & - &  \\ 
+ & Time2 & 0.13(0.04) & [0.05, 0.21] & 201.3 & 3.09 & 0.002 & 3. Time2 & 0.01 & -0.01 & 0 & - \\ 
+ & Less Time Spent & -0.11(0.04) & [-0.18, -0.03] & 664.33 & -2.67 & 0.008 & Residual & 0.14 &  &  &  \\ 
+ & Credibility Online GMC & 0.03(0.02) & [-0.02, 0.07] & 457.54 & 1.15 & 0.25 &  &  &  &  &  \\ 
+ & InteractionTime1 & 0.03(0.01) & [0, 0.05] & 327.22 & 2.06 & 0.04 &  &  &  &  &  \\ 
+ & InteractionTime2 & -0.15(0.07) & [-0.28, -0.02] & 173.46 & -2.22 & 0.028 &  &  &  &  &  \\ 
+RR Positive Bias & Intercept & 2.34(0.03) & [2.29, 2.39] & 1999.7 & 89.37 & 0 & 1. Intercept & 0.14 & - &  &  \\ 
+ & Time1 & 0.13(0.01) & [0.11, 0.15] & 366.96 & 14.14 & 0 & 2. Time1 & 0.01 & -0.02 & - &  \\ 
+ & Time2 & -0.21(0.04) & [-0.29, -0.13] & 217.01 & -5.21 & 0 & 3. Time2 & 0.03 & 0.03 & -0.01 & - \\ 
+ & Less Time Spent & 0(0.04) & [-0.07, 0.08] & 672.66 & 0.06 & 0.952 & Residual & 0.13 &  &  &  \\ 
+ & Credibility Online GMC & 0(0.02) & [-0.04, 0.04] & 374.71 & 0.07 & 0.946 &  &  &  &  &  \\ 
+ & InteractionTime1 & 0(0.01) & [-0.03, 0.03] & 383.21 & 0.07 & 0.94 &  &  &  &  &  \\ 
+ & InteractionTime2 & -0.04(0.07) & [-0.17, 0.09] & 185.97 & -0.67 & 0.506 &  &  &  &  &  \\ 
+\hline \\[-1.8ex] 
+\end{tabular} 
+\end{table} 

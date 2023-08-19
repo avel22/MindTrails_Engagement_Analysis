@@ -1,0 +1,37 @@
+
+% Table created by stargazer v.5.2.3 by Marek Hlavac, Social Policy Institute. E-mail: marek.hlavac at gmail.com
+% Date and time: sáb., may. 21, 2022 - 09:00:22 p. m.
+\begin{table}[!htbp] \centering 
+  \caption{Descriptive statistics of target outcomes over time for analyzed sample broken down by engagement clusters} 
+  \label{} 
+\begin{tabular}{@{\extracolsep{5pt}} ccccccccccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+outcome & session\_only & n & M & SD & n.1 & M.1 & SD.1 & n.2 & M.2 & SD.2 \\ 
+\hline \\[-1.8ex] 
+OASIS & fifthSession & $272$ & $1.54$ & $0.78$ & $152$ & $1.58$ & $0.77$ & $120$ & $1.50$ & $0.78$ \\ 
+OASIS & firstSession & $549$ & $2.19$ & $0.74$ & $288$ & $2.18$ & $0.74$ & $261$ & $2.20$ & $0.73$ \\ 
+OASIS & fourthSession & $295$ & $1.56$ & $0.82$ & $164$ & $1.56$ & $0.81$ & $131$ & $1.56$ & $0.84$ \\ 
+OASIS & PostFollowUp & $244$ & $1.57$ & $0.83$ & $140$ & $1.59$ & $0.81$ & $104$ & $1.54$ & $0.86$ \\ 
+OASIS & preTest & $697$ & $2.31$ & $0.70$ & $386$ & $2.28$ & $0.71$ & $311$ & $2.34$ & $0.69$ \\ 
+OASIS & secondSession & $397$ & $1.74$ & $0.74$ & $219$ & $1.72$ & $0.74$ & $178$ & $1.76$ & $0.73$ \\ 
+OASIS & thirdSession & $356$ & $1.76$ & $0.79$ & $199$ & $1.79$ & $0.82$ & $157$ & $1.73$ & $0.76$ \\ 
+DASS21 & fifthSession & $272$ & $0.86$ & $0.57$ & $152$ & $0.95$ & $0.56$ & $120$ & $0.75$ & $0.57$ \\ 
+DASS21 & PostFollowUp & $244$ & $0.81$ & $0.60$ & $140$ & $0.87$ & $0.59$ & $104$ & $0.73$ & $0.60$ \\ 
+DASS21 & preTest & $697$ & $1.61$ & $0.54$ & $386$ & $1.65$ & $0.54$ & $311$ & $1.56$ & $0.53$ \\ 
+DASS21 & thirdSession & $355$ & $1$ & $0.61$ & $198$ & $1.06$ & $0.62$ & $157$ & $0.92$ & $0.59$ \\ 
+Negative Bias (BBSIQ) & fifthSession & $270$ & $0.79$ & $0.68$ & $151$ & $0.83$ & $0.71$ & $119$ & $0.74$ & $0.63$ \\ 
+Negative Bias (BBSIQ) & PostFollowUp & $240$ & $0.79$ & $0.62$ & $137$ & $0.88$ & $0.66$ & $103$ & $0.66$ & $0.54$ \\ 
+Negative Bias (BBSIQ) & preTest & $697$ & $1.54$ & $0.84$ & $386$ & $1.59$ & $0.84$ & $311$ & $1.46$ & $0.83$ \\ 
+Negative Bias (BBSIQ) & thirdSession & $347$ & $0.89$ & $0.73$ & $195$ & $0.93$ & $0.74$ & $152$ & $0.84$ & $0.72$ \\ 
+Negative Bias (RR) & fifthSession & $270$ & $2.87$ & $0.48$ & $151$ & $2.88$ & $0.45$ & $119$ & $2.86$ & $0.52$ \\ 
+Negative Bias (RR) & PostFollowUp & $241$ & $2.75$ & $0.47$ & $137$ & $2.77$ & $0.47$ & $104$ & $2.73$ & $0.47$ \\ 
+Negative Bias (RR) & preTest & $696$ & $2.31$ & $0.53$ & $386$ & $2.31$ & $0.52$ & $310$ & $2.31$ & $0.53$ \\ 
+Negative Bias (RR) & thirdSession & $351$ & $2.87$ & $0.46$ & $196$ & $2.86$ & $0.48$ & $155$ & $2.88$ & $0.44$ \\ 
+Positive Bias (RR) & fifthSession & $270$ & $2.55$ & $0.55$ & $151$ & $2.56$ & $0.57$ & $119$ & $2.55$ & $0.54$ \\ 
+Positive Bias (RR) & PostFollowUp & $241$ & $2.52$ & $0.55$ & $137$ & $2.57$ & $0.54$ & $104$ & $2.45$ & $0.56$ \\ 
+Positive Bias (RR) & preTest & $696$ & $2.90$ & $0.53$ & $386$ & $2.95$ & $0.54$ & $310$ & $2.83$ & $0.51$ \\ 
+Positive Bias (RR) & thirdSession & $352$ & $2.53$ & $0.55$ & $197$ & $2.52$ & $0.57$ & $155$ & $2.53$ & $0.54$ \\ 
+\hline \\[-1.8ex] 
+\end{tabular} 
+\end{table} 

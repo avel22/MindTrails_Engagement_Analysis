@@ -1,0 +1,34 @@
+Analyzed Sample: 
+ 
+
+Call:
+lm(formula = fml, data = df)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.51601 -0.40755  0.05542  0.30674  0.45714 
+
+Coefficients:
+                                Estimate Std. Error t value Pr(>|t|)    
+(Intercept)                     0.407548   0.014881  27.388   <2e-16 ***
+gender_col_naMale               0.108462   0.036029   3.010   0.0027 ** 
+gender_col_naTransgender/Other -0.007548   0.092452  -0.082   0.9350    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.3534 on 692 degrees of freedom
+  (2 observations deleted due to missingness)
+Multiple R-squared:  0.01304,	Adjusted R-squared:  0.01019 
+F-statistic: 4.571 on 2 and 692 DF,  p-value: 0.01066
+
+Analysis of Variance Table
+
+Response: miss_session_assess_prop
+               Df Sum Sq Mean Sq F value  Pr(>F)  
+gender_col_na   2  1.142 0.57089  4.5712 0.01066 *
+Residuals     692 86.423 0.12489                  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+-------------------- 
+ 

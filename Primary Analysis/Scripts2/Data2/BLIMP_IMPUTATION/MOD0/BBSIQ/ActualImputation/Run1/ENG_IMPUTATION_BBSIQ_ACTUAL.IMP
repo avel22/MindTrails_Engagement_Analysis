@@ -1,0 +1,30 @@
+#Modication 0: Gender (3 categories + missing values), credibility (missing values), device type (binary), no age
+DATA: C:\Users\angel\OneDrive\UVA\MS Systems Engineering\Thesis\R_Thesis_MindTrails\Scripts2\Data2\BLIMP_IMPUTATION\MOD0\blimp_imputation_bbsiq_mod0.csv;
+VARIABLES: p_id t t1 t2 outcome cred_on eng gender isOne;
+#From Blimp Guide: 
+#"For computational efficiency, we recommend listing binary variables on the ORDINAL line, but these variables could also be treated as nominal."
+ORDINAL: isOne;
+#From Blimp Guide:
+#"Nominal variables must be represented as a single variable with numeric codes"
+NOMINAL: eng gender;
+MISSING: 999;
+CLUSTERID: p_id;
+#From Blimp Guide:
+#"The FIXED command identifies complete predictor variables that do not require a distribution."
+#"With relatively few exceptions, we recommend listing complete variables on the fixed line, as doing so speeds computations and convergence."
+FIXED: eng isOne t1 t2;
+CENTER: grandmean = cred_on;
+MODEL: outcome ~  t1 t2 eng eng*t1 eng*t2 cred_on gender isOne | t1 t2;
+SEED: 90291;
+BURN: 10000;
+#2 for diagnostics,100 for actual imputation
+NIMPS: 100;
+#1 for diagnostics, 5000 for actual imputation
+THIN: 5000; 
+OPTIONS: psr labels;
+SAVE: stacked = C:\Users\angel\OneDrive\UVA\MS Systems Engineering\Thesis\R_Thesis_MindTrails\Scripts2\Data2\BLIMP_IMPUTATION\MOD0\BBSIQ\ActualImputation\BBSIQ_imps_mod0.csv;
+burn = C:\Users\angel\OneDrive\UVA\MS Systems Engineering\Thesis\R_Thesis_MindTrails\Scripts2\Data2\BLIMP_IMPUTATION\MOD0\BBSIQ\ActualImputation\BBSIQ_imps_mod3_burnin*.csv;
+iterations = C:\Users\angel\OneDrive\UVA\MS Systems Engineering\Thesis\R_Thesis_MindTrails\Scripts2\Data2\BLIMP_IMPUTATION\MOD0\BBSIQ\ActualImputation\BBSIQ_imps_mod0_iterations*.csv;
+estimates = C:\Users\angel\OneDrive\UVA\MS Systems Engineering\Thesis\R_Thesis_MindTrails\Scripts2\Data2\BLIMP_IMPUTATION\MOD0\BBSIQ\ActualImputation\BBSIQ_imps_mod0_estimates.txt;
+starts = C:\Users\angel\OneDrive\UVA\MS Systems Engineering\Thesis\R_Thesis_MindTrails\Scripts2\Data2\BLIMP_IMPUTATION\MOD0\BBSIQ\ActualImputation\BBSIQ_imps_mod0_starts.TXT;
+psr = C:\Users\angel\OneDrive\UVA\MS Systems Engineering\Thesis\R_Thesis_MindTrails\Scripts2\Data2\BLIMP_IMPUTATION\MOD0\BBSIQ\ActualImputation\BBSIQ_imps_mod0_psr.csv;

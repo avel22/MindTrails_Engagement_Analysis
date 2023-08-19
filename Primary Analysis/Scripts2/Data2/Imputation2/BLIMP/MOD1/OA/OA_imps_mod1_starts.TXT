@@ -1,0 +1,55 @@
+
+OUTCOME MODEL STARTING VALUES:
+
+  Summaries based on 2 iterations using 2 chains.
+
+
+Outcome Variable:  outcome    
+
+Grand Mean Centered: cred_on
+
+
+Parameters                          Chain 1    Chain 2 
+                                -----------------------
+Variances:                      
+  L2 : Var(Intercept)                 0.166      0.615 
+  L2 : Cov(t1,Intercept)              0.000      0.000 
+  L2 : Var(t1)                        1.000      1.000 
+  L2 : Cov(t2,Intercept)              0.000      0.000 
+  L2 : Cov(t2,t1)                     0.000      0.000 
+  L2 : Var(t2)                        1.000      1.000 
+  Residual Var.                       0.251      3.469 
+
+Coefficients:                   
+  Intercept                           1.909      2.042 
+  t1                                  0.000      0.000 
+  t2                                  0.000      0.000 
+  eng.2                               0.000      0.000 
+  cred_on                             0.000      0.000 
+  gender.2                            0.000      0.000 
+  gender.3                            0.000      0.000 
+  isOne                               0.000      0.000 
+  eng.2*t1                            0.000      0.000 
+  eng.2*t2                            0.000      0.000 
+
+Standardized Coefficients:      
+  t1                                  0.000      0.000 
+  t2                                  0.000      0.000 
+  eng.2                               0.000      0.000 
+  cred_on                             0.000      0.000 
+  gender.2                            0.000      0.000 
+  gender.3                            0.000      0.000 
+  isOne                               0.000      0.000 
+  eng.2*t1                            0.000      0.000 
+  eng.2*t2                            0.000      0.000 
+
+Proportion Variance Explained   
+  by Coefficients                     0.000      0.000 
+  by Level-2 Random Intercepts        0.696      0.562 
+  by Level-2 Random Slopes            0.283      0.216 
+  by Level-1 Residual Variation       0.021      0.222 
+
+                                -----------------------
+
+
+

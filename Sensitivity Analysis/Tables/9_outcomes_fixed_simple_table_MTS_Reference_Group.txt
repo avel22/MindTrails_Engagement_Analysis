@@ -1,0 +1,30 @@
+
+% Table created by stargazer v.5.2.3 by Marek Hlavac, Social Policy Institute. E-mail: marek.hlavac at gmail.com
+% Date and time: Fri, Aug 18, 2023 - 06:10:20
+\begin{table}[!htbp] \centering 
+  \caption{Simple effects of time from pooled longitudinal multilevel model for each of the outcomes} 
+  \label{} 
+\begin{tabular}{@{\extracolsep{5pt}} ccccccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+Outcome & FixedEffect & b(SE) & t.value & df & P(\textgreater \textbar t\textbar ) & CI \\ 
+\hline \\[-1.8ex] 
+BBSIQ Less Time Spent & Intercept & 1.58(0.05) & 33.86 & 949.35 & \textbackslash textless\{\}.001\textasteriskcentered \textasteriskcentered \textasteriskcentered  & [1.49, 1.67] \\ 
+ & time\$\_\{TR\}\$ & -0.17(0.01) & -13.12 & 338.49 & \textbackslash textless\{\}.001\textasteriskcentered \textasteriskcentered \textasteriskcentered  & [-0.20, -0.15] \\ 
+ & time\$\_\{FU\}\$ & 0.17(0.05) & 3.41 & 174.03 & .001\textasteriskcentered \textasteriskcentered  & [0.07, 0.27] \\ 
+ & Training confidence & 0.05(0.05) & 1.09 & 215.43 & .279 & [-0.04, 0.15] \\ 
+BBSIQ More Time Spent & Intercept & 1.46(0.05) & 31.47 & 891.10 & \textbackslash textless\{\}.001\textasteriskcentered \textasteriskcentered \textasteriskcentered  & [1.37, 1.56] \\ 
+ & time\$\_\{TR\}\$ & -0.16(0.01) & -11.71 & 271.24 & \textbackslash textless\{\}.001\textasteriskcentered \textasteriskcentered \textasteriskcentered  & [-0.18, -0.13] \\ 
+ & time\$\_\{FU\}\$ & 0.01(0.05) & 0.22 & 148.59 & .824 & [-0.09, 0.12] \\ 
+ & Training confidence & -0.00(0.04) & -0.11 & 216.17 & .915 & [-0.09, 0.08] \\ 
+RR Negative Bias Less Time Spent & Intercept & 2.95(0.03) & 100.85 & 940.97 & \textbackslash textless\{\}.001\textasteriskcentered \textasteriskcentered \textasteriskcentered  & [2.89, 3.01] \\ 
+ & time\$\_\{TR\}\$ & -0.10(0.01) & -10.43 & 338.06 & \textbackslash textless\{\}.001\textasteriskcentered \textasteriskcentered \textasteriskcentered  & [-0.12, -0.08] \\ 
+ & time\$\_\{FU\}\$ & 0.14(0.04) & 3.29 & 185.92 & .001\textasteriskcentered \textasteriskcentered  & [0.06, 0.22] \\ 
+ & Training confidence & 0.02(0.03) & 0.57 & 243.56 & .569 & [-0.05, 0.08] \\ 
+RR Negative Bias More Time Spent & Intercept & 2.81(0.03) & 96.32 & 880.02 & \textbackslash textless\{\}.001\textasteriskcentered \textasteriskcentered \textasteriskcentered  & [2.76, 2.87] \\ 
+ & time\$\_\{TR\}\$ & -0.07(0.01) & -7.04 & 215.51 & \textbackslash textless\{\}.001\textasteriskcentered \textasteriskcentered \textasteriskcentered  & [-0.09, -0.05] \\ 
+ & time\$\_\{FU\}\$ & -0.03(0.04) & -0.59 & 158.71 & .558 & [-0.11, 0.06] \\ 
+ & Training confidence & -0.01(0.03) & -0.34 & 233.37 & .737 & [-0.08, 0.05] \\ 
+\hline \\[-1.8ex] 
+\end{tabular} 
+\end{table} 

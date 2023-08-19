@@ -1,0 +1,97 @@
+label,n,M,SD
+Gender,NA,NA,NA
+Female,564,0.41,0.36
+Male,116,0.52,0.34
+Transgender,2,0.57,0.2
+Transgender Female,0,NA,NA
+Transgender Male,3,0.48,0.41
+Other,10,0.34,0.38
+Prefer not to answer,2,0.64,0.3
+Gender (Collapsed),NA,NA,NA
+Female,564,0.41,0.36
+Male,116,0.52,0.34
+Transgender/Other,15,0.4,0.36
+NA,2,0.64,0.3
+Race,NA,NA,NA
+American Indian/Alaska Native,7,0.45,0.28
+Black/African origin,69,0.43,0.33
+East Asian,15,0.51,0.37
+Native Hawaiian/Pacific Islander,4,0.39,0.46
+South Asian,13,0.43,0.38
+White/European origin,491,0.41,0.36
+More than one race,58,0.5,0.36
+Other or Unknown,32,0.54,0.34
+Prefer not to answer,8,0.39,0.42
+Ethnicity,NA,NA,NA
+Hispanic or Latino,93,0.44,0.36
+Not Hispanic or Latino,570,0.42,0.36
+Unknown,14,0.43,0.36
+Prefer not to answer,20,0.55,0.29
+Country,NA,NA,NA
+United States,639,0.42,0.36
+Australia,28,0.36,0.34
+Canada,8,0.57,0.31
+United Kingdom,8,0.61,0.3
+Other,13,0.47,0.35
+Prefer not to answer,1,0.86,NA
+Education,NA,NA,NA
+Junior High,1,0.86,NA
+Some High School,9,0.44,0.36
+High School Graduate,59,0.48,0.35
+Some College,225,0.45,0.35
+Associate's Degree,75,0.41,0.36
+Bachelor's Degree,164,0.4,0.36
+Some Graduate School,38,0.36,0.37
+Master's Degree,84,0.4,0.36
+M.B.A.,13,0.44,0.34
+J.D.,3,0.33,0.46
+M.D.,2,0.29,0.2
+Ph.D.,10,0.23,0.32
+Other Advanced Degree,12,0.5,0.36
+Prefer not to answer,2,0.71,0
+Employment Status,NA,NA,NA
+Student,96,0.51,0.34
+Homemaker,60,0.33,0.35
+Unemployed or laid off,33,0.42,0.39
+Looking for work,38,0.39,0.35
+Working part-time,107,0.48,0.36
+Working full-time,295,0.41,0.35
+Retired,22,0.47,0.36
+Other,42,0.37,0.36
+Unknown,0,NA,NA
+Prefer not to answer,4,0.46,0.46
+Marital Status,NA,NA,NA
+Single,187,0.46,0.36
+"Single,dating",83,0.48,0.35
+"Single,engaged",33,0.45,0.32
+"Single,marriagelike",88,0.37,0.36
+Married,203,0.41,0.35
+civilunion,25,0.4,0.33
+Separated,16,0.26,0.31
+Divorced,45,0.48,0.36
+Widow/widower,7,0.24,0.38
+Other,6,0.36,0.32
+Prefer not to answer,4,0,0
+Device (Collapsed),NA,NA,NA
+desktop,259,0.48,0.34
+tablet,12,0.56,0.33
+mobile,279,0.49,0.35
+multiple types,147,0.2,0.3
+Device (Binary),NA,NA,NA
+one type,550,0.49,0.34
+multiple types,147,0.2,0.3
+Income,NA,NA,NA
+"Less than $5,000",33,0.52,0.36
+"$5,000 through $11,999",52,0.32,0.35
+"$12,000 through $15,999",27,0.46,0.38
+"$16,000 through $24,999",63,0.44,0.36
+"$25,000 through $34,999",67,0.39,0.38
+"$35,000 through $49,999",102,0.39,0.34
+"$50,000 through $74,999",111,0.45,0.35
+"$75,000 through $99,999",68,0.41,0.36
+"$100,000 through $149,999",67,0.36,0.36
+"$150,000 through $199,999",18,0.52,0.36
+"$200,000 through $249,999",11,0.49,0.34
+"$250,000 or greater",12,0.44,0.35
+Unknown,28,0.6,0.31
+Prefer not to answer,38,0.49,0.35

@@ -1,0 +1,30 @@
+
+% Table created by stargazer v.5.2.3 by Marek Hlavac, Social Policy Institute. E-mail: marek.hlavac at gmail.com
+% Date and time: lun., may. 16, 2022 - 08:31:05 a. m.
+\begin{table}[!htbp] \centering 
+  \caption{Simple effects of time from pooled longitudinal multilevel model for each of the outcomes} 
+  \label{} 
+\begin{tabular}{@{\extracolsep{5pt}} cccccccccccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+Outcome & FixedEffect & b(SE) & t.value & df & P(\textgreater \textbar t\textbar ) & CI & RandomEffect & var\_res & cor\_1 & cor\_2 & cor\_3 \\ 
+\hline \\[-1.8ex] 
+BBSIQ Less Time Spent & Intercept & 1.57(0.04) & 36.91 & 1129.18 & 0.000 & [1.49, 1.65] & 1. Intercept & 0.52 & - &  &  \\ 
+ & Time1 & -0.17(0.01) & -13.32 & 292.36 & 0.000 & [-0.19, -0.14] & 2. Time1 & 0.02 & -0.62 & - &  \\ 
+ & Time2 & 0.16(0.05) & 3.38 & 168.46 & 0.001 & [0.07, 0.26] & 3. Time2 & 0.03 & 0.13 & -0.76 & - \\ 
+ & Credibility Online GMC & 0.04(0.04) & 0.9 & 232.21 & 0.371 & [-0.05, 0.12] & Residual & 0.18 &  &  &  \\ 
+BBSIQ More Time Spent & Intercept & 1.44(0.05) & 30.77 & 913.02 & 0.000 & [1.35, 1.53] & 1. Intercept & 0.52 & - &  &  \\ 
+ & Time1 & -0.16(0.01) & -11.43 & 264.05 & 0.000 & [-0.18, -0.13] & 2. Time1 & 0.02 & -0.63 & - &  \\ 
+ & Time2 & 0.01(0.05) & 0.27 & 161.03 & 0.788 & [-0.09, 0.11] & 3. Time2 & 0.03 & -0.10 & -0.60 & - \\ 
+ & Credibility Online GMC & 0.03(0.05) & 0.68 & 945.66 & 0.494 & [-0.06, 0.12] & Residual & 0.17 &  &  &  \\ 
+RR Negative Bias Less Time Spent & Intercept & 2.92(0.03) & 108.75 & 1102.88 & 0.000 & [2.87, 2.98] & 1. Intercept & 0.14 & - &  &  \\ 
+ & Time1 & -0.10(0.01) & -10.05 & 243.67 & 0.000 & [-0.12, -0.08] & 2. Time1 & 0.01 & -0.29 & - &  \\ 
+ & Time2 & 0.13(0.04) & 3.06 & 175.75 & 0.003 & [0.05, 0.21] & 3. Time2 & 0.01 & -0.12 & -0.55 & - \\ 
+ & Credibility Online GMC & 0.04(0.03) & 1.23 & 282.96 & 0.221 & [-0.02, 0.09] & Residual & 0.15 &  &  &  \\ 
+RR Negative Bias More Time Spent & Intercept & 2.82(0.03) & 96.85 & 885.55 & 0.000 & [2.76, 2.87] & 1. Intercept & 0.14 & - &  &  \\ 
+ & Time1 & -0.07(0.01) & -7.44 & 245.17 & 0.000 & [-0.09, -0.05] & 2. Time1 & 0.01 & -0.21 & - &  \\ 
+ & Time2 & -0.02(0.05) & -0.38 & 125.7 & 0.705 & [-0.12, 0.08] & 3. Time2 & 0.02 & -0.21 & -0.20 & - \\ 
+ & Credibility Online GMC & 0.01(0.03) & 0.37 & 1491.36 & 0.712 & [-0.05, 0.08] & Residual & 0.12 &  &  &  \\ 
+\hline \\[-1.8ex] 
+\end{tabular} 
+\end{table} 

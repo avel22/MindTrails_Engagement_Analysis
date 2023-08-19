@@ -1,0 +1,53 @@
+[1] Dataset: mitml_list_rr_neg
+[1] Outcome: outcome
+[1] Minimum plausible scale value: 1
+[1] Maximum plausible scale value: 4
+
+[1] For session_int = preTest:
+
+[1] Mean number of imputed values below plausible range = 0
+[1] Mean percent of imputed values below plausible range = 0%
+[1] Mean minimum imputed value = 1.333
+[1] Absolute minimum imputed value = 1.333
+
+[1] Mean number of imputed values above plausible range = 0.01
+[1] Mean percent of imputed values above plausible range = 0.001%
+[1] Mean maximum imputed value = 4
+[1] Absolute maximum imputed value = 4.012
+
+[1] For session_int = thirdSession:
+
+[1] Mean number of imputed values below plausible range = 0.56
+[1] Mean percent of imputed values below plausible range = 0.08%
+[1] Mean minimum imputed value = 0.935
+[1] Absolute minimum imputed value = 0.342
+
+[1] Mean number of imputed values above plausible range = 1.48
+[1] Mean percent of imputed values above plausible range = 0.212%
+[1] Mean maximum imputed value = 4.161
+[1] Absolute maximum imputed value = 4.798
+
+[1] For session_int = fifthSession:
+
+[1] Mean number of imputed values below plausible range = 3.85
+[1] Mean percent of imputed values below plausible range = 0.552%
+[1] Mean minimum imputed value = 0.604
+[1] Absolute minimum imputed value = 0.004
+
+[1] Mean number of imputed values above plausible range = 2.05
+[1] Mean percent of imputed values above plausible range = 0.294%
+[1] Mean maximum imputed value = 4.24
+[1] Absolute maximum imputed value = 4.834
+
+[1] For session_int = PostFollowUp:
+
+[1] Mean number of imputed values below plausible range = 2.01
+[1] Mean percent of imputed values below plausible range = 0.288%
+[1] Mean minimum imputed value = 0.758
+[1] Absolute minimum imputed value = 0.155
+
+[1] Mean number of imputed values above plausible range = 2.04
+[1] Mean percent of imputed values above plausible range = 0.293%
+[1] Mean maximum imputed value = 4.216
+[1] Absolute maximum imputed value = 4.96
+

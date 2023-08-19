@@ -1,0 +1,99 @@
+
+% Table created by stargazer v.5.2.3 by Marek Hlavac, Social Policy Institute. E-mail: marek.hlavac at gmail.com
+% Date and time: mié., may. 04, 2022 - 12:33:25 p. m.
+\begin{table}[!htbp] \centering 
+  \caption{Demographic characteristics of analyzed sample and engagement clusters} 
+  \label{} 
+\begin{tabular}{@{\extracolsep{5pt}} cccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+Characteristic & All & Engagement Cluster 1 : More Time Spent & Engagement Cluster 2: Less Time Spent \\ 
+\hline \\[-1.8ex] 
+\textbackslash MyIndent  n & 697 & 386 & 311 \\ 
+\textbackslash MyIndent  Age (years): M (SD) & 35.38 (11.88) & 31.94 (9.6) & 39.66 (13.01) \\ 
+\textbackslash MyIndent  Gender: n (\%) &  &  &  \\ 
+\textbackslash MyIndent  Female & 564 (80.9) & 316 (81.9) & 248 (79.7) \\ 
+\textbackslash MyIndent  Male & 116 (16.6) & 59 (15.3) & 57 (18.3) \\ 
+\textbackslash MyIndent  Transgender & 2 (0.3) & 1 (0.3) & 1 (0.3) \\ 
+\textbackslash MyIndent  Transgender Female & 0 (0) & 0 (0) & 0 (0) \\ 
+\textbackslash MyIndent  Transgender Male & 3 (0.4) & 2 (0.5) & 1 (0.3) \\ 
+\textbackslash MyIndent  Other & 10 (1.4) & 7 (1.8) & 3 (1) \\ 
+\textbackslash MyIndent  Prefer not to answer & 2 (0.3) & 1 (0.3) & 1 (0.3) \\ 
+\textbackslash MyIndent  Race: n (\%) &  &  &  \\ 
+\textbackslash MyIndent  American Indian/Alaska Native & 7 (1) & 2 (0.5) & 5 (1.6) \\ 
+\textbackslash MyIndent  Black/African origin & 69 (9.9) & 33 (8.5) & 36 (11.6) \\ 
+\textbackslash MyIndent  East Asian & 15 (2.2) & 12 (3.1) & 3 (1) \\ 
+\textbackslash MyIndent  Native Hawaiian/Pacific Islander & 4 (0.6) & 1 (0.3) & 3 (1) \\ 
+\textbackslash MyIndent  South Asian & 13 (1.9) & 9 (2.3) & 4 (1.3) \\ 
+\textbackslash MyIndent  White/European origin & 491 (70.4) & 270 (69.9) & 221 (71.1) \\ 
+\textbackslash MyIndent  More than one race & 58 (8.3) & 41 (10.6) & 17 (5.5) \\ 
+\textbackslash MyIndent  Other or Unknown & 32 (4.6) & 13 (3.4) & 19 (6.1) \\ 
+\textbackslash MyIndent  Prefer not to answer & 8 (1.1) & 5 (1.3) & 3 (1) \\ 
+\textbackslash MyIndent  Ethnicity: n (\%) &  &  &  \\ 
+\textbackslash MyIndent  Hispanic or Latino & 93 (13.3) & 48 (12.4) & 45 (14.5) \\ 
+\textbackslash MyIndent  Not Hispanic or Latino & 570 (81.8) & 325 (84.2) & 245 (78.8) \\ 
+\textbackslash MyIndent  Unknown & 14 (2) & 6 (1.6) & 8 (2.6) \\ 
+\textbackslash MyIndent  Prefer not to answer & 20 (2.9) & 7 (1.8) & 13 (4.2) \\ 
+\textbackslash MyIndent  Country: n (\%) &  &  &  \\ 
+\textbackslash MyIndent  United States & 639 (91.7) & 367 (95.1) & 272 (87.5) \\ 
+\textbackslash MyIndent  Australia & 28 (4) & 8 (2.1) & 20 (6.4) \\ 
+\textbackslash MyIndent  Canada & 8 (1.1) & 3 (0.8) & 5 (1.6) \\ 
+\textbackslash MyIndent  United Kingdom & 8 (1.1) & 5 (1.3) & 3 (1) \\ 
+\textbackslash MyIndent  Other & 13 (1.9) & 3 (0.8) & 10 (3.2) \\ 
+\textbackslash MyIndent  Prefer not to answer & 1 (0.1) & 0 (0) & 1 (0.3) \\ 
+\textbackslash MyIndent  Education: n (\%) &  &  &  \\ 
+\textbackslash MyIndent  Junior High & 1 (0.1) & 1 (0.3) & 0 (0) \\ 
+\textbackslash MyIndent  Some High School & 9 (1.3) & 5 (1.3) & 4 (1.3) \\ 
+\textbackslash MyIndent  High School Graduate & 59 (8.5) & 30 (7.8) & 29 (9.3) \\ 
+\textbackslash MyIndent  Some College & 225 (32.3) & 112 (29) & 113 (36.3) \\ 
+\textbackslash MyIndent  Associate's Degree & 75 (10.8) & 45 (11.7) & 30 (9.6) \\ 
+\textbackslash MyIndent  Bachelor's Degree & 164 (23.5) & 90 (23.3) & 74 (23.8) \\ 
+\textbackslash MyIndent  Some Graduate School & 38 (5.5) & 27 (7) & 11 (3.5) \\ 
+\textbackslash MyIndent  Master's Degree & 84 (12.1) & 53 (13.7) & 31 (10) \\ 
+\textbackslash MyIndent  M.B.A. & 13 (1.9) & 10 (2.6) & 3 (1) \\ 
+\textbackslash MyIndent  J.D. & 3 (0.4) & 0 (0) & 3 (1) \\ 
+\textbackslash MyIndent  M.D. & 2 (0.3) & 1 (0.3) & 1 (0.3) \\ 
+\textbackslash MyIndent  Ph.D. & 10 (1.4) & 6 (1.6) & 4 (1.3) \\ 
+\textbackslash MyIndent  Other Advanced Degree & 12 (1.7) & 6 (1.6) & 6 (1.9) \\ 
+\textbackslash MyIndent  Prefer not to answer & 2 (0.3) & 0 (0) & 2 (0.6) \\ 
+\textbackslash MyIndent  Employment Status: n (\%) &  &  &  \\ 
+\textbackslash MyIndent  Student & 96 (13.8) & 65 (16.8) & 31 (10) \\ 
+\textbackslash MyIndent  Homemaker & 60 (8.6) & 29 (7.5) & 31 (10) \\ 
+\textbackslash MyIndent  Unemployed or laid off & 33 (4.7) & 13 (3.4) & 20 (6.4) \\ 
+\textbackslash MyIndent  Looking for work & 38 (5.5) & 19 (4.9) & 19 (6.1) \\ 
+\textbackslash MyIndent  Working part-time & 107 (15.4) & 56 (14.5) & 51 (16.4) \\ 
+\textbackslash MyIndent  Working full-time & 295 (42.3) & 182 (47.2) & 113 (36.3) \\ 
+\textbackslash MyIndent  Retired & 22 (3.2) & 4 (1) & 18 (5.8) \\ 
+\textbackslash MyIndent  Other & 42 (6) & 16 (4.1) & 26 (8.4) \\ 
+\textbackslash MyIndent  Unknown & 0 (0) & 0 (0) & 0 (0) \\ 
+\textbackslash MyIndent  Prefer not to answer & 4 (0.6) & 2 (0.5) & 2 (0.6) \\ 
+\textbackslash MyIndent  Annual Income: n (\%) &  &  &  \\ 
+\textbackslash MyIndent  Less than \$5,000 & 33 (4.7) & 13 (3.4) & 20 (6.4) \\ 
+\textbackslash MyIndent  \$5,000 through \$11,999 & 52 (7.5) & 25 (6.5) & 27 (8.7) \\ 
+\textbackslash MyIndent  \$12,000 through \$15,999 & 27 (3.9) & 15 (3.9) & 12 (3.9) \\ 
+\textbackslash MyIndent  \$16,000 through \$24,999 & 63 (9) & 32 (8.3) & 31 (10) \\ 
+\textbackslash MyIndent  \$25,000 through \$34,999 & 67 (9.6) & 36 (9.3) & 31 (10) \\ 
+\textbackslash MyIndent  \$35,000 through \$49,999 & 102 (14.6) & 58 (15) & 44 (14.1) \\ 
+\textbackslash MyIndent  \$50,000 through \$74,999 & 111 (15.9) & 68 (17.6) & 43 (13.8) \\ 
+\textbackslash MyIndent  \$75,000 through \$99,999 & 68 (9.8) & 45 (11.7) & 23 (7.4) \\ 
+\textbackslash MyIndent  \$100,000 through \$149,999 & 67 (9.6) & 42 (10.9) & 25 (8) \\ 
+\textbackslash MyIndent  \$150,000 through \$199,999 & 18 (2.6) & 10 (2.6) & 8 (2.6) \\ 
+\textbackslash MyIndent  \$200,000 through \$249,999 & 11 (1.6) & 5 (1.3) & 6 (1.9) \\ 
+\textbackslash MyIndent  \$250,000 or greater & 12 (1.7) & 9 (2.3) & 3 (1) \\ 
+\textbackslash MyIndent  Unknown & 28 (4) & 16 (4.1) & 12 (3.9) \\ 
+\textbackslash MyIndent  Prefer not to answer & 38 (5.5) & 12 (3.1) & 26 (8.4) \\ 
+\textbackslash MyIndent  Marital Status: n (\%) &  &  &  \\ 
+\textbackslash MyIndent  Single & 187 (26.8) & 103 (26.7) & 84 (27) \\ 
+\textbackslash MyIndent  Single,dating & 83 (11.9) & 48 (12.4) & 35 (11.3) \\ 
+\textbackslash MyIndent  Single,engaged & 33 (4.7) & 22 (5.7) & 11 (3.5) \\ 
+\textbackslash MyIndent  Single,marriagelike & 88 (12.6) & 51 (13.2) & 37 (11.9) \\ 
+\textbackslash MyIndent  Married & 203 (29.1) & 117 (30.3) & 86 (27.7) \\ 
+\textbackslash MyIndent  civilunion & 25 (3.6) & 12 (3.1) & 13 (4.2) \\ 
+\textbackslash MyIndent  Separated & 16 (2.3) & 7 (1.8) & 9 (2.9) \\ 
+\textbackslash MyIndent  Divorced & 45 (6.5) & 21 (5.4) & 24 (7.7) \\ 
+\textbackslash MyIndent  Widow/widower & 7 (1) & 1 (0.3) & 6 (1.9) \\ 
+\textbackslash MyIndent  Other & 6 (0.9) & 3 (0.8) & 3 (1) \\ 
+\textbackslash MyIndent  Prefer not to answer & 4 (0.6) & 1 (0.3) & 3 (1) \\ 
+\hline \\[-1.8ex] 
+\end{tabular} 
+\end{table} 

@@ -1,0 +1,6 @@
+outcome	raw_alpha	std_alpha	low_ci_95	up_ci_95
+1	RR_POS_BIAS	0.730	0.734	0.697	0.760
+2	RR_NEG_BIAS	0.746	0.744	0.715	0.775
+3	BBSIQ      	0.903	0.903	0.892	0.914
+4	DASS21     	0.724	0.729	0.690	0.756
+5	OASIS      	0.819	0.823	0.796	0.840

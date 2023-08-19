@@ -1,0 +1,98 @@
+
+% Table created by stargazer v.5.2.3 by Marek Hlavac, Social Policy Institute. E-mail: marek.hlavac at gmail.com
+% Date and time: mar., nov. 08, 2022 - 09:43:35 p. m.
+\begin{table}[!htbp] \centering 
+  \caption{Demographic characteristics of analyzed sample and engagement clusters} 
+  \label{} 
+\begin{tabular}{@{\extracolsep{5pt}} cccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+Characteristic & All & Engagement Cluster 1 : More Time Spent & Engagement Cluster 2: Less Time Spent \\ 
+\hline \\[-1.8ex] 
+n & 627 & 304 & 323 \\ 
+Age (years): M (SD) & 35.42 (11.82) & 39.7 (12.93) & 31.41 (9.01) \\ 
+Gender: n (\%) &  &  &  \\ 
+Female & 512 (81.7) & 243 (79.9) & 269 (83.3) \\ 
+Male & 101 (16.1) & 55 (18.1) & 46 (14.2) \\ 
+Transgender & 2 (0.3) & 1 (0.3) & 1 (0.3) \\ 
+Transgender Female & 0 (0) & 0 (0) & 0 (0) \\ 
+Transgender Male & 3 (0.5) & 1 (0.3) & 2 (0.6) \\ 
+Other & 8 (1.3) & 3 (1) & 5 (1.5) \\ 
+Prefer not to answer & 1 (0.2) & 1 (0.3) & 0 (0) \\ 
+Race: n (\%) &  &  &  \\ 
+American Indian/Alaska Native & 7 (1.1) & 5 (1.6) & 2 (0.6) \\ 
+Black/African origin & 60 (9.6) & 30 (9.9) & 30 (9.3) \\ 
+East Asian & 14 (2.2) & 3 (1) & 11 (3.4) \\ 
+Native Hawaiian/Pacific Islander & 4 (0.6) & 3 (1) & 1 (0.3) \\ 
+South Asian & 12 (1.9) & 4 (1.3) & 8 (2.5) \\ 
+White/European origin & 447 (71.3) & 220 (72.4) & 227 (70.3) \\ 
+More than one race & 50 (8) & 21 (6.9) & 29 (9) \\ 
+Other or Unknown & 26 (4.1) & 16 (5.3) & 10 (3.1) \\ 
+Prefer not to answer & 7 (1.1) & 2 (0.7) & 5 (1.5) \\ 
+Ethnicity: n (\%) &  &  &  \\ 
+Hispanic or Latino & 82 (13.1) & 42 (13.8) & 40 (12.4) \\ 
+Not Hispanic or Latino & 514 (82) & 242 (79.6) & 272 (84.2) \\ 
+Unknown & 13 (2.1) & 8 (2.6) & 5 (1.5) \\ 
+Prefer not to answer & 18 (2.9) & 12 (3.9) & 6 (1.9) \\ 
+Country: n (\%) &  &  &  \\ 
+United States & 575 (91.7) & 261 (85.9) & 314 (97.2) \\ 
+Australia & 27 (4.3) & 22 (7.2) & 5 (1.5) \\ 
+Canada & 7 (1.1) & 6 (2) & 1 (0.3) \\ 
+Other & 17 (2.7) & 14 (4.6) & 3 (0.9) \\ 
+Prefer not to answer & 1 (0.2) & 1 (0.3) & 0 (0) \\ 
+Education: n (\%) &  &  &  \\ 
+Junior High & 1 (0.2) & 0 (0) & 1 (0.3) \\ 
+Some High School & 6 (1) & 4 (1.3) & 2 (0.6) \\ 
+High School Graduate & 52 (8.3) & 27 (8.9) & 25 (7.7) \\ 
+Some College & 210 (33.5) & 111 (36.5) & 99 (30.7) \\ 
+Associate's Degree & 64 (10.2) & 30 (9.9) & 34 (10.5) \\ 
+Bachelor's Degree & 146 (23.3) & 69 (22.7) & 77 (23.8) \\ 
+Some Graduate School & 35 (5.6) & 14 (4.6) & 21 (6.5) \\ 
+Master's Degree & 75 (12) & 30 (9.9) & 45 (13.9) \\ 
+M.B.A. & 11 (1.8) & 3 (1) & 8 (2.5) \\ 
+J.D. & 2 (0.3) & 2 (0.7) & 0 (0) \\ 
+M.D. & 2 (0.3) & 1 (0.3) & 1 (0.3) \\ 
+Ph.D. & 10 (1.6) & 4 (1.3) & 6 (1.9) \\ 
+Other Advanced Degree & 11 (1.8) & 7 (2.3) & 4 (1.2) \\ 
+Prefer not to answer & 2 (0.3) & 2 (0.7) & 0 (0) \\ 
+Employment Status: n (\%) &  &  &  \\ 
+Student & 85 (13.6) & 29 (9.5) & 56 (17.3) \\ 
+Homemaker & 57 (9.1) & 32 (10.5) & 25 (7.7) \\ 
+Unemployed or laid off & 30 (4.8) & 20 (6.6) & 10 (3.1) \\ 
+Looking for work & 33 (5.3) & 17 (5.6) & 16 (5) \\ 
+Working part-time & 96 (15.3) & 53 (17.4) & 43 (13.3) \\ 
+Working full-time & 265 (42.3) & 109 (35.9) & 156 (48.3) \\ 
+Retired & 20 (3.2) & 18 (5.9) & 2 (0.6) \\ 
+Other & 39 (6.2) & 24 (7.9) & 15 (4.6) \\ 
+Unknown & 0 (0) & 0 (0) & 0 (0) \\ 
+Prefer not to answer & 2 (0.3) & 2 (0.7) & 0 (0) \\ 
+Annual Income: n (\%) &  &  &  \\ 
+Less than \$5,000 & 29 (4.6) & 19 (6.2) & 10 (3.1) \\ 
+\$5,000 through \$11,999 & 48 (7.7) & 25 (8.2) & 23 (7.1) \\ 
+\$12,000 through \$15,999 & 24 (3.8) & 13 (4.3) & 11 (3.4) \\ 
+\$16,000 through \$24,999 & 58 (9.3) & 31 (10.2) & 27 (8.4) \\ 
+\$25,000 through \$34,999 & 57 (9.1) & 28 (9.2) & 29 (9) \\ 
+\$35,000 through \$49,999 & 92 (14.7) & 41 (13.5) & 51 (15.8) \\ 
+\$50,000 through \$74,999 & 97 (15.5) & 43 (14.1) & 54 (16.7) \\ 
+\$75,000 through \$99,999 & 63 (10) & 24 (7.9) & 39 (12.1) \\ 
+\$100,000 through \$149,999 & 62 (9.9) & 25 (8.2) & 37 (11.5) \\ 
+\$150,000 through \$199,999 & 14 (2.2) & 7 (2.3) & 7 (2.2) \\ 
+\$200,000 through \$249,999 & 11 (1.8) & 6 (2) & 5 (1.5) \\ 
+\$250,000 or greater & 12 (1.9) & 3 (1) & 9 (2.8) \\ 
+Unknown & 24 (3.8) & 13 (4.3) & 11 (3.4) \\ 
+Prefer not to answer & 36 (5.7) & 26 (8.6) & 10 (3.1) \\ 
+Marital Status: n (\%) &  &  &  \\ 
+Single & 165 (26.3) & 81 (26.6) & 84 (26) \\ 
+Single,dating & 76 (12.1) & 34 (11.2) & 42 (13) \\ 
+Single,engaged & 31 (4.9) & 12 (3.9) & 19 (5.9) \\ 
+Single,marriagelike & 76 (12.1) & 35 (11.5) & 41 (12.7) \\ 
+Married & 184 (29.3) & 85 (28) & 99 (30.7) \\ 
+civilunion & 24 (3.8) & 13 (4.3) & 11 (3.4) \\ 
+Separated & 15 (2.4) & 9 (3) & 6 (1.9) \\ 
+Divorced & 39 (6.2) & 23 (7.6) & 16 (5) \\ 
+Widow/widower & 7 (1.1) & 6 (2) & 1 (0.3) \\ 
+Other & 6 (1) & 3 (1) & 3 (0.9) \\ 
+Prefer not to answer & 4 (0.6) & 3 (1) & 1 (0.3) \\ 
+\hline \\[-1.8ex] 
+\end{tabular} 
+\end{table} 

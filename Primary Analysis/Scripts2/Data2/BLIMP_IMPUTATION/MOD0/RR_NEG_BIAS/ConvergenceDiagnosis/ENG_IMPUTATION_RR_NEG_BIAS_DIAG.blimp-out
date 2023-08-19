@@ -1,0 +1,324 @@
+
+---------------------------------------------------------------------------
+
+                                   Blimp
+                                  3.0.60
+
+             Blimp was developed with funding from Institute of
+          Educational Sciences awards R305D150056 and R305D190002.
+
+            Craig K. Enders, P.I. Email: cenders@psych.ucla.edu
+              Brian T. Keller, Co-P.I. Email: blimp@utexas.edu
+                 Han Du, Co-P.I. Email: hdu@psych.ucla.edu
+                 Roy Levy, Co-P.I. Email: roy.levy@asu.edu
+
+              Programming and Blimp Studio by Brian T. Keller
+
+                   There is no expressed license given.
+
+---------------------------------------------------------------------------
+
+
+ALGORITHMIC OPTIONS SPECIFIED:
+
+  Imputation method:                 Fully Bayesian model-based
+  MCMC algorithm:                    Full conditional Metropolis sampler
+  Between-cluster imputation model:  Latent cluster means (LATENT)
+  Residual variance structure:       Homogeneous level-1 variance (HOV)
+  Prior for random effect variances: Zero matrix, df = -(p + 1) (PRIOR2)
+  Prior for residual variances:      Zero sum of squares, df = -2 (PRIOR2)
+  Prior for predictor variances:     Unit sum of squares, df = 2 (XPRIOR1)
+  Chain Starting Values:             Random starting values
+
+
+  NOTE: The default prior for regression coefficients 
+        in categorical models is 'normal( 0.0, 5.0)'
+
+  NOTE: The following nominal variables have automatically
+        been assigned a reference group.
+
+          'eng' with reference value '1'
+          'gender' with reference value '1'
+
+        To change reference group use the following command:
+          NOMINAL: variable_name(reference_value);
+
+
+BURN-IN POTENTIAL SCALE REDUCTION (PSR) OUTPUT:
+
+  NOTE: Split chain PSR is being used. This splits each chain's
+        iterations to create twice as many chains.
+
+  Comparing iterations across 2 chains     Highest PSR   Parameter #  
+                         1501 to 3000            1.162             4  
+                         3001 to 6000            1.202             4  
+                         4501 to 9000            1.125             6  
+                         6001 to 12000           1.139             6  
+                         7501 to 15000           1.096             6  
+                         9001 to 18000           1.103             6  
+                        10501 to 21000           1.034             6  
+                        12001 to 24000           1.042             5  
+                        13501 to 27000           1.035             5  
+                        15001 to 30000           1.012             5  
+                        16501 to 33000           1.006             6  
+                        18001 to 36000           1.027             6  
+                        19501 to 39000           1.019             6  
+                        21001 to 42000           1.006             5  
+                        22501 to 45000           1.008             5  
+                        24001 to 48000           1.010             6  
+                        25501 to 51000           1.016             6  
+                        27001 to 54000           1.064             6  
+                        28501 to 57000           1.038             6  
+                        30001 to 60000           1.037             5  
+
+
+PARAMETER LABELS:
+
+  Printing out PSR for last 5 comparisons:
+
+  NOTE: Split chain PSR is being used. This splits each chain's
+        iterations to create twice as many chains.
+
+  Comparing iterations across 2 chains  
+                  [1]   24001 to 48000 
+                  [2]   25501 to 51000 
+                  [3]   27001 to 54000 
+                  [4]   28501 to 57000 
+                  [5]   30001 to 60000 
+
+                                      [1]    [2]    [3]    [4]    [5]  
+Outcome Variable:  outcome    
+
+    Variances:                      
+  1  L2 : Var(Intercept)              1.00   1.00   1.00   1.00   1.00 
+  2  L2 : Cov(t1,Intercept)           1.00   1.00   1.00   1.00   1.01 
+  3  L2 : Var(t1)                     1.01   1.01   1.02   1.02   1.02 
+  4  L2 : Cov(t2,Intercept)           1.01   1.00   1.00   1.00   1.00 
+  5  L2 : Cov(t2,t1)                  1.01   1.01   1.04   1.04   1.04 
+  6  L2 : Var(t2)                     1.01   1.02   1.06   1.04   1.02 
+  7  Residual Var.                    1.00   1.00   1.00   1.01   1.01 
+
+    Coefficients:                   
+  8  Intercept                        1.00   1.00   1.00   1.00   1.00 
+  9  t1                               1.00   1.00   1.00   1.00   1.00 
+ 10  t2                               1.00   1.00   1.00   1.00   1.00 
+ 11  eng.2                            1.00   1.00   1.00   1.00   1.00 
+ 12  cred_on                          1.00   1.00   1.00   1.00   1.00 
+ 13  gender.2                         1.00   1.00   1.00   1.00   1.00 
+ 14  gender.3                         1.00   1.00   1.00   1.00   1.00 
+ 15  isOne                            1.00   1.00   1.00   1.00   1.00 
+ 16  eng.2*t1                         1.00   1.00   1.00   1.00   1.00 
+ 17  eng.2*t2                         1.00   1.00   1.00   1.00   1.00 
+
+    Standardized Coefficients:      
+ 18  t1                               1.00   1.00   1.00   1.00   1.00 
+ 19  t2                               1.00   1.00   1.00   1.00   1.00 
+ 20  eng.2                            1.00   1.00   1.00   1.00   1.00 
+ 21  cred_on                          1.00   1.00   1.00   1.00   1.00 
+ 22  gender.2                         1.00   1.00   1.00   1.00   1.00 
+ 23  gender.3                         1.00   1.00   1.00   1.00   1.00 
+ 24  isOne                            1.00   1.00   1.00   1.00   1.00 
+ 25  eng.2*t1                         1.00   1.00   1.00   1.00   1.00 
+ 26  eng.2*t2                         1.00   1.00   1.00   1.00   1.00 
+
+    Proportion Variance Explained   
+ 27  by Coefficients                  1.00   1.00   1.00   1.00   1.00 
+ 28  by Level-2 Random Intercepts     1.00   1.00   1.00   1.00   1.00 
+ 29  by Level-2 Random Slopes         1.01   1.01   1.02   1.01   1.01 
+ 30  by Level-1 Residual Variation    1.00   1.00   1.01   1.01   1.00 
+
+
+
+Missing predictor:  cred_on    
+
+ 31  Grand Mean                       1.00   1.00   1.00   1.00   1.00 
+
+     Level 2:                       
+ 32   eng.2                           1.00   1.00   1.00   1.00   1.00 
+ 33   gender.2                        1.00   1.00   1.00   1.00   1.00 
+ 34   gender.3                        1.00   1.00   1.00   1.00   1.00 
+ 35   isOne                           1.00   1.00   1.00   1.00   1.00 
+ 36   Residual Var.                   1.00   1.00   1.00   1.00   1.00 
+
+
+Missing predictor:  gender     
+
+ 37  Grand Mean: gender.2             1.00   1.00   1.00   1.00   1.00 
+ 38  Grand Mean: gender.3             1.00   1.00   1.00   1.00   1.00 
+
+     Level 2:                       
+ 39   gender.2 ~ cred_on              1.00   1.00   1.00   1.00   1.00 
+ 40   gender.2 ~ eng.2                1.00   1.00   1.00   1.00   1.00 
+ 41   gender.2 ~ isOne                1.00   1.00   1.00   1.00   1.00 
+ 42   gender.3 ~ cred_on              1.00   1.00   1.00   1.00   1.00 
+ 43   gender.3 ~ eng.2                1.00   1.00   1.00   1.00   1.00 
+ 44   gender.3 ~ isOne                1.00   1.00   1.00   1.00   1.00 
+ 45   Var(gender.2)                    nan    nan    nan    nan    nan 
+ 46   Cov(gender.2, gender.3)          nan    nan    nan    nan    nan 
+ 47   Var(gender.3)                    nan    nan    nan    nan    nan 
+
+
+METROPOLIS-HASTINGS ACCEPTANCE RATES:
+
+  Chain 1:
+    Variable                            Type    Probability   Target Value 
+
+  Chain 2:
+    Variable                            Type    Probability   Target Value 
+    cred_on                        parameter          0.410          0.500 
+
+
+  NOTE: Suppressing printing of tuning info that is within
+        +/- 0.05 of the target acceptance probability.
+        Use keyword 'tuneinfo' in options to override.
+
+
+DATA INFORMATION:
+
+  Level-2 identifier:       p_id
+  Sample Size:              2788
+  Level-2 Clusters:         697
+  Missing Data Rates:
+
+                  outcome = 44.08
+                  cred_on = 00.57
+                   gender = 00.29
+
+  Nominal Dummy Codes:
+
+                      eng = eng.2
+                   gender = gender.2 gender.3
+
+
+MODEL INFORMATION:
+
+  NUMBER OF PARAMETERS
+    Outcome Models:         17
+    Predictor Models:       14
+
+  PREDICTORS
+    Fixed variables:        t1 t2 eng isOne
+    Incomplete continuous:  cred_on
+    Incomplete nominal:     gender
+
+  CENTERED PREDICTORS
+    Grand Mean Centered:    cred_on
+
+  MODELS
+    [1]  outcome ~ Intercept t1 t2 eng.2 cred_on gender.2 gender.3 isOne eng.2*t1 
+                 eng.2*t2 | Intercept t1 t2
+
+
+WARNING MESSAGES:
+
+  WARNING: One or more tuning parameters had a suboptimal acceptance probability.
+           See METROPOLIS-HASTINGS ACCEPTANCE RATES section.
+
+
+OUTCOME MODEL ESTIMATES:
+
+  Summaries based on 2 iterations using 2 chains.
+
+
+Outcome Variable:  outcome    
+
+Grand Mean Centered: cred_on
+
+
+Parameters                           Median     StdDev       2.5%      97.5%        PSR      N_Eff 
+                                -------------------------------------------------------------------
+Variances:                      
+  L2 : Var(Intercept)                 0.145      0.009      0.139      0.151        nan        nan 
+  L2 : Cov(t1,Intercept)             -0.010      0.001     -0.011     -0.009        nan        nan 
+  L2 : Var(t1)                        0.007      0.000      0.007      0.007        nan        nan 
+  L2 : Cov(t2,Intercept)             -0.003      0.037     -0.029      0.024        nan        nan 
+  L2 : Cov(t2,t1)                    -0.006      0.001     -0.007     -0.005        nan        nan 
+  L2 : Var(t2)                        0.020      0.016      0.009      0.032        nan        nan 
+  Residual Var.                       0.143      0.001      0.142      0.144        nan        nan 
+
+Coefficients:                   
+  Intercept                           2.955      0.032      2.932      2.977        nan        nan 
+  t1                                 -0.104      0.002     -0.106     -0.103        nan        nan 
+  t2                                  0.088      0.010      0.080      0.095        nan        nan 
+  eng.2                              -0.122      0.021     -0.137     -0.108        nan        nan 
+  cred_on                             0.054      0.010      0.047      0.061        nan        nan 
+  gender.2                           -0.064      0.106     -0.139      0.011        nan        nan 
+  gender.3                           -0.021      0.106     -0.096      0.055        nan        nan 
+  isOne                               0.003      0.006     -0.001      0.007        nan        nan 
+  eng.2*t1                            0.024      0.010      0.017      0.031        nan        nan 
+  eng.2*t2                           -0.057      0.005     -0.060     -0.054        nan        nan 
+
+Standardized Coefficients:      
+  t1                                 -0.361      0.002     -0.362     -0.359        nan        nan 
+  t2                                  0.064      0.009      0.058      0.071        nan        nan 
+  eng.2                              -0.103      0.015     -0.113     -0.092        nan        nan 
+  cred_on                             0.073      0.011      0.065      0.080        nan        nan 
+  gender.2                           -0.039      0.066     -0.086      0.007        nan        nan 
+  gender.3                           -0.005      0.026     -0.024      0.013        nan        nan 
+  isOne                               0.002      0.004     -0.001      0.005        nan        nan 
+  eng.2*t1                            0.084      0.034      0.060      0.108        nan        nan 
+  eng.2*t2                           -0.030      0.002     -0.032     -0.029        nan        nan 
+
+Proportion Variance Explained   
+  by Coefficients                     0.106      0.000      0.106      0.107        nan        nan 
+  by Level-2 Random Intercepts        0.405      0.037      0.379      0.431        nan        nan 
+  by Level-2 Random Slopes            0.079      0.012      0.071      0.088        nan        nan 
+  by Level-1 Residual Variation       0.409      0.025      0.392      0.427        nan        nan 
+
+                                -------------------------------------------------------------------
+
+
+
+
+PREDICTOR MODEL ESTIMATES:
+
+  Summaries based on 2 iterations using 2 chains.
+
+
+Missing predictor:  cred_on    
+
+Parameters                           Median     StdDev       2.5%      97.5%        PSR      N_Eff 
+                                -------------------------------------------------------------------
+
+Grand Mean                            1.832      0.016      1.821      1.843        nan        nan 
+
+Level 2:                                                                                           
+  eng.2                               0.075      0.059      0.033      0.116        nan        nan 
+  gender.2                           -0.037      0.014     -0.047     -0.028        nan        nan 
+  gender.3                           -0.035      0.095     -0.102      0.032        nan        nan 
+  isOne                               0.030      0.030      0.009      0.051        nan        nan 
+  Residual Var.                       0.626      0.029      0.605      0.646        nan        nan 
+                                                                                                   
+                                -------------------------------------------------------------------
+
+
+
+Missing predictor:  gender     
+
+Parameters                           Median     StdDev       2.5%      97.5%        PSR      N_Eff 
+                                -------------------------------------------------------------------
+
+Grand Mean: gender.2                 -1.000      0.009     -1.006     -0.994        nan        nan 
+Grand Mean: gender.3                 -1.824      0.033     -1.847     -1.801        nan        nan 
+
+Level 2:                                                                                           
+  gender.2 ~ cred_on                 -0.103      0.119     -0.186     -0.019        nan        nan 
+  gender.2 ~ eng.2                    0.064      0.010      0.057      0.071        nan        nan 
+  gender.2 ~ isOne                    0.032      0.037      0.006      0.058        nan        nan 
+  gender.3 ~ cred_on                 -0.173      0.047     -0.206     -0.139        nan        nan 
+  gender.3 ~ eng.2                   -0.182      0.089     -0.245     -0.120        nan        nan 
+  gender.3 ~ isOne                    0.458      0.333      0.222      0.693        nan        nan 
+  Var(gender.2)                       1.000      0.000      1.000      1.000        nan        nan 
+  Cov(gender.2, gender.3)             0.500      0.000      0.500      0.500        nan        nan 
+  Var(gender.3)                       1.000      0.000      1.000      1.000        nan        nan 
+                                                                                                   
+                                -------------------------------------------------------------------
+
+
+
+VARIABLE ORDER IN IMPUTED DATA:
+
+   stacked = 'C:\Users\angel\OneDrive\UVA\MS Systems Engineering\Thesis\R_Thesis_MindTrails\Scripts2\Data2\BLIMP_IMPUTATION\MOD0\RR_NEG_BIAS\ConvergenceDiagnosis\RR_NEG_imps_mod0.csv'
+
+     imp# p_id t t1 t2 outcome cred_on eng gender isOne
+

@@ -8,6 +8,18 @@
 
 # User-specific files
 .Ruserdata
+# Ignore specific zip file
+public-v1.0.0.zip
+pooledResults7LME.RData
+1_Import_Data.RData
+1_Import_Data_Dat_List.RData
+7_2_simple_time_effects_results.RData
+7_2_simple_time_effects_results_MTS_Reference_Group.RData
+9_Tables_Formatting_MTS_Reference_Group.Rdata
+
+# Ignore specific folder
+public-v1.0.0/
+
 
 # Example code in package build process
 *-Ex.R

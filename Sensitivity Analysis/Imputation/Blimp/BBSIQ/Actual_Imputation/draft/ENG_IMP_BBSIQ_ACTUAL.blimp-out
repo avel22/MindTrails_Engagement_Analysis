@@ -1,0 +1,441 @@
+
+---------------------------------------------------------------------------
+
+                                   Blimp
+                                  3.0.60
+
+             Blimp was developed with funding from Institute of
+          Educational Sciences awards R305D150056 and R305D190002.
+
+            Craig K. Enders, P.I. Email: cenders@psych.ucla.edu
+              Brian T. Keller, Co-P.I. Email: blimp@utexas.edu
+                 Han Du, Co-P.I. Email: hdu@psych.ucla.edu
+                 Roy Levy, Co-P.I. Email: roy.levy@asu.edu
+
+              Programming and Blimp Studio by Brian T. Keller
+
+                   There is no expressed license given.
+
+---------------------------------------------------------------------------
+
+
+ALGORITHMIC OPTIONS SPECIFIED:
+
+  Imputation method:                 Fully Bayesian model-based
+  MCMC algorithm:                    Full conditional Metropolis sampler
+  Between-cluster imputation model:  Latent cluster means (LATENT)
+  Residual variance structure:       Homogeneous level-1 variance (HOV)
+  Prior for random effect variances: Zero matrix, df = -(p + 1) (PRIOR2)
+  Prior for residual variances:      Zero sum of squares, df = -2 (PRIOR2)
+  Prior for predictor variances:     Unit sum of squares, df = 2 (XPRIOR1)
+  Chain Starting Values:             Random starting values
+
+
+  NOTE: The default prior for regression coefficients 
+        in categorical models is 'normal( 0.0, 5.0)'
+
+  NOTE: The following nominal variables have automatically
+        been assigned a reference group.
+
+          'eng' with reference value '1'
+          'gender' with reference value '1'
+
+        To change reference group use the following command:
+          NOMINAL: variable_name(reference_value);
+
+
+BURN-IN POTENTIAL SCALE REDUCTION (PSR) OUTPUT:
+
+  NOTE: Split chain PSR is being used. This splits each chain's
+        iterations to create twice as many chains.
+
+  Comparing iterations across 2 chains     Highest PSR   Parameter #  
+                         2501 to 5000            1.178             6  
+                         5001 to 10000           1.105             6  
+                         7501 to 15000           1.105             6  
+                        10001 to 20000           1.108             6  
+                        12501 to 25000           1.036             5  
+                        15001 to 30000           1.035             6  
+                        17501 to 35000           1.048             6  
+                        20001 to 40000           1.022             6  
+                        22501 to 45000           1.057             6  
+                        25001 to 50000           1.029             6  
+                        27501 to 55000           1.019             4  
+                        30001 to 60000           1.014             6  
+                        32501 to 65000           1.011             4  
+                        35001 to 70000           1.010             6  
+                        37501 to 75000           1.013             6  
+                        40001 to 80000           1.009             5  
+                        42501 to 85000           1.018             5  
+                        45001 to 90000           1.006             4  
+                        47501 to 95000           1.004             6  
+                        50001 to 100000          1.004             4  
+
+
+PARAMETER LABELS:
+
+  Printing out PSR for last 5 comparisons:
+
+  NOTE: Split chain PSR is being used. This splits each chain's
+        iterations to create twice as many chains.
+
+  Comparing iterations across 2 chains  
+                  [1]   40001 to 80000 
+                  [2]   42501 to 85000 
+                  [3]   45001 to 90000 
+                  [4]   47501 to 95000 
+                  [5]   50001 to 100000
+
+                                      [1]    [2]    [3]    [4]    [5]  
+Outcome Variable:  outcome    
+
+    Variances:                      
+  1  L2 : Var(Intercept)              1.00   1.00   1.00   1.00   1.00 
+  2  L2 : Cov(t1,Intercept)           1.00   1.00   1.00   1.00   1.00 
+  3  L2 : Var(t1)                     1.00   1.00   1.00   1.00   1.00 
+  4  L2 : Cov(t2,Intercept)           1.01   1.02   1.01   1.00   1.00 
+  5  L2 : Cov(t2,t1)                  1.01   1.02   1.00   1.00   1.00 
+  6  L2 : Var(t2)                     1.00   1.01   1.00   1.00   1.00 
+  7  Residual Var.                    1.00   1.00   1.00   1.00   1.00 
+
+    Coefficients:                   
+  8  Intercept                        1.00   1.00   1.00   1.00   1.00 
+  9  t1                               1.00   1.00   1.00   1.00   1.00 
+ 10  t2                               1.00   1.00   1.00   1.00   1.00 
+ 11  eng.2                            1.00   1.00   1.00   1.00   1.00 
+ 12  cred_on                          1.00   1.00   1.00   1.00   1.00 
+ 13  gender.2                         1.00   1.00   1.00   1.00   1.00 
+ 14  gender.3                         1.00   1.00   1.00   1.00   1.00 
+ 15  isOne                            1.00   1.00   1.00   1.00   1.00 
+ 16  eng.2*t1                         1.00   1.00   1.00   1.00   1.00 
+ 17  eng.2*t2                         1.00   1.00   1.00   1.00   1.00 
+
+    Standardized Coefficients:      
+ 18  t1                               1.00   1.00   1.00   1.00   1.00 
+ 19  t2                               1.00   1.00   1.00   1.00   1.00 
+ 20  eng.2                            1.00   1.00   1.00   1.00   1.00 
+ 21  cred_on                          1.00   1.00   1.00   1.00   1.00 
+ 22  gender.2                         1.00   1.00   1.00   1.00   1.00 
+ 23  gender.3                         1.00   1.00   1.00   1.00   1.00 
+ 24  isOne                            1.00   1.00   1.00   1.00   1.00 
+ 25  eng.2*t1                         1.00   1.00   1.00   1.00   1.00 
+ 26  eng.2*t2                         1.00   1.00   1.00   1.00   1.00 
+
+    Proportion Variance Explained   
+ 27  by Coefficients                  1.00   1.00   1.00   1.00   1.00 
+ 28  by Level-2 Random Intercepts     1.00   1.00   1.00   1.00   1.00 
+ 29  by Level-2 Random Slopes         1.00   1.00   1.00   1.00   1.00 
+ 30  by Level-1 Residual Variation    1.00   1.00   1.00   1.00   1.00 
+
+
+
+Missing predictor:  cred_on    
+
+ 31  Grand Mean                       1.00   1.00   1.00   1.00   1.00 
+
+     Level 2:                       
+ 32   eng.2                           1.00   1.00   1.00   1.00   1.00 
+ 33   gender.2                        1.00   1.00   1.00   1.00   1.00 
+ 34   gender.3                        1.00   1.00   1.00   1.00   1.00 
+ 35   isOne                           1.00   1.00   1.00   1.00   1.00 
+ 36   Residual Var.                   1.00   1.00   1.00   1.00   1.00 
+
+
+Missing predictor:  gender     
+
+ 37  Grand Mean: gender.2             1.00   1.00   1.00   1.00   1.00 
+ 38  Grand Mean: gender.3             1.00   1.00   1.00   1.00   1.00 
+
+     Level 2:                       
+ 39   gender.2 ~ cred_on              1.00   1.00   1.00   1.00   1.00 
+ 40   gender.2 ~ eng.2                1.00   1.00   1.00   1.00   1.00 
+ 41   gender.2 ~ isOne                1.00   1.00   1.00   1.00   1.00 
+ 42   gender.3 ~ cred_on              1.00   1.00   1.00   1.00   1.00 
+ 43   gender.3 ~ eng.2                1.00   1.00   1.00   1.00   1.00 
+ 44   gender.3 ~ isOne                1.00   1.00   1.00   1.00   1.00 
+ 45   Var(gender.2)                    nan    nan    nan    nan    nan 
+ 46   Cov(gender.2, gender.3)          nan    nan    nan    nan    nan 
+ 47   Var(gender.3)                    nan    nan    nan    nan    nan 
+
+
+METROPOLIS-HASTINGS ACCEPTANCE RATES:
+
+  Chain 1:
+
+    Variable                            Type    Probability   Target Value 
+    cred_on                       imputation          0.474          0.500 
+    cred_on                        parameter          0.517          0.500 
+    gender                        imputation          0.490          0.500 
+
+  NOTE: Suppressing printing of 1 chains.
+        Use keyword 'tuneinfo' in options to override.
+
+
+DATA INFORMATION:
+
+  Level-2 identifier:       p_id
+  Sample Size:              2508
+  Level-2 Clusters:         627
+  Missing Data Rates:
+
+                  outcome = 40.83
+                  cred_on = 00.64
+                   gender = 00.16
+
+  Nominal Dummy Codes:
+
+                      eng = eng.2
+                   gender = gender.2 gender.3
+
+
+MODEL INFORMATION:
+
+  NUMBER OF PARAMETERS
+    Outcome Models:         17
+    Predictor Models:       14
+
+  PREDICTORS
+    Fixed variables:        t1 t2 eng isOne
+    Incomplete continuous:  cred_on
+    Incomplete nominal:     gender
+
+  CENTERED PREDICTORS
+    Grand Mean Centered:    cred_on
+
+  MODELS
+    [1]  outcome ~ Intercept t1 t2 eng.2 cred_on gender.2 gender.3 isOne eng.2*t1 
+                 eng.2*t2 | Intercept t1 t2
+
+
+WARNING MESSAGES:
+
+  No warning messages.
+
+
+OUTCOME MODEL ESTIMATES:
+
+  Summaries based on 500000 iterations using 2 chains.
+
+
+Outcome Variable:  outcome    
+
+Grand Mean Centered: cred_on
+
+
+Parameters                           Median     StdDev       2.5%      97.5%        PSR      N_Eff 
+                                -------------------------------------------------------------------
+Variances:                      
+  L2 : Var(Intercept)                 0.521      0.041      0.447      0.606      1.000  114828.327 
+  L2 : Cov(t1,Intercept)             -0.065      0.009     -0.084     -0.048      1.000  19796.026 
+  L2 : Var(t1)                        0.020      0.003      0.015      0.026      1.000  11541.496 
+  L2 : Cov(t2,Intercept)              0.004      0.029     -0.052      0.063      1.002    976.570 
+  L2 : Cov(t2,t1)                    -0.017      0.007     -0.032     -0.005      1.003   1135.481 
+  L2 : Var(t2)                        0.031      0.016      0.010      0.071      1.003    988.849 
+  Residual Var.                       0.175      0.011      0.155      0.198      1.000  35053.341 
+
+Coefficients:                   
+  Intercept                           1.390      0.070      1.252      1.527      1.000  34840.161 
+  t1                                 -0.158      0.014     -0.185     -0.131      1.000  43131.591 
+  t2                                  0.015      0.054     -0.092      0.122      1.000  93250.098 
+  eng.2                               0.122      0.067     -0.009      0.252      1.000  49164.035 
+  cred_on                             0.026      0.034     -0.040      0.091      1.000  28427.488 
+  gender.2                            0.033      0.076     -0.116      0.184      1.000  26032.039 
+  gender.3                            0.263      0.184     -0.100      0.625      1.000  29390.258 
+  isOne                               0.079      0.061     -0.041      0.199      1.000  28891.804 
+  eng.2*t1                           -0.014      0.019     -0.051      0.023      1.000  47482.463 
+  eng.2*t2                            0.154      0.073      0.011      0.298      1.000  96284.330 
+
+Standardized Coefficients:      
+  t1                                 -0.400      0.034     -0.465     -0.333      1.000  44699.697 
+  t2                                  0.008      0.029     -0.049      0.065      1.000  93414.025 
+  eng.2                               0.075      0.041     -0.005      0.155      1.000  49321.762 
+  cred_on                             0.025      0.033     -0.039      0.088      1.000  28467.748 
+  gender.2                            0.015      0.035     -0.052      0.083      1.000  26027.425 
+  gender.3                            0.046      0.032     -0.018      0.109      1.000  29500.711 
+  isOne                               0.041      0.032     -0.021      0.103      1.000  28917.411 
+  eng.2*t1                           -0.038      0.051     -0.138      0.061      1.000  47441.581 
+  eng.2*t2                            0.064      0.030      0.004      0.124      1.000  95549.012 
+
+Proportion Variance Explained   
+  by Coefficients                     0.174      0.016      0.143      0.207      1.000  44430.938 
+  by Level-2 Random Intercepts        0.441      0.026      0.391      0.492      1.000  33719.284 
+  by Level-2 Random Slopes            0.117      0.015      0.089      0.149      1.000  11641.248 
+  by Level-1 Residual Variation       0.267      0.019      0.231      0.306      1.000  31057.524 
+
+                                -------------------------------------------------------------------
+
+
+
+
+PREDICTOR MODEL ESTIMATES:
+
+  Summaries based on 500000 iterations using 2 chains.
+
+
+Missing predictor:  cred_on    
+
+Parameters                           Median     StdDev       2.5%      97.5%        PSR      N_Eff 
+                                -------------------------------------------------------------------
+
+Grand Mean                            1.854      0.032      1.791      1.916      1.000  97117.858 
+
+Level 2:                                                                                           
+  eng.2                              -0.006      0.081     -0.153      0.165      1.000  54332.329 
+  gender.2                            0.088      0.073     -0.064      0.220      1.000  38906.239 
+  gender.3                           -0.183      0.106     -0.367      0.043      1.000  23903.717 
+  isOne                               0.094      0.097     -0.083      0.302      1.000  47368.178 
+  Residual Var.                       0.590      0.046      0.491      0.675      1.000  41042.002 
+                                                                                                   
+                                -------------------------------------------------------------------
+
+
+
+Missing predictor:  gender     
+
+Parameters                           Median     StdDev       2.5%      97.5%        PSR      N_Eff 
+                                -------------------------------------------------------------------
+
+Grand Mean: gender.2                 -0.971      0.060     -1.089     -0.854      1.000  122291.753 
+Grand Mean: gender.3                 -1.903      0.121     -2.158     -1.683      1.000  19122.616 
+
+Level 2:                                                                                           
+  gender.2 ~ cred_on                 -0.006      0.076     -0.156      0.142      1.000  125504.749 
+  gender.2 ~ eng.2                   -0.147      0.120     -0.383      0.088      1.000  125664.059 
+  gender.2 ~ isOne                    0.073      0.146     -0.209      0.363      1.000  121233.851 
+  gender.3 ~ cred_on                 -0.235      0.152     -0.545      0.051      1.000  20860.785 
+  gender.3 ~ eng.2                    0.140      0.223     -0.289      0.588      1.000  25676.632 
+  gender.3 ~ isOne                    0.267      0.296     -0.260      0.902      1.000  20301.860 
+  Var(gender.2)                       1.000      0.000      1.000      1.000        nan        nan 
+  Cov(gender.2, gender.3)             0.500      0.000      0.500      0.500        nan        nan 
+  Var(gender.3)                       1.000      0.000      1.000      1.000        nan        nan 
+                                                                                                   
+                                -------------------------------------------------------------------
+
+
+
+
+ITERATION HISTORY:
+
+  Chain 1 burn-in started on Nov 08 23:39:03 2022
+  Chain 2 burn-in started on Nov 08 23:39:03 2022
+  Chain 2 burn-in iteration 25000 completed on Nov 08 23:41:19 2022
+  Chain 1 burn-in iteration 25000 completed on Nov 08 23:41:20 2022
+  Chain 2 burn-in iteration 50000 completed on Nov 08 23:43:30 2022
+  Chain 1 burn-in iteration 50000 completed on Nov 08 23:43:32 2022
+  Chain 2 burn-in iteration 75000 completed on Nov 08 23:45:40 2022
+  Chain 1 burn-in iteration 75000 completed on Nov 08 23:45:42 2022
+  Chain 2 burn-in iteration 100000 completed on Nov 08 23:48:21 2022
+  Chain 2 completed burn-in on Nov 08 23:48:21 2022
+  Chain 1 burn-in iteration 100000 completed on Nov 08 23:48:23 2022
+  Chain 1 completed burn-in on Nov 08 23:48:23 2022
+  Chain 2 saved imputation 2 on Nov 08 23:48:57 2022
+  Chain 1 saved imputation 1 on Nov 08 23:49:00 2022
+  Chain 2 saved imputation 4 on Nov 08 23:49:34 2022
+  Chain 1 saved imputation 3 on Nov 08 23:49:37 2022
+  Chain 2 saved imputation 6 on Nov 08 23:50:10 2022
+  Chain 1 saved imputation 5 on Nov 08 23:50:12 2022
+  Chain 2 saved imputation 8 on Nov 08 23:50:36 2022
+  Chain 1 saved imputation 7 on Nov 08 23:50:39 2022
+  Chain 2 saved imputation 10 on Nov 08 23:51:03 2022
+  Chain 1 saved imputation 9 on Nov 08 23:51:06 2022
+  Chain 2 saved imputation 12 on Nov 08 23:51:26 2022
+  Chain 1 saved imputation 11 on Nov 08 23:51:29 2022
+  Chain 2 saved imputation 14 on Nov 08 23:51:51 2022
+  Chain 1 saved imputation 13 on Nov 08 23:51:55 2022
+  Chain 2 saved imputation 16 on Nov 08 23:52:19 2022
+  Chain 1 saved imputation 15 on Nov 08 23:52:23 2022
+  Chain 2 saved imputation 18 on Nov 08 23:52:45 2022
+  Chain 1 saved imputation 17 on Nov 08 23:52:49 2022
+  Chain 2 saved imputation 20 on Nov 08 23:53:12 2022
+  Chain 1 saved imputation 19 on Nov 08 23:53:16 2022
+  Chain 2 saved imputation 22 on Nov 08 23:53:40 2022
+  Chain 1 saved imputation 21 on Nov 08 23:53:44 2022
+  Chain 2 saved imputation 24 on Nov 08 23:54:02 2022
+  Chain 1 saved imputation 23 on Nov 08 23:54:06 2022
+  Chain 2 completed iteration 62500 on Nov 08 23:54:13 2022
+  Chain 1 completed iteration 62500 on Nov 08 23:54:16 2022
+  Chain 2 saved imputation 26 on Nov 08 23:54:23 2022
+  Chain 1 saved imputation 25 on Nov 08 23:54:26 2022
+  Chain 2 saved imputation 28 on Nov 08 23:54:42 2022
+  Chain 1 saved imputation 27 on Nov 08 23:54:46 2022
+  Chain 2 saved imputation 30 on Nov 08 23:55:03 2022
+  Chain 1 saved imputation 29 on Nov 08 23:55:06 2022
+  Chain 2 saved imputation 32 on Nov 08 23:55:24 2022
+  Chain 1 saved imputation 31 on Nov 08 23:55:27 2022
+  Chain 2 saved imputation 34 on Nov 08 23:55:43 2022
+  Chain 1 saved imputation 33 on Nov 08 23:55:45 2022
+  Chain 2 saved imputation 36 on Nov 08 23:56:00 2022
+  Chain 1 saved imputation 35 on Nov 08 23:56:03 2022
+  Chain 2 saved imputation 38 on Nov 08 23:56:18 2022
+  Chain 1 saved imputation 37 on Nov 08 23:56:20 2022
+  Chain 2 saved imputation 40 on Nov 08 23:56:35 2022
+  Chain 1 saved imputation 39 on Nov 08 23:56:38 2022
+  Chain 2 saved imputation 42 on Nov 08 23:56:53 2022
+  Chain 1 saved imputation 41 on Nov 08 23:56:56 2022
+  Chain 2 saved imputation 44 on Nov 08 23:57:10 2022
+  Chain 1 saved imputation 43 on Nov 08 23:57:13 2022
+  Chain 2 saved imputation 46 on Nov 08 23:57:28 2022
+  Chain 1 saved imputation 45 on Nov 08 23:57:31 2022
+  Chain 2 saved imputation 48 on Nov 08 23:57:45 2022
+  Chain 1 saved imputation 47 on Nov 08 23:57:47 2022
+  Chain 2 completed iteration 125000 on Nov 08 23:58:01 2022
+  Chain 2 saved imputation 50 on Nov 08 23:58:01 2022
+  Chain 1 completed iteration 125000 on Nov 08 23:58:04 2022
+  Chain 1 saved imputation 49 on Nov 08 23:58:04 2022
+  Chain 2 saved imputation 52 on Nov 08 23:58:18 2022
+  Chain 1 saved imputation 51 on Nov 08 23:58:20 2022
+  Chain 2 saved imputation 54 on Nov 08 23:58:35 2022
+  Chain 1 saved imputation 53 on Nov 08 23:58:37 2022
+  Chain 2 saved imputation 56 on Nov 08 23:58:51 2022
+  Chain 1 saved imputation 55 on Nov 08 23:58:54 2022
+  Chain 2 saved imputation 58 on Nov 08 23:59:07 2022
+  Chain 1 saved imputation 57 on Nov 08 23:59:10 2022
+  Chain 2 saved imputation 60 on Nov 08 23:59:24 2022
+  Chain 1 saved imputation 59 on Nov 08 23:59:26 2022
+  Chain 2 saved imputation 62 on Nov 08 23:59:40 2022
+  Chain 1 saved imputation 61 on Nov 08 23:59:43 2022
+  Chain 2 saved imputation 64 on Nov 08 23:59:56 2022
+  Chain 1 saved imputation 63 on Nov 08 23:59:58 2022
+  Chain 2 saved imputation 66 on Nov 09 00:00:12 2022
+  Chain 1 saved imputation 65 on Nov 09 00:00:14 2022
+  Chain 2 saved imputation 68 on Nov 09 00:00:27 2022
+  Chain 1 saved imputation 67 on Nov 09 00:00:30 2022
+  Chain 2 saved imputation 70 on Nov 09 00:00:43 2022
+  Chain 1 saved imputation 69 on Nov 09 00:00:45 2022
+  Chain 2 saved imputation 72 on Nov 09 00:00:58 2022
+  Chain 1 saved imputation 71 on Nov 09 00:01:00 2022
+  Chain 2 saved imputation 74 on Nov 09 00:01:13 2022
+  Chain 1 saved imputation 73 on Nov 09 00:01:16 2022
+  Chain 2 completed iteration 187500 on Nov 09 00:01:21 2022
+  Chain 1 completed iteration 187500 on Nov 09 00:01:23 2022
+  Chain 2 saved imputation 76 on Nov 09 00:01:28 2022
+  Chain 1 saved imputation 75 on Nov 09 00:01:31 2022
+  Chain 2 saved imputation 78 on Nov 09 00:01:43 2022
+  Chain 1 saved imputation 77 on Nov 09 00:01:45 2022
+  Chain 2 saved imputation 80 on Nov 09 00:01:58 2022
+  Chain 1 saved imputation 79 on Nov 09 00:02:00 2022
+  Chain 2 saved imputation 82 on Nov 09 00:02:12 2022
+  Chain 1 saved imputation 81 on Nov 09 00:02:14 2022
+  Chain 2 saved imputation 84 on Nov 09 00:02:27 2022
+  Chain 1 saved imputation 83 on Nov 09 00:02:29 2022
+  Chain 2 saved imputation 86 on Nov 09 00:02:41 2022
+  Chain 1 saved imputation 85 on Nov 09 00:02:43 2022
+  Chain 2 saved imputation 88 on Nov 09 00:02:56 2022
+  Chain 1 saved imputation 87 on Nov 09 00:02:58 2022
+  Chain 2 saved imputation 90 on Nov 09 00:03:10 2022
+  Chain 1 saved imputation 89 on Nov 09 00:03:12 2022
+  Chain 2 saved imputation 92 on Nov 09 00:03:25 2022
+  Chain 1 saved imputation 91 on Nov 09 00:03:27 2022
+  Chain 2 saved imputation 94 on Nov 09 00:03:39 2022
+  Chain 1 saved imputation 93 on Nov 09 00:03:41 2022
+  Chain 2 saved imputation 96 on Nov 09 00:03:53 2022
+  Chain 1 saved imputation 95 on Nov 09 00:03:55 2022
+  Chain 2 saved imputation 98 on Nov 09 00:04:07 2022
+  Chain 1 saved imputation 97 on Nov 09 00:04:09 2022
+  Chain 2 completed iteration 250000 on Nov 09 00:04:21 2022
+  Chain 2 saved imputation 100 on Nov 09 00:04:21 2022
+  Chain 2 finished on Nov 09 00:04:21 2022
+  Chain 1 completed iteration 250000 on Nov 09 00:04:22 2022
+  Chain 1 saved imputation 99 on Nov 09 00:04:22 2022
+  Chain 1 finished on Nov 09 00:04:22 2022
+
