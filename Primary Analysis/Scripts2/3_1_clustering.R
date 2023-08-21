@@ -330,7 +330,7 @@ plot_scenarios <- ggplot(eng_df_cluster, aes(x=T2_sec_mean_scenario_rt_across_se
   geom_violin(trim=FALSE)+
   geom_boxplot(width=0.2, fill="white")+
   theme(legend.position="none")+
-  labs(title="Average time spent on scenarios across sessions",x="Average time spent (seconds)", y = "Engagement Group") +scale_fill_brewer(palette="Dark2")
+  labs(title="Time spent on scenarios across sessions",x="Time spent (seconds)", y = "Engagement Group") +scale_fill_brewer(palette="Dark2")
 
 plot_scenarios
 
@@ -366,7 +366,9 @@ mod_measure_names1 <- gsub("T4_min_mean_assessment_time*.", "",mod_measure_names
 mod_measures_names2 <- gsub("_winsor","",mod_measure_names1)
 mod_measures_names3 <- gsub("_"," ",mod_measures_names2)
 
-measure_names <- c("Anxiety Identity","Anxiety Triggers","Comorbid","Credibility","DASS-21 AS","Demographics","Mechanisms","Mental Health History","OASIS","Pre-Affect","RR","Technology Use","Wellness")
+measure_names <- c("Anxiety Identity","Anxiety Triggers","Depression and Alc.
+Use (Comorbid)","Credibility","Anxiety Symptoms (DASS-21
+AS)","Demographics","Mechanisms","Mental Health History","Anxiety Symptoms (OASIS)","Affect","Interpretation Bias (RR)","Technology Use","Wellness")
 
 colnames(eng_df_cluster_m) <- c("participant_id","cluster","cluster_label",measure_names)
 
@@ -407,11 +409,11 @@ png(here("Scripts2","Tables_Figures","Figures","JAMIA_EDITS","time_training_box2
 ggpubr::ggarrange(plot_scenarios,plot_lemon,plot_imagine,ncol = 2, nrow = 2)
 dev.off()
 
-png(here("Scripts2","Tables_Figures","Figures","JAMIA_EDITS","time_measures_box.png"), units="in", width=9, height=5, res=300)
+png(here("Scripts2","Tables_Figures","Figures","JAMIA_EDITS","time_measures_box_2.png"), units="in", width=9, height=5, res=300)
 plot_measures
 dev.off()
 
-png(here("Scripts2","Tables_Figures","Figures","JAMIA_EDITS","time_measures_distributions.png"), units="in", width=9, height=5, res=300)
+png(here("Scripts2","Tables_Figures","Figures","JAMIA_EDITS","time_measures_distributions_2.png"), units="in", width=9, height=5, res=300)
 plot_measures_distributions
 dev.off()
 

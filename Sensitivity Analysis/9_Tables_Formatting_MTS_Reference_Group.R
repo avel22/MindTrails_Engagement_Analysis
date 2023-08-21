@@ -352,15 +352,3 @@ sink()
 save.image(file = here("Data","RData","9_Tables_Formatting_MTS_Reference_Group.RData"))
 
 
-
-# ---------------------------------------------------------------------------- #
-# correlations ----
-# ---------------------------------------------------------------------------- #
-
-#https://rpubs.com/yjunechoe/correlationsLMEM
-
-fixed_random_table_oa_corr <- create_results_list(modelList_oa_lme,pooled_oa_lme,3)
-
-fixed_random_table_dass21_corr <- create_results_list(modelList_dass21_lme,pooled_dass21_lme,3)
-
-
