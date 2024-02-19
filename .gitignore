@@ -64,3 +64,7 @@ rsconnect/
 Primary Analysis/.DS_Store
 Primary Analysis/Scripts2/.DS_Store
 Primary Analysis/Scripts2/Tables_Figures/.DS_Store
+
+# Data folders
+Primary Analysis/Scripts2/Data2
+Sensitivity Analysis/Data
