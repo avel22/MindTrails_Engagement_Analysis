@@ -1,9 +1,7 @@
-### Adapting code written by Jeremy Eberle
-### Adapted by: Angel Vela
-### Written by: ¡ngel Vela and Jeremy Eberle
+### Written by: √Ångel Vela and Jeremy Eberle
 ### MT Engagement Analysis
 ### University of Virginia
-### January-December 2022
+### August 2023
 ### Script is adapted from the completion rate script written by Jeremy Eberle. https://github.com/jwe4ec/fy7e6/blob/main/code/2_compute_completion.R
 ### Purpose of this script is to calculate participant's completion rate
 
@@ -19,7 +17,7 @@ source(here("0_Functions.R"))
 # loading the data ----
 #--------------------------------------------------------------------------------#
 #load RData from 1_Import_Data.R
-load(here("Data","RData","1_Import_Data.RData"))
+load(here("Data","1_Import_Data.RData"))
 
 
 dat.used <- dat.3
@@ -663,5 +661,5 @@ final_completion <- training_assessment_completion %>% select(participant_id,tra
 #save as RData file to be used in later steps
 
 
-save(final_completion,completion,check_completion2, file = here("Data","RData","2_1_Engagement_Metrics_Completion_Rate.RData"))
+save(final_completion,completion,check_completion2, file = here("Data","2_1_Engagement_Metrics_Completion_Rate.RData"))
 

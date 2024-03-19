@@ -1,3 +1,8 @@
+### Written by: Ángel Vela and Jeremy Eberle
+### MT Engagement Analysis
+### University of Virginia
+### August 2023
+
 #--------------------------------------------------------------------------------#
 # Create assessment table from individual tables
 #--------------------------------------------------------------------------------#
@@ -238,3 +243,51 @@ outlierCalculation <- function(df,col,T4) {
   return(T4)
 }
 
+# ---------------------------------------------------------------------------- #
+# Define check_relevant_files() ----
+# ---------------------------------------------------------------------------- #
+
+# from https://github.com/isaacahuvia/anxiety-identity-avoidance/blob/17170bd337c94ffcbfa2eb637ed040e453d03844/code/01a_define_functions.R#L49
+# Define function to check that selected intermediate clean CSV data files contain
+# those relevant to present manuscript (for full set of intermediate clean CSV data 
+# files, see https://github.com/TeachmanLab/MT-Data-CalmThinkingStudy)
+
+check_relevant_files <- function(filenames) {
+  relevant_files <- c("affect.csv",
+                      "angular_training.csv",
+                      "anxiety_identity.csv",
+                      "anxiety_triggers.csv",
+                      "assessing_program.csv",
+                      "bbsiq.csv",
+                      "cc.csv",
+                      "coach_prompt.csv",
+                      "comorbid.csv",
+                      "covid19.csv",
+                      "credibility.csv",
+                      "dass21_as.csv",
+                      "demographics_race.csv",
+                      "demographics.csv",
+                      "evaluation.csv",
+                      "help_seeking.csv",
+                      "mechanisms.csv",
+                      "mental_health_history.csv",
+                      "oa.csv",
+                      "participant.csv",
+                      "return_intention.csv",
+                      "rr.csv",
+                      "session_review.csv",
+                      "study.csv",
+                      "task_log.csv",
+                      "technology_use.csv",
+                      "wellness.csv")
+  
+  if (all(relevant_files %in% filenames) == FALSE) {
+    missing_files <- setdiff(relevant_files, filenames)
+    
+    warning(paste0(c("You are missing these files:", paste0(" ", missing_files))))
+  }
+  
+  else {
+    print("All relevant files included.")
+  }
+}

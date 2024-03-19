@@ -1,8 +1,8 @@
 ### Adapted from script written by: Jeremy Eberle
-### Written by: ¡ngel Vela and Jeremy Eberle
+### Written by: √Ångel Vela and Jeremy Eberle
 ### MT Engagement Analysis
 ### University of Virginia
-### January-December 2022
+### August 2023
 ### The purpose of this script is to find auxiliary variables for data imputation
 
 
@@ -15,9 +15,9 @@ pacman::p_load(tidyverse,purrr,here,DescTools)
 #--------------------------------------------------------------------------------#
 # loading the data ----
 #--------------------------------------------------------------------------------#
-load(here("Data","RData","4_1_Demographic_Characteristics_627.RData"))
-load(here("Data","RData","3_Clustering_627.RData"))
-load(here("Data","RData","2_1_Engagement_Metrics_Completion_Rate.RData"))
+load(here("Data","4_1_Demographic_Characteristics_627.RData"))
+load(here("Data","3_Clustering_627.RData"))
+load(here("Data","2_1_Engagement_Metrics_Completion_Rate.RData"))
 
 #--------------------------------------------------------------------------------#
 # variables ----
@@ -294,4 +294,4 @@ sink_test_diffs(compl_itt_iv,
 
 aux_vars <- compl_itt_iv %>% select(participant_id,age,gender,gender_col,gender_col2,device_col,device_col_bin)
 
-save(aux_vars, file = here("Data","RData","6_1_aux_vars.RData"))
+save(aux_vars, file = here("Data","6_1_aux_vars.RData"))

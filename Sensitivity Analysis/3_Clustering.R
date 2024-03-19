@@ -1,7 +1,7 @@
-### Written by: ¡ngel Vela and Jeremy Eberle
+### Written by: √Ångel Vela and Jeremy Eberle
 ### MT Engagement Analysis
 ### University of Virginia
-### January-December 2022
+### August 2023
 ### The purpose of this script is to cluster participants based on engagement metrics and generate engagement labels
 
 
@@ -17,8 +17,8 @@ pacman::p_load(tidyverse,here,Hmisc,cluster,factoextra,mclust,mixtools,Rtsne,NbC
 #clean the environment
 rm(list=ls())
 
-load(here("Data","RData","1_Import_Data_Dat3.RData"))
-load(here("Data","RData","2_3_Engagement_EDA.RData"))
+load(here("Data","1_Import_Data_Dat3.RData"))
+load(here("Data","2_3_Engagement_EDA.RData"))
 
 
 
@@ -502,4 +502,4 @@ sink()
 participant_cluster <- eng_df_cluster %>% select(participant_id,cluster)
 cluster_summary <- eng_df_cluster
 
-save(participant_cluster,cluster_summary, file = here("Data","RData","3_Clustering_627.RData"))
+save(participant_cluster,cluster_summary, file = here("Data","3_Clustering_627.RData"))

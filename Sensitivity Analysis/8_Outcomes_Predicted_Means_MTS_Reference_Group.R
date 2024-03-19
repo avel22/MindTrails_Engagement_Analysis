@@ -2,7 +2,7 @@
 ### https://github.com/jwe4ec/jp5ws/blob/main/Syntax/19_create_figures_linear_spline.R
 ### Eberle, J. W., Boukhechba, M., Sun, J., Zhang, D., Funk, D., Barnes, L., & Teachman, B. (2022, January 13). Shifting Episodic Prediction With Online Cognitive Bias Modification: A Randomized Controlled Trial. Retrieved from osf.io/jp5ws
 
-### Written by: ¡ngel Vela and Jeremy Eberle
+### Written by: √Ångel Vela and Jeremy Eberle
 ### MT Engagement Analysis
 ### University of Virginia
 ### August 2023
@@ -18,7 +18,7 @@ pacman::p_load(tidyverse,purrr,here,mitml,ggplot2, gridExtra,stargazer,lme4,psyc
 # loading the  data ----
 #--------------------------------------------------------------------------------#
 #session outcomes
-load(here("Data","RData","7_2_simple_time_effects_results_MTS_Reference_Group.RData"))
+load(here("Data","7_2_simple_time_effects_results_MTS_Reference_Group.RData"))
 
 # ---------------------------------------------------------------------------- #
 # Define functions used throughout script ----

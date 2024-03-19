@@ -1,7 +1,7 @@
-### Written by: ¡ngel Vela and Jeremy Eberle
+### Written by: √Ångel Vela and Jeremy Eberle
 ### MT Engagement Analysis
 ### University of Virginia
-### January-December 2022
+### August 2023
 ### The purpose of this script is to combined all engagement metrics into one dataframe and preform EDA
 
 #--------------------------------------------------------------------------------#
@@ -16,9 +16,9 @@ pacman::p_load(tidyverse,purrr,here,tools,reshape2,lubridate,hash,caret,corrplot
 #clean the environment
 rm(list=ls())
 
-load(here("Data","RData","1_Import_Data_Dat3.RData"))
-load(here("Data","RData","2_1_Engagement_Metrics_Completion_Rate.RData"))
-load(here("Data","RData","2_2_Engagement_Metrics_Time_Spent.RData"))
+load(here("Data","1_Import_Data_Dat3.RData"))
+load(here("Data","2_1_Engagement_Metrics_Completion_Rate.RData"))
+load(here("Data","2_2_Engagement_Metrics_Time_Spent.RData"))
 
 #--------------------------------------------------------------------------------#
 # combined data into one dataframe  ----
@@ -115,4 +115,4 @@ ggplot(engagement_metrics3.m, aes(value))+geom_boxplot()+facet_wrap(~variable,sc
 # ---------------------------------------------------------------------------- #
 engagement_metrics_final <- engagement_metrics3
 #save as RData file to be used in later steps
-save(engagement_metrics,engagement_metrics_winsor,engagement_metrics_final, file = here("Data","RData","2_3_Engagement_EDA.RData"))
+save(engagement_metrics,engagement_metrics_winsor,engagement_metrics_final, file = here("Data","2_3_Engagement_EDA.RData"))

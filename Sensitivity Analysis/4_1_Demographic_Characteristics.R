@@ -1,9 +1,9 @@
 ### Adapted from Jeremy Eberle's code
 ### https://github.com/jwe4ec/fy7e6/blob/develop/code/04_further_clean_demog_data.R
-### Written by: ¡ngel Vela and Jeremy Eberle
+### Written by: √Ångel Vela and Jeremy Eberle
 ### MT Engagement Analysis
 ### University of Virginia
-### January-December 2022
+### August 2023
 ### The purpose of this script is to get demographic characteristics of sample being analyzed
 
 #--------------------------------------------------------------------------------#
@@ -15,8 +15,8 @@ pacman::p_load(tidyverse,purrr,here,stargazer)
 #--------------------------------------------------------------------------------#
 # loading the data ----
 #--------------------------------------------------------------------------------#
-load(here("Data","RData","1_Import_Data_Dat3.RData"))
-load(here("Data","RData","3_Clustering_627.RData"))
+load(here("Data","1_Import_Data_Dat3.RData"))
+load(here("Data","3_Clustering_627.RData"))
 
 #--------------------------------------------------------------------------------#
 # variables ----
@@ -227,9 +227,9 @@ dat$demographics$race_col <-
 # Clean country ----
 # ---------------------------------------------------------------------------- #
 
-# Recode "√.land Islands"
+# Recode "ÔøΩ.land Islands"
 
-dat$demographics$country[dat$demographics$country == "√.land Islands"] <- "≈land Islands"
+dat$demographics$country[dat$demographics$country == "ÔøΩ.land Islands"] <- "ÔøΩland Islands"
 
 # Define desired levels order (decreasing frequency ending with "prefer not to answer")
 
@@ -271,7 +271,7 @@ dat$demographics$country_col <-
 
 dat.3.demographics.cleaned.627 <- dat
 
-save(dat.3.demographics.cleaned.627, file = here("Data","RData","4_1_Demographic_Characteristics_627.RData"))
+save(dat.3.demographics.cleaned.627, file = here("Data","4_1_Demographic_Characteristics_627.RData"))
 
 
 # ---------------------------------------------------------------------------- #

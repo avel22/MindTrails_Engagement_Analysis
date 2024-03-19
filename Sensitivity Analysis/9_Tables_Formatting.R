@@ -1,7 +1,7 @@
-### Written by: ¡ngel Vela
-### MS Thesis 
+### Written by: √Ångel Vela and Jeremy Eberle
+### MT Engagement Analysis
 ### University of Virginia
-### May 2022
+### August 2023
 ### The purpose of this script is to print out the tables for the model results
 
 
@@ -21,7 +21,7 @@ pacman::p_load(tidyverse,purrr,here,mitml,ggplot2, gridExtra,stargazer,lme4,psyc
 # loading the  data ----
 #--------------------------------------------------------------------------------#
 #session outcomes
-load(here("Data","RData","7_2_simple_time_effects_results.RData"))
+load(here("Data","7_2_simple_time_effects_results.RData"))
 
 # ---------------------------------------------------------------------------- #
 # Define create_re_var_cov() ----

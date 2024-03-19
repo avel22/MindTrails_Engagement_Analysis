@@ -35,13 +35,13 @@ pacman::p_load(tidyverse,purrr,here,stargazer,forcats)
 #--------------------------------------------------------------------------------#
 # loading the data ----
 #--------------------------------------------------------------------------------#
-load(here("Scripts2","Data2","2_Calm.RData"))
+load(here("Scripts2","Data","2_Calm_2.RData"))
 
-load(here("Scripts2","Data2","participant_cluster.RData"))
+load(here("Scripts2","Data","participant_cluster.RData"))
 
-load(here("Scripts2","results","dem_tbl.RData"))
+load(here("Scripts2","Data","dem_tbl.RData"))
 
-load(here("Scripts2","Data2","Test699","outcomes_df_for_imputation.RData"))
+load(here("Scripts2","Data","outcomes_df_for_imputation.RData"))
 
 
 #check 

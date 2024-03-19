@@ -1,7 +1,7 @@
-#check to make sure that cluster 1 is lees time spent
+#check to make sure that cluster 1 is less time spent
 
 #load participant clustering from May 1 2022
-load(here("Scripts2","Data2","participant_cluster.RData"))
+load(here("Scripts2","Data","participant_cluster.RData"))
 
 eng_df_cluster.m <- melt(as.data.frame(cluster_summary),id.vars=c('participant_id',"cluster"), measure.vars=colnames(cluster_summary[,-c(1,2,3,4,5,19)]))
 
@@ -11,7 +11,7 @@ table(participant_cluster$cluster)
 
 
 #session outcomes
-load(here("Scripts2","Data2","Test699","outcomes_df_for_imputation.RData"))
+load(here("Scripts2","Data","outcomes_df_for_imputation.RData"))
 session_outcomes$time <- 0:6
 
 #imputed outcomes
@@ -20,7 +20,7 @@ mod0_columns <- c("imp_num","participant_id","time","t1","t2","outcome","cred_on
 
 
 #OA
-oa_imputed <- read.csv(here("Scripts2","Data2","BLIMP_IMPUTATION","MOD0","OASIS","ActualImputation","OA_imps_mod0.csv"),header = F)
+oa_imputed <- read.csv(here("Scripts2","Data","imputation","MOD0","OASIS","ActualImputation","OA_imps_mod0.csv"),header = F)
 colnames(oa_imputed) <- mod0_columns
 oa_imputed <- oa_imputed  %>% left_join(select(session_outcomes,time,sessions), by ="time")
 oa_imputed$session_only <- oa_imputed$sessions

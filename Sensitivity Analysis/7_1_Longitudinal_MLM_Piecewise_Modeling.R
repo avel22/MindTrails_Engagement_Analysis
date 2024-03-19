@@ -1,7 +1,7 @@
-### Written by: ¡ngel Vela and Jeremy Eberle
-### MS Thesis 
+### Written by: √Ångel Vela and Jeremy Eberle
+### MT Engagement Analysis
 ### University of Virginia
-### May 2022
+### August 2023
 ### The purpose of this script is to run the MLM analysis on each of the imputed datasets and pool the results
 #--------------------------------------------------------------------------------#
 # loading the libraries ----
@@ -12,7 +12,7 @@ pacman::p_load(tidyverse,here,mitml,ggplot2)
 #--------------------------------------------------------------------------------#
 # loading the data ----
 #--------------------------------------------------------------------------------#
-load(here("Data","RData","6_3_imputed_outcomes_mitml_lists.RData"))
+load(here("Data","6_3_imputed_outcomes_mitml_lists.RData"))
 
 #--------------------------------------------------------------------------------#
 # Analyzing and pooling imputed datasets ----
@@ -365,4 +365,4 @@ pooled_bbsiq_lme
 # pooled_bbsiq_lme_mod4
 
 
-save.image(file = here("Data","RData","7_1_mitml_pooled_results_2.RData"))
+save.image(file = here("Data","7_1_mitml_pooled_results_2.RData"))

@@ -13,14 +13,9 @@ pacman::p_load(tidyverse,purrr,here,tools,reshape2,lubridate,hash,caret)
 #--------------------------------------------------------------------------------#
 # loading the engagement metrics
 #--------------------------------------------------------------------------------#
-#load data from scrip 1_importing_data.R
-# load(here("Scripts2","Data2","2_Calm.RData"))
-# load(here("Scripts2","Data2","completionRate.RData"))
-# load(here("Scripts2","Data2","E_T_1_Winsor_Complete.RData"))
-
-load(here("Scripts2","Data2","2_Calm.RData"))
-load(here("Scripts2","Data2","completionRate.RData"))
-load(here("Scripts2","Data2","Test699","E_T_1_Winsor_Complete.RData"))
+load(here("Scripts2","Data","2_Calm_2.RData"))
+load(here("Scripts2","Data","completionRate.RData"))
+load(here("Scripts2","Data","E_T_1_Winsor_Complete.RData"))
 
 
 #--------------------------------------------------------------------------------#
@@ -51,4 +46,4 @@ E_M_1 <- engagement_metrics
 # Save data as RData ----
 # ---------------------------------------------------------------------------- #
 #save as RData file to be used in later steps
-save(E_M_1, file = here("Scripts2","Data2","Test699","E_M_1.RData"))
+save(E_M_1, file = here("Scripts2","Data","E_M_1.RData"))

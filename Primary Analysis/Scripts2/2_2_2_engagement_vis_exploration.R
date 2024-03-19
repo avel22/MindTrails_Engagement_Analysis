@@ -13,7 +13,7 @@ pacman::p_load(tidyverse,purrr,here,tools,reshape2,lubridate,hash,caret,corrplot
 #--------------------------------------------------------------------------------#
 # loading the engagement metrics
 #--------------------------------------------------------------------------------#
-load(here("Scripts2","Data2","Test699","E_M_1.RData"))
+load(here("Scripts2","Data","E_M_1.RData"))
 
 #--------------------------------------------------------------------------------#
 # summary of engagement metrics
@@ -95,4 +95,4 @@ ggplot(engagement_metrics3.m, aes(value))+geom_boxplot()+facet_wrap(~variable,sc
 # Save data as RData ----
 # ---------------------------------------------------------------------------- #
 #save as RData file to be used in later steps
-save(engagement_metrics_winsor, file = here("Scripts2","Data2","Test699","E_M2_1_Winsor.RData"))
+save(engagement_metrics_winsor, file = here("Scripts2","Data","E_M2_1_Winsor.RData"))

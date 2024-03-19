@@ -17,8 +17,8 @@ pacman::p_load(tidyverse,here,mitml,ggplot2)
 #--------------------------------------------------------------------------------#
 # loading the data ----
 #--------------------------------------------------------------------------------#
-load(here("Scripts2","Data2","Test699","outcomes_df_for_imputation.RData"))
-load(here("Scripts2","Data2","Test699","aux_vars.RData"))
+load(here("Scripts2","Data","outcomes_df_for_imputation.RData"))
+load(here("Scripts2","Data","aux_vars.RData"))
 
 outcomes.scores.df %>% select(participant_id) %>% unique() %>% nrow()
 
@@ -140,17 +140,17 @@ view(blimp_dass21)
 mod <- 0
 
 #OASIS
-write.table(blimp_oa,here("Scripts2","Data2","BLIMP_IMPUTATION",paste0("MOD",as.character(mod)),paste0("blimp_imputation_oa_mod",as.character(mod),".csv")),row.names = F,col.names = F)
+write.table(blimp_oa,here("Scripts2","Data","imputation",paste0("MOD",as.character(mod)),paste0("blimp_imputation_oa_mod",as.character(mod),".csv")),row.names = F,col.names = F)
 
 #DASS21
-write.table(blimp_dass21,here("Scripts2","Data2","BLIMP_IMPUTATION",paste0("MOD",as.character(mod)),paste0("blimp_imputation_dass21_mod",as.character(mod),".csv")),row.names = F,col.names = F)
+write.table(blimp_dass21,here("Scripts2","Data","imputation",paste0("MOD",as.character(mod)),paste0("blimp_imputation_dass21_mod",as.character(mod),".csv")),row.names = F,col.names = F)
 
 #BBSIQ
-write.table(blimp_bbsiq,here("Scripts2","Data2","BLIMP_IMPUTATION",paste0("MOD",as.character(mod)),paste0("blimp_imputation_bbsiq_mod",as.character(mod),".csv")),row.names = F,col.names = F)
+write.table(blimp_bbsiq,here("Scripts2","Data","imputation",paste0("MOD",as.character(mod)),paste0("blimp_imputation_bbsiq_mod",as.character(mod),".csv")),row.names = F,col.names = F)
 
 #RR POSITIVE BIAS
-write.table(blimp_rr_pos_bias,here("Scripts2","Data2","BLIMP_IMPUTATION",paste0("MOD",as.character(mod)),paste0("blimp_imputation_rr_pos_mod",as.character(mod),".csv")),row.names = F,col.names = F)
+write.table(blimp_rr_pos_bias,here("Scripts2","Data","imputation",paste0("MOD",as.character(mod)),paste0("blimp_imputation_rr_pos_mod",as.character(mod),".csv")),row.names = F,col.names = F)
 
 #RR NEGATIVE BIAS
-write.table(blimp_rr_neg_bias,here("Scripts2","Data2","BLIMP_IMPUTATION",paste0("MOD",as.character(mod)),paste0("blimp_imputation_rr_neg_mod",as.character(mod),".csv")),row.names = F,col.names = F)
+write.table(blimp_rr_neg_bias,here("Scripts2","Data","imputation",paste0("MOD",as.character(mod)),paste0("blimp_imputation_rr_neg_mod",as.character(mod),".csv")),row.names = F,col.names = F)
 

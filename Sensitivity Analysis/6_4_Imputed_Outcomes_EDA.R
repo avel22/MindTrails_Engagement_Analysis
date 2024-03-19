@@ -2,11 +2,12 @@
 ### https://github.com/jwe4ec/jp5ws/blob/main/Syntax/16_longitudinal_analyses.R
 ### Eberle, J. W., Boukhechba, M., Sun, J., Zhang, D., Funk, D., Barnes, L., & Teachman, B. (2022, January 13). Shifting Episodic Prediction With Online Cognitive Bias Modification: A Randomized Controlled Trial. Retrieved from osf.io/jp5ws
 
-### Written by: ¡ngel Vela and Jeremy Eberle
+### Written by: √Ångel Vela and Jeremy Eberle
 ### MT Engagement Analysis
 ### University of Virginia
-### January-December 2022
+### August 2023
 ### The purpose of this script is to calculate distribution of imputed data and analyze proportion of values that are below and above the possible values
+### We did not run this script for the sensitivity analysis. 
 #--------------------------------------------------------------------------------#
 # loading the libraries ----
 #--------------------------------------------------------------------------------#
@@ -17,7 +18,7 @@ pacman::p_load(tidyverse,purrr,here,mitml,ggplot2, gridExtra,stargazer)
 # loading the  data ----
 #--------------------------------------------------------------------------------#
 #session outcomes
-load(here("Scripts2","Data2","Test699","outcomes_df_for_imputation.RData"))
+load(here("Data","5_outcomes_df_for_imputation.RData"))
 session_outcomes$time <- 0:6
 
 #imputed outcomes
@@ -26,31 +27,31 @@ mod0_columns <- c("imp_num","participant_id","time","t1","t2","outcome","cred_on
 
 
 #OA
-oa_imputed <- read.csv(here("Scripts2","Data2","BLIMP_IMPUTATION","MOD0","OASIS","ActualImputation","OA_imps_mod0.csv"),header = F)
+oa_imputed <- read.csv(here("Data","imputation","Blimp","OASIS","ActualImputation","OA_imps_mod0.csv"),header = F)
 colnames(oa_imputed) <- mod0_columns
 oa_imputed <- oa_imputed  %>% left_join(select(session_outcomes,time,sessions), by ="time")
 oa_imputed$session_only <- oa_imputed$sessions
 
 #DASS21
-dass21_imputed <- read.csv(here("Scripts2","Data2","BLIMP_IMPUTATION","MOD0","DASS21","ActualImputation","DASS21_imps_mod0.csv"),header = F)
+dass21_imputed <- read.csv(here("Data","imputation","Blimp","DASS21","ActualImputation","DASS21_imps_mod0.csv"),header = F)
 colnames(dass21_imputed) <- mod0_columns
 dass21_imputed <- dass21_imputed  %>% left_join(select(session_outcomes,time,sessions), by ="time")
 dass21_imputed$session_only <- dass21_imputed$sessions
 
 #RR_NEG
-rr_neg_imputed <- read.csv(here("Scripts2","Data2","BLIMP_IMPUTATION","MOD0","RR_NEG_BIAS","ActualImputation","RR_NEG_imps_mod0.csv"),header = F)
+rr_neg_imputed <- read.csv(here("Data","imputation","Blimp","RR_NEG_BIAS","ActualImputation","RR_NEG_imps_mod0.csv"),header = F)
 colnames(rr_neg_imputed) <- mod0_columns
 rr_neg_imputed <- rr_neg_imputed  %>% left_join(select(session_outcomes,time,sessions), by ="time")
 rr_neg_imputed$session_only <- rr_neg_imputed$sessions
 
 #RR_POS
-rr_pos_imputed <- read.csv(here("Scripts2","Data2","BLIMP_IMPUTATION","MOD0","RR_POS_BIAS","ActualImputation","RR_POS_imps_mod0.csv"),header = F)
+rr_pos_imputed <- read.csv(here("Data","imputation","Blimp","RR_POS_BIAS","ActualImputation","RR_POS_imps_mod0.csv"),header = F)
 colnames(rr_pos_imputed) <- mod0_columns
 rr_pos_imputed <- rr_pos_imputed  %>% left_join(select(session_outcomes,time,sessions), by ="time")
 rr_pos_imputed$session_only <- rr_pos_imputed$sessions
 
 #BBSIQ
-bbsiq_imputed <- read.csv(here("Scripts2","Data2","BLIMP_IMPUTATION","MOD0","BBSIQ","ActualImputation","BBSIQ_imps_mod0.csv"),header = F)
+bbsiq_imputed <- read.csv(here("Data","imputation","Blimp","BBSIQ","ActualImputation","BBSIQ_imps_mod0.csv"),header = F)
 colnames(bbsiq_imputed) <- mod0_columns
 bbsiq_imputed <- bbsiq_imputed  %>% left_join(select(session_outcomes,time,sessions), by ="time")
 bbsiq_imputed$session_only <- bbsiq_imputed$sessions
@@ -236,31 +237,31 @@ histbytime_before_imp <- function(data, path, outcome,outcome_label, xmin, xmax,
 # Data Distributions Before Imputations ----
 #--------------------------------------------------------------------------------#
 histbytime_before_imp(data = dplyr::select(outcomes.scores.df,session_only,OA_MeanScore), 
-                      path = here("Scripts2","Tables_Figures","BeforeImputationDistribution_OA"),outcome = "OA_MeanScore", 
+                      path = here("Figures","6_4_BeforeImputationDistribution_OA"),outcome = "OA_MeanScore", 
                       outcome_label = "OASIS Mean Score Scale",
                       xmin = -4,xmax =  8,ymin =  0,ymax =  500,scalemin =  0,scalemax =  4,
                       sessions = session_outcomes$sessions[session_outcomes$OA==1])
 
 histbytime_before_imp(data = dplyr::select(outcomes.scores.df,session_only,DASS21_MeanScore), 
-                      path = here("Scripts2","Tables_Figures","BeforeImputationDistribution_DASS21"),outcome = "DASS21_MeanScore", 
+                      path = here("Figures","6_4_BeforeImputationDistribution_DASS21"),outcome = "DASS21_MeanScore", 
                       outcome_label = "DASS21 Mean Score Scale",
                       xmin = -4,xmax =  8,ymin =  0,ymax =  500,scalemin =  0,scalemax =  3,
                       sessions = session_outcomes$sessions[session_outcomes$DASS21==1])
 
 histbytime_before_imp(data = dplyr::select(outcomes.scores.df,session_only,BBSIQ_MeanScore), 
-                      path = here("Scripts2","Tables_Figures","BeforeImputationDistribution_BBSIQ"),outcome = "BBSIQ_MeanScore", 
+                      path = here("Figures","6_4_BeforeImputationDistribution_BBSIQ"),outcome = "BBSIQ_MeanScore", 
                       outcome_label = "BBSIQ Mean Score Scale",
                       xmin = -4,xmax =  8,ymin =  0,ymax =  500,scalemin =  0,scalemax =  4,
                       sessions = session_outcomes$sessions[session_outcomes$BBSIQ==1])
 
 histbytime_before_imp(data = dplyr::select(outcomes.scores.df,session_only,RR_NEG_BIAS_MeanScore), 
-                      path = here("Scripts2","Tables_Figures","BeforeImputationDistribution_RR_NEG_BIAS"),outcome = "RR_NEG_BIAS_MeanScore", 
+                      path = here("Figures","6_4_BeforeImputationDistribution_RR_NEG_BIAS"),outcome = "RR_NEG_BIAS_MeanScore", 
                       outcome_label = "RR Negative Bias Mean Score Scale",
                       xmin = -4,xmax =  8,ymin =  0,ymax =  500,scalemin =  1,scalemax =  4,
                       sessions = session_outcomes$sessions[session_outcomes$RR_NEG_BIAS==1])
 
 histbytime_before_imp(data = dplyr::select(outcomes.scores.df,session_only,RR_POS_BIAS_MeanScore), 
-                      path = here("Scripts2","Tables_Figures","BeforeImputationDistribution_RR_POS_BIAS"),outcome = "RR_POS_BIAS_MeanScore", 
+                      path = here("Figures","6_4_BeforeImputationDistribution_RR_POS_BIAS"),outcome = "RR_POS_BIAS_MeanScore", 
                       outcome_label = "RR Positive Bias Mean Score Scale",
                       xmin = -4,xmax =  8,ymin =  0,ymax =  500,scalemin =  1,scalemax =  4,
                       sessions = session_outcomes$sessions[session_outcomes$RR_POS_BIAS==1])
@@ -280,8 +281,6 @@ range_DASS21 <- imputation_range_analysis(imputationList = mitml_list_dass21,sca
 
 range_DASS21$outcome <- c("DASS21", rep("", nrow(range_DASS21)-1))
 range_DASS21$scale <- c("[0,3]", rep("", nrow(range_DASS21)-1))
-
-
 
 #BBSIQ min of 0, max of 4
 range_BBSIQ <- imputation_range_analysis(imputationList = mitml_list_bbsiq,scaleMin = 0,ScaleMax = 4, sessions = session_outcomes$sessions[session_outcomes$BBSIQ==1])
@@ -316,7 +315,7 @@ round_format <- function(var,roundNum){
 
 extreme_scores[c(-1,-2,-3)] <- lapply(extreme_scores[c(-1,-2,-3)], round_format, roundNum = 2)
 
-sink(here("Scripts2","Tables_Figures","Tables","extreme_scores.txt"))
+sink(here("Tables","6_4_extreme_scores.txt"))
 stargazer(extreme_scores, type = "latex", title="Scale out of bounds values across the 100 imputed datasets for the analyzed sample", digits=2, summary = F,rownames = F)
 sink()
 
@@ -325,27 +324,27 @@ sink()
 #--------------------------------------------------------------------------------#
 #OA min of 0, max of 4
 histbytime(mitml_list_oa, 
-           here("Scripts2","Tables_Figures","ImputationDistribution_OA"), 
+           here("Figures","6_4_ImputationDistribution_OA"), 
            "outcome",outcome_label = "OASIS Mean Score Scale", -4, 8, 0, 500, 0, 4,session_outcomes$sessions[session_outcomes$OA==1])
 
 #DASS21 min of 0, max of 3
 histbytime(mitml_list_dass21, 
-           here("Scripts2","Tables_Figures","ImputationDistribution_DASS21"), 
+           here("Figures","6_4_ImputationDistribution_DASS21"), 
            "outcome",outcome_label = "DASS21 Mean Score Scale", -4, 8, 0, 500, 0, 3,session_outcomes$sessions[session_outcomes$DASS21==1])
 
 #BBSIQ min of 0, max of 4
 histbytime(mitml_list_bbsiq, 
-           here("Scripts2","Tables_Figures","ImputationDistribution_BBSIQ"), 
+           here("Figures","6_4_ImputationDistribution_BBSIQ"), 
            "outcome",outcome_label = "BBSIQ Mean Score Scale", -4, 8, 0, 500, 0, 4,session_outcomes$sessions[session_outcomes$BBSIQ==1])
 
 #RR_POS_BIAS min of 1, max of 4
 histbytime(mitml_list_rr_pos, 
-           here("Scripts2","Tables_Figures","ImputationDistribution_RR_POS_BIAS"), 
+           here("Figures","6_4_ImputationDistribution_RR_POS_BIAS"), 
            "outcome",outcome_label = "RR Positive Bias Mean Score Scale", -4, 8, 0, 500, 1, 4,session_outcomes$sessions[session_outcomes$RR_POS_BIAS==1])
 
 #RR_NEG_BIAS min of 1, max of 4
 histbytime(mitml_list_rr_neg, 
-           here("Scripts2","Tables_Figures","ImputationDistribution_RR_NEG_BIAS"), 
+           here("Figures","6_4_ImputationDistribution_RR_NEG_BIAS"), 
            "outcome",outcome_label = "RR Negative Bias Mean Score Scale", -4, 8, 0, 500, 1, 4,session_outcomes$sessions[session_outcomes$RR_NEG_BIAS==1])
 
 

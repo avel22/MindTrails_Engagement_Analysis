@@ -1,7 +1,7 @@
-### Written by: ¡ngel Vela and Jeremy Eberle
+### Written by: √Ångel Vela and Jeremy Eberle
 ### MT Engagement Analysis
 ### University of Virginia
-### January-December 2022
+### August 2023
 ### The purpose of this script is to structure and analyze psychosocial outcomes of interest
 ## DASS-21-21,OASIS,BBSIQ,RR
 
@@ -16,16 +16,8 @@ pacman::p_load(tidyverse,purrr,here,stargazer,mice)
 # loading the data ----
 #--------------------------------------------------------------------------------#
 
-load(here("Data","RData","4_1_Demographic_Characteristics_627.RData"))
-load(here("Data","RData","3_Clustering_627.RData"))
-# load(here("Scripts2","Data2","2_Calm.RData"))
-# 
-# load(here("Scripts2","Data2","participant_cluster.RData"))
-# 
-# #(here("Scripts2","Data2","E_M2_1_Winsor.RData"))
-# load(here("Scripts2","Data2","Test699","E_M2_1_Winsor.RData"))
-# 
-# load(here("Scripts2","Data2","completionRate.RData"))
+load(here("Data","4_1_Demographic_Characteristics_627.RData"))
+load(here("Data","3_Clustering_627.RData"))
 
 #--------------------------------------------------------------------------------#
 # functions ----
@@ -548,15 +540,4 @@ prop_scale_missing <- summary_df %>% group_by(outcome) %>% summarise(prop_missin
 # Save data as RData ----
 # ---------------------------------------------------------------------------- #
 #save as RData file to be used in later steps
-save(outcomes.scores.df,session_outcomes, file = here("Data","RData" ,"5_outcomes_df_for_imputation.RData"))
-
-
-
-
-
-
-
-
-
-
-
+save(outcomes.scores.df,session_outcomes, file = here("Data","5_outcomes_df_for_imputation.RData"))

@@ -2,10 +2,10 @@
 ### https://github.com/jwe4ec/jp5ws/blob/main/Syntax/15_multiple_imputation_linear_spline.R
 ### Eberle, J. W., Boukhechba, M., Sun, J., Zhang, D., Funk, D., Barnes, L., & Teachman, B. (2022, January 13). Shifting Episodic Prediction With Online Cognitive Bias Modification: A Randomized Controlled Trial. Retrieved from osf.io/jp5ws
 
-### Written by: Ángel Vela and Jeremy Eberle
+### Written by: Ãngel Vela and Jeremy Eberle
 ### MT Engagement Analysis
 ### University of Virginia
-### January-December 2022
+### August 2023
 
 ### The purpose of this script is to format the missing data to then be used in the Blimp Software
 
@@ -18,8 +18,8 @@ pacman::p_load(tidyverse,here,mitml,ggplot2)
 #--------------------------------------------------------------------------------#
 # loading the data ----
 #--------------------------------------------------------------------------------#
-load(here("Data","RData","5_outcomes_df_for_imputation.RData"))
-load(here("Data","RData","6_1_aux_vars.RData"))
+load(here("Data","5_outcomes_df_for_imputation.RData"))
+load(here("Data","6_1_aux_vars.RData"))
 
 outcomes.scores.df %>% select(participant_id) %>% unique() %>% nrow()
 
@@ -113,17 +113,17 @@ str(blimp_dass21)
 mod <- 0
 
 #OASIS
-write.table(blimp_oa,here("Imputation","Data",paste0("6_2_","blimp_imputation_oa_mod",as.character(mod),".csv")),row.names = F,col.names = F)
+write.table(blimp_oa,here("Data","imputation","Data",paste0("6_2_","blimp_imputation_oa_mod",as.character(mod),".csv")),row.names = F,col.names = F)
 
 #DASS21
-write.table(blimp_dass21,here("Imputation","Data",paste0("6_2_","blimp_imputation_dass21_mod",as.character(mod),".csv")),row.names = F,col.names = F)
+write.table(blimp_dass21,here("Data","imputation","Data",paste0("6_2_","blimp_imputation_dass21_mod",as.character(mod),".csv")),row.names = F,col.names = F)
 
 #BBSIQ
-write.table(blimp_bbsiq,here("Imputation","Data",paste0("6_2_","blimp_imputation_bbsiq_mod",as.character(mod),".csv")),row.names = F,col.names = F)
+write.table(blimp_bbsiq,here("Data","imputation","Data",paste0("6_2_","blimp_imputation_bbsiq_mod",as.character(mod),".csv")),row.names = F,col.names = F)
 
 #RR POSITIVE BIAS
-write.table(blimp_rr_pos_bias,here("Imputation","Data",paste0("6_2_","blimp_imputation_rr_pos_mod",as.character(mod),".csv")),row.names = F,col.names = F)
+write.table(blimp_rr_pos_bias,here("Data","imputation","Data",paste0("6_2_","blimp_imputation_rr_pos_mod",as.character(mod),".csv")),row.names = F,col.names = F)
 
 #RR NEGATIVE BIAS
-write.table(blimp_rr_neg_bias,here("Imputation","Data",paste0("6_2_","blimp_imputation_rr_neg_mod",as.character(mod),".csv")),row.names = F,col.names = F)
+write.table(blimp_rr_neg_bias,here("Data","imputation","Data",paste0("6_2_","blimp_imputation_rr_neg_mod",as.character(mod),".csv")),row.names = F,col.names = F)
 

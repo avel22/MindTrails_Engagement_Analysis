@@ -14,7 +14,7 @@ pacman::p_load(tidyverse,here,Hmisc,cluster,factoextra,mclust,mixtools,Rtsne,NbC
 #--------------------------------------------------------------------------------
 # loading the engagement metrics  ----
 #--------------------------------------------------------------------------------
-load(here("Scripts2","Data2","Test699","E_M2_1_Winsor.RData"))
+load(here("Scripts2","Data","E_M2_1_Winsor.RData"))
 
 eng_met <- engagement_metrics_winsor
 
@@ -279,7 +279,7 @@ dev.off()
 chosen_cluster <- km2
 
 #load participant clustering from May 1 2022
-load(here("Scripts2","Data2","participant_cluster.RData"))
+load(here("Scripts2","Data","participant_cluster.RData"))
 
 
 #add clustering to engagement features
@@ -565,4 +565,4 @@ for(col in colnames(eng_df_cluster2[c(-1,-19)])){
 participant_cluster <- eng_df_cluster %>% select(participant_id,cluster)
 cluster_summary <- eng_df_cluster
 
-save(participant_cluster,cluster_summary, file = here("Scripts2","Data2","participant_cluster.RData"))
+save(participant_cluster,cluster_summary, file = here("Scripts2","Data","participant_cluster.RData"))

@@ -16,14 +16,13 @@ pacman::p_load(tidyverse,purrr,here,DescTools)
 #--------------------------------------------------------------------------------#
 # loading the data ----
 #--------------------------------------------------------------------------------#
-load(here("Scripts2","Data2","dat.3.Rdata"))
+load(here("Scripts2","Data","dat.3.Rdata"))
 
-load(here("Scripts2","Data2","participant_cluster.RData"))
+load(here("Scripts2","Data","participant_cluster.RData"))
 
-#(here("Scripts2","Data2","E_M2_1_Winsor.RData"))
-load(here("Scripts2","Data2","Test699","E_M2_1_Winsor.RData"))
+load(here("Scripts2","Data","E_M2_1_Winsor.RData"))
 
-load(here("Scripts2","Data2","completionRate.RData"))
+load(here("Scripts2","Data","completionRate.RData"))
 
 #--------------------------------------------------------------------------------#
 # variables ----
@@ -333,4 +332,4 @@ GoodmanKruskalGamma(compl_itt_iv$miss_session_assess_prop,compl_itt_iv$age, conf
 
 aux_vars <- compl_itt_iv %>% select(participant_id,age,gender,gender_col,gender_col2,device_col,device_col_bin)
 
-save(aux_vars, file = here("Scripts2","Data2","Test699","aux_vars.RData"))
+save(aux_vars, file = here("Scripts2","Data","aux_vars.RData"))

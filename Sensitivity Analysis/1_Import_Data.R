@@ -1,7 +1,7 @@
-### Written by: ¡ngel Vela and Jeremy Eberle
+### Written by: √Ångel Vela and Jeremy Eberle
 ### MT Engagement Analysis
 ### University of Virginia
-### January-December 2022
+### August 2023
 ### Purpose of this script is to import the data 
 ### downloaded from the osf public component (https://osf.io/s8v3h/)
 ### and perform some further cleaning and filtering steps
@@ -15,27 +15,28 @@
 ## Github for Data Cleaning Script:
 ## https://github.com/jwe4ec/MT-Data-CalmThinkingStudy
 
-
-
 #--------------------------------------------------------------------------------#
 # loading the libraries ----
 #--------------------------------------------------------------------------------#
 #libraries 
 pacman::p_load(tidyverse,purrr,here,tools)
 
+#functions
+source(here("0_Functions.R"))
+
 #--------------------------------------------------------------------------------#
 # importing the data ----
 #--------------------------------------------------------------------------------#
-#create array of file names with extension
-data.path <- here("Data","public-v1.0.0","data","3_intermediate_clean")
+int_cln_data_dir <- here("Data","intermediate_clean")
+file.names <- list.files(int_cln_data_dir, pattern = "\\.csv$", full.names = FALSE)
 
-file.names <- list.files(data.path,pattern = "*.csv")
+check_relevant_files(file.names)
 
 #remove extension from file name, create new array with just file name
 table.names <- file_path_sans_ext(file.names)
 
 #read in each data file, stores it in a list
-dat <- lapply(paste0(data.path, "/", file.names), read.csv)
+dat <- lapply(paste0(int_cln_data_dir, "/", file.names), read.csv)
 
 #name components on the list based on file name
 names(dat) <- table.names
@@ -299,11 +300,11 @@ dat.files <- list(dat,dat.2,dat.3,dat.3.preAffect,dat.3.intro,dat.3.first.scenar
 
 names(dat.files)<- dat.names
 
-save(dat,dat.2,dat.3,dat.3.preAffect,dat.3.intro,dat.3.first.scenario,dat.3.first.scenario.602,dat.3.postAffect, file = here("Data","RData","1_Import_Data.RData"))
+save(dat,dat.2,dat.3,dat.3.preAffect,dat.3.intro,dat.3.first.scenario,dat.3.first.scenario.602,dat.3.postAffect, file = here("Data","1_Import_Data.RData"))
 
-save(dat.files, file = here("Data","RData","1_Import_Data_Dat_List.RData"))
+save(dat.files, file = here("Data","1_Import_Data_Dat_List.RData"))
 
-save(dat.3, file = here("Data","RData","1_Import_Data_Dat3.RData"))
+save(dat.3, file = here("Data","1_Import_Data_Dat3.RData"))
 
 
 

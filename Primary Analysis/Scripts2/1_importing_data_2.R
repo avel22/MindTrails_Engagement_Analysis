@@ -18,19 +18,27 @@
 #libraries 
 pacman::p_load(tidyverse,purrr,here,tools)
 
+#functions
+source(here("Scripts2","functions.R"))
+
 #--------------------------------------------------------------------------------#
 # importing the data
 #--------------------------------------------------------------------------------#
-#create array of file names with extension
-data.path <- here("Data","public-v1.0.0","data","3_intermediate_clean")
 
-file.names <- list.files(data.path,pattern = "*.csv")
+# Obtain file names of selected intermediate clean CSV data files and output a
+# warning if they do not contain all those relevant to present manuscript
+int_cln_data_dir <- here("Scripts2","Data","intermediate_clean")
+file.names <- list.files(int_cln_data_dir, pattern = "\\.csv$", full.names = FALSE)
+#file.names <- list.files(data.path,pattern = "*.csv")
+
+check_relevant_files(file.names)
+
 
 #remove extension from file name, create new array with just file name
 table.names <- file_path_sans_ext(file.names)
 
 #read in each data file, stores it in a list
-dat <- lapply(paste0(data.path, "/", file.names), read.csv)
+dat <- lapply(paste0(int_cln_data_dir, "/", file.names), read.csv)
 
 #name components on the list based on file name
 names(dat) <- table.names
@@ -223,11 +231,12 @@ dat.3 <- lapply(dat.2, function(df) {
   df
 })
 
+
 # ---------------------------------------------------------------------------- #
 # Save as RData file to be used in next step
 # ---------------------------------------------------------------------------- #
 #save as RData file to be used in step 2
-save(dat,dat.3, file = here("Scripts2","Data2","2_Calm.RData"))
+save(dat,dat.3, file = here("Scripts2","Data","2_Calm_2.RData"))
 
 
 

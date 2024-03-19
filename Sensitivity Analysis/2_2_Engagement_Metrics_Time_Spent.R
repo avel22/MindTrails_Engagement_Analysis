@@ -1,7 +1,7 @@
-### Written by: ¡ngel Vela and Jeremy Eberle
+### Written by: √Ångel Vela and Jeremy Eberle
 ### MT Engagement Analysis
 ### University of Virginia
-### January-December 2022
+### August 2023
 ### The purpose of this script is to calculate the average time spent in a scenario, training session, assessment, questionnaire
 
 #--------------------------------------------------------------------------------#
@@ -19,7 +19,7 @@ source(here("0_Functions.R"))
 # loading the data -----
 #--------------------------------------------------------------------------------#
 #load data from scrip 1_importing_data.R
-load(here("Data","RData","1_Import_Data.RData"))
+load(here("Data","1_Import_Data.RData"))
 
 #--------------------------------------------------------------------------------#
 # variables -----
@@ -775,7 +775,7 @@ engagement.time4$totalOutlierScore[is.na(engagement.time4$totalOutlierScore)]<-0
 #replace NAs with 0
 E_T_FINAL_NA_1 <- engagement.time4
 E_T_FINAL_1 <- engagement.time4 %>% replace(is.na(.), 0) 
-save(E_T_FINAL_1,E_T_FINAL_NA_1, file = here("Data","RData","2_2_Engagement_Metrics_Time_Spent.RData"))
+save(E_T_FINAL_1,E_T_FINAL_NA_1, file = here("Data","2_2_Engagement_Metrics_Time_Spent.RData"))
 
 
 

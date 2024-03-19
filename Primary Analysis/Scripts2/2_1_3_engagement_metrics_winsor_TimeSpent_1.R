@@ -19,7 +19,7 @@ source(here("Scripts2","functions.R"))
 # loading the data -----
 #--------------------------------------------------------------------------------#
 #load data from scrip 1_importing_data.R
-load(here("Scripts2","Data2","2_Calm.RData"))
+load(here("Scripts2","Data","2_Calm_2.RData"))
 
 #--------------------------------------------------------------------------------#
 # variables -----
@@ -775,7 +775,7 @@ engagement.time4$totalOutlierScore[is.na(engagement.time4$totalOutlierScore)]<-0
 #replace NAs with 0
 E_T_FINAL_NA_1 <- engagement.time4
 E_T_FINAL_1 <- engagement.time4 %>% replace(is.na(.), 0) 
-save(E_T_FINAL_1,E_T_FINAL_NA_1, file = here("Scripts2","Data2","Test699","E_T_1_Winsor_Complete.RData"))
+save(E_T_FINAL_1,E_T_FINAL_NA_1, file = here("Scripts2","Data","E_T_1_Winsor_Complete.RData"))
 
 
 

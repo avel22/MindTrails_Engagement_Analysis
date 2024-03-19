@@ -1,7 +1,7 @@
-### Written by: ¡ngel Vela
-### MS Thesis 
+### Written by: √Ångel Vela and Jeremy Eberle
+### MT Engagement Analysis
 ### University of Virginia
-### May 2022
+### August 2023
 ### The purpose of this script is to print out the tables for the model results
 
 
@@ -21,7 +21,7 @@ pacman::p_load(tidyverse,purrr,here,mitml,ggplot2, gridExtra,stargazer,lme4,psyc
 # loading the  data ----
 #--------------------------------------------------------------------------------#
 #session outcomes
-load(here("Data","RData","7_2_simple_time_effects_results_MTS_Reference_Group.RData"))
+load(here("Data","7_2_simple_time_effects_results_MTS_Reference_Group.RData"))
 
 # ---------------------------------------------------------------------------- #
 # Define create_re_var_cov() ----
@@ -349,6 +349,6 @@ sink(here("Tables","9_outcomes_fixed_simple_table_MTS_Reference_Group.txt"))
 stargazer(outcomes_fixed_random_simple_table_cor_no_random_formatting, type = "latex", title="Simple effects of time from pooled longitudinal multilevel model for each of the outcomes", digits=2, summary = F,rownames = F)
 sink()
 
-save.image(file = here("Data","RData","9_Tables_Formatting_MTS_Reference_Group.RData"))
+save.image(file = here("Data","9_Tables_Formatting_MTS_Reference_Group.RData"))
 
 
