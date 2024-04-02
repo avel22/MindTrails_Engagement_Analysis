@@ -21,7 +21,7 @@ pacman::p_load(tidyverse,purrr,here,mitml,ggplot2, gridExtra,stargazer,lme4,psyc
 # loading the  data ----
 #--------------------------------------------------------------------------------#
 #session outcomes
-load(here("Data","7_2_simple_time_effects_results_MTS_Reference_Group.RData"))
+load(here("Data_Sensitivity_Analysis","7_2_simple_time_effects_results_MTS_Reference_Group.RData"))
 
 # ---------------------------------------------------------------------------- #
 # Define create_re_var_cov() ----
@@ -349,6 +349,6 @@ sink(here("Tables","9_outcomes_fixed_simple_table_MTS_Reference_Group.txt"))
 stargazer(outcomes_fixed_random_simple_table_cor_no_random_formatting, type = "latex", title="Simple effects of time from pooled longitudinal multilevel model for each of the outcomes", digits=2, summary = F,rownames = F)
 sink()
 
-save.image(file = here("Data","9_Tables_Formatting_MTS_Reference_Group.RData"))
+save.image(file = here("Data_Sensitivity_Analysis","9_Tables_Formatting_MTS_Reference_Group.RData"))
 
 

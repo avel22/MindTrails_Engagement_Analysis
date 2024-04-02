@@ -15,13 +15,13 @@ pacman::p_load(tidyverse,purrr,here,stargazer)
 #--------------------------------------------------------------------------------#
 # loading the data ----
 #--------------------------------------------------------------------------------#
-load(here("Scripts2","Data","2_Calm_2.RData"))
+load(here("Scripts2","Data_Primary_Analysis","2_Calm_2.RData"))
 
-load(here("Scripts2","Data","participant_cluster.RData"))
+load(here("Scripts2","Data_Primary_Analysis","participant_cluster.RData"))
 
-load(here("Scripts2","Data","E_M2_1_Winsor.RData"))
+load(here("Scripts2","Data_Primary_Analysis","E_M2_1_Winsor.RData"))
 
-load(here("Scripts2","Data","completionRate.RData"))
+load(here("Scripts2","Data_Primary_Analysis","completionRate.RData"))
 
 #--------------------------------------------------------------------------------#
 # functions ----
@@ -541,7 +541,7 @@ prop_scale_missing <- summary_df %>% group_by(outcome) %>% summarise(prop_missin
 # Save data as RData ----
 # ---------------------------------------------------------------------------- #
 #save as RData file to be used in later steps
-save(outcomes.scores.df,session_outcomes, file = here("Scripts2","Data","outcomes_df_for_imputation.RData"))
+save(outcomes.scores.df,session_outcomes, file = here("Scripts2","Data_Primary_Analysis","outcomes_df_for_imputation.RData"))
 
 
 

@@ -21,7 +21,7 @@ pacman::p_load(tidyverse,purrr,here,mitml,ggplot2, gridExtra,stargazer,lme4,psyc
 # loading the  data ----
 #--------------------------------------------------------------------------------#
 #session outcomes
-load(here("Data","7_2_simple_time_effects_results.RData"))
+load(here("Data_Sensitivity_Analysis","7_2_simple_time_effects_results.RData"))
 
 # ---------------------------------------------------------------------------- #
 # Define create_re_var_cov() ----

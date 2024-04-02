@@ -15,9 +15,9 @@ pacman::p_load(tidyverse,purrr,here,stargazer)
 #--------------------------------------------------------------------------------#
 # loading the data ----
 #--------------------------------------------------------------------------------#
-load(here("Scripts2","Data","2_Calm_2.RData"))
+load(here("Scripts2","Data_Primary_Analysis","2_Calm_2.RData"))
 
-load(here("Scripts2","Data","participant_cluster.RData"))
+load(here("Scripts2","Data_Primary_Analysis","participant_cluster.RData"))
 
 #--------------------------------------------------------------------------------#
 # variables ----
@@ -271,7 +271,7 @@ dat$demographics$country_col <-
 
 dat.3 <- dat
 
-save(dat.3, file = here("Scripts2","Data","dat.3.RData"))
+save(dat.3, file = here("Scripts2","Data_Primary_Analysis","dat.3.RData"))
 
 
 # ---------------------------------------------------------------------------- #
@@ -301,7 +301,7 @@ dem_tbl <- merge(dem_tbl,
 dem_tbl$cluster <- as.factor(dem_tbl$cluster)
 
 #save dem_table
-save(dem_tbl,file = here("Scripts2","Data","dem_tbl.RData"))
+save(dem_tbl,file = here("Scripts2","Data_Primary_Analysis","dem_tbl.RData"))
 
 # Define function to compute descriptives
 

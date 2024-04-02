@@ -27,7 +27,7 @@ source(here("Scripts2","functions.R"))
 
 # Obtain file names of selected intermediate clean CSV data files and output a
 # warning if they do not contain all those relevant to present manuscript
-int_cln_data_dir <- here("Scripts2","Data","intermediate_clean")
+int_cln_data_dir <- here("Scripts2","Data_Primary_Analysis","intermediate_clean")
 file.names <- list.files(int_cln_data_dir, pattern = "\\.csv$", full.names = FALSE)
 #file.names <- list.files(data.path,pattern = "*.csv")
 
@@ -236,7 +236,7 @@ dat.3 <- lapply(dat.2, function(df) {
 # Save as RData file to be used in next step
 # ---------------------------------------------------------------------------- #
 #save as RData file to be used in step 2
-save(dat,dat.3, file = here("Scripts2","Data","2_Calm_2.RData"))
+save(dat,dat.3, file = here("Scripts2","Data_Primary_Analysis","2_Calm_2.RData"))
 
 
 

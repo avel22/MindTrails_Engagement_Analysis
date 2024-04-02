@@ -19,7 +19,7 @@ source(here("0_Functions.R"))
 # loading the data -----
 #--------------------------------------------------------------------------------#
 #load data from scrip 1_importing_data.R
-load(here("Data","1_Import_Data.RData"))
+load(here("Data_Sensitivity_Analysis","1_Import_Data.RData"))
 
 #--------------------------------------------------------------------------------#
 # variables -----
@@ -775,7 +775,7 @@ engagement.time4$totalOutlierScore[is.na(engagement.time4$totalOutlierScore)]<-0
 #replace NAs with 0
 E_T_FINAL_NA_1 <- engagement.time4
 E_T_FINAL_1 <- engagement.time4 %>% replace(is.na(.), 0) 
-save(E_T_FINAL_1,E_T_FINAL_NA_1, file = here("Data","2_2_Engagement_Metrics_Time_Spent.RData"))
+save(E_T_FINAL_1,E_T_FINAL_NA_1, file = here("Data_Sensitivity_Analysis","2_2_Engagement_Metrics_Time_Spent.RData"))
 
 
 

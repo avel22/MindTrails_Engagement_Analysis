@@ -21,7 +21,7 @@ source(here("Scripts2","functions.R"))
 # loading the data
 #--------------------------------------------------------------------------------#
 #load data from scrip 1_importing_data.R
-load(here("Scripts2","Data","2_Calm_2.RData"))
+load(here("Scripts2","Data_Primary_Analysis","2_Calm_2.RData"))
 
 
 dat <- dat.3
@@ -665,5 +665,5 @@ final_completion <- training_assessment_completion %>% select(participant_id,tra
 #save as RData file to be used in later steps
 
 
-save(final_completion,completion,check_completion2, file = here("Scripts2","Data","completionRate.RData"))
+save(final_completion,completion,check_completion2, file = here("Scripts2","Data_Primary_Analysis","completionRate.RData"))
 

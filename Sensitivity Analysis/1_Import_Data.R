@@ -27,7 +27,7 @@ source(here("0_Functions.R"))
 #--------------------------------------------------------------------------------#
 # importing the data ----
 #--------------------------------------------------------------------------------#
-int_cln_data_dir <- here("Data","intermediate_clean")
+int_cln_data_dir <- here("Data_Sensitivity_Analysis","intermediate_clean")
 file.names <- list.files(int_cln_data_dir, pattern = "\\.csv$", full.names = FALSE)
 
 check_relevant_files(file.names)
@@ -300,11 +300,11 @@ dat.files <- list(dat,dat.2,dat.3,dat.3.preAffect,dat.3.intro,dat.3.first.scenar
 
 names(dat.files)<- dat.names
 
-save(dat,dat.2,dat.3,dat.3.preAffect,dat.3.intro,dat.3.first.scenario,dat.3.first.scenario.602,dat.3.postAffect, file = here("Data","1_Import_Data.RData"))
+save(dat,dat.2,dat.3,dat.3.preAffect,dat.3.intro,dat.3.first.scenario,dat.3.first.scenario.602,dat.3.postAffect, file = here("Data_Sensitivity_Analysis","1_Import_Data.RData"))
 
-save(dat.files, file = here("Data","1_Import_Data_Dat_List.RData"))
+save(dat.files, file = here("Data_Sensitivity_Analysis","1_Import_Data_Dat_List.RData"))
 
-save(dat.3, file = here("Data","1_Import_Data_Dat3.RData"))
+save(dat.3, file = here("Data_Sensitivity_Analysis","1_Import_Data_Dat3.RData"))
 
 
 

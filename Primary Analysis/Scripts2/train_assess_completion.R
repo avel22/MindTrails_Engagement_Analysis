@@ -14,16 +14,16 @@ pacman::p_load(tidyverse,purrr,here,DescTools)
 #--------------------------------------------------------------------------------#
 # loading the data ----
 #--------------------------------------------------------------------------------#
-load(here("Scripts2","Data","dat.3.Rdata"))
+load(here("Scripts2","Data_Primary_Analysis","dat.3.Rdata"))
 
-load(here("Scripts2","Data","participant_cluster.RData"))
+load(here("Scripts2","Data_Primary_Analysis","participant_cluster.RData"))
 
-load(here("Scripts2","Data","E_M2_1_Winsor.RData"))
+load(here("Scripts2","Data_Primary_Analysis","E_M2_1_Winsor.RData"))
 
-load(here("Scripts2","Data","completionRate.RData"))
+load(here("Scripts2","Data_Primary_Analysis","completionRate.RData"))
 
 #load data from scrip 1_importing_data.R
-load(here("Scripts2","Data","2_Calm_2.RData"))
+load(here("Scripts2","Data_Primary_Analysis","2_Calm_2.RData"))
 
 
 #--------------------------------------------------------------------------------#

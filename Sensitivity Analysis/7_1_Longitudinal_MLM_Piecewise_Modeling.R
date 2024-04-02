@@ -12,7 +12,7 @@ pacman::p_load(tidyverse,here,mitml,ggplot2)
 #--------------------------------------------------------------------------------#
 # loading the data ----
 #--------------------------------------------------------------------------------#
-load(here("Data","6_3_imputed_outcomes_mitml_lists.RData"))
+load(here("Data_Sensitivity_Analysis","6_3_imputed_outcomes_mitml_lists.RData"))
 
 #--------------------------------------------------------------------------------#
 # Analyzing and pooling imputed datasets ----
@@ -365,4 +365,4 @@ pooled_bbsiq_lme
 # pooled_bbsiq_lme_mod4
 
 
-save.image(file = here("Data","7_1_mitml_pooled_results_2.RData"))
+save.image(file = here("Data_Sensitivity_Analysis","7_1_mitml_pooled_results_2.RData"))

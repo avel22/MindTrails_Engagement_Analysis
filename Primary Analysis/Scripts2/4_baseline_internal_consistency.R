@@ -16,7 +16,7 @@ pacman::p_load(tidyverse,purrr,here)
 # loading the data ----
 #--------------------------------------------------------------------------------#
 
-load(here("Scripts2","Data","outcomes_df_for_imputation.RData"))
+load(here("Scripts2","Data_Primary_Analysis","outcomes_df_for_imputation.RData"))
 
 #--------------------------------------------------------------------------------#
 # outcomes at baseline ----

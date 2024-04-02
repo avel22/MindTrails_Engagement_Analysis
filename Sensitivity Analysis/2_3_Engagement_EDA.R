@@ -16,9 +16,9 @@ pacman::p_load(tidyverse,purrr,here,tools,reshape2,lubridate,hash,caret,corrplot
 #clean the environment
 rm(list=ls())
 
-load(here("Data","1_Import_Data_Dat3.RData"))
-load(here("Data","2_1_Engagement_Metrics_Completion_Rate.RData"))
-load(here("Data","2_2_Engagement_Metrics_Time_Spent.RData"))
+load(here("Data_Sensitivity_Analysis","1_Import_Data_Dat3.RData"))
+load(here("Data_Sensitivity_Analysis","2_1_Engagement_Metrics_Completion_Rate.RData"))
+load(here("Data_Sensitivity_Analysis","2_2_Engagement_Metrics_Time_Spent.RData"))
 
 #--------------------------------------------------------------------------------#
 # combined data into one dataframe  ----
@@ -115,4 +115,4 @@ ggplot(engagement_metrics3.m, aes(value))+geom_boxplot()+facet_wrap(~variable,sc
 # ---------------------------------------------------------------------------- #
 engagement_metrics_final <- engagement_metrics3
 #save as RData file to be used in later steps
-save(engagement_metrics,engagement_metrics_winsor,engagement_metrics_final, file = here("Data","2_3_Engagement_EDA.RData"))
+save(engagement_metrics,engagement_metrics_winsor,engagement_metrics_final, file = here("Data_Sensitivity_Analysis","2_3_Engagement_EDA.RData"))

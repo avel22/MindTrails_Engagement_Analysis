@@ -18,8 +18,8 @@ pacman::p_load(tidyverse,here,mitml,ggplot2)
 #--------------------------------------------------------------------------------#
 # loading the data ----
 #--------------------------------------------------------------------------------#
-load(here("Data","5_outcomes_df_for_imputation.RData"))
-load(here("Data","6_1_aux_vars.RData"))
+load(here("Data_Sensitivity_Analysis","5_outcomes_df_for_imputation.RData"))
+load(here("Data_Sensitivity_Analysis","6_1_aux_vars.RData"))
 
 outcomes.scores.df %>% select(participant_id) %>% unique() %>% nrow()
 
@@ -113,17 +113,17 @@ str(blimp_dass21)
 mod <- 0
 
 #OASIS
-write.table(blimp_oa,here("Data","imputation","Data",paste0("6_2_","blimp_imputation_oa_mod",as.character(mod),".csv")),row.names = F,col.names = F)
+write.table(blimp_oa,here("Data_Sensitivity_Analysis","imputation","Data",paste0("6_2_","blimp_imputation_oa_mod",as.character(mod),".csv")),row.names = F,col.names = F)
 
 #DASS21
-write.table(blimp_dass21,here("Data","imputation","Data",paste0("6_2_","blimp_imputation_dass21_mod",as.character(mod),".csv")),row.names = F,col.names = F)
+write.table(blimp_dass21,here("Data_Sensitivity_Analysis","imputation","Data",paste0("6_2_","blimp_imputation_dass21_mod",as.character(mod),".csv")),row.names = F,col.names = F)
 
 #BBSIQ
-write.table(blimp_bbsiq,here("Data","imputation","Data",paste0("6_2_","blimp_imputation_bbsiq_mod",as.character(mod),".csv")),row.names = F,col.names = F)
+write.table(blimp_bbsiq,here("Data_Sensitivity_Analysis","imputation","Data",paste0("6_2_","blimp_imputation_bbsiq_mod",as.character(mod),".csv")),row.names = F,col.names = F)
 
 #RR POSITIVE BIAS
-write.table(blimp_rr_pos_bias,here("Data","imputation","Data",paste0("6_2_","blimp_imputation_rr_pos_mod",as.character(mod),".csv")),row.names = F,col.names = F)
+write.table(blimp_rr_pos_bias,here("Data_Sensitivity_Analysis","imputation","Data",paste0("6_2_","blimp_imputation_rr_pos_mod",as.character(mod),".csv")),row.names = F,col.names = F)
 
 #RR NEGATIVE BIAS
-write.table(blimp_rr_neg_bias,here("Data","imputation","Data",paste0("6_2_","blimp_imputation_rr_neg_mod",as.character(mod),".csv")),row.names = F,col.names = F)
+write.table(blimp_rr_neg_bias,here("Data_Sensitivity_Analysis","imputation","Data",paste0("6_2_","blimp_imputation_rr_neg_mod",as.character(mod),".csv")),row.names = F,col.names = F)
 

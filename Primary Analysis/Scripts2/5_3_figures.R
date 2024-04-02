@@ -18,7 +18,7 @@ pacman::p_load(tidyverse,purrr,here,mitml,ggplot2, gridExtra,stargazer,lme4,psyc
 # loading the  data ----
 #--------------------------------------------------------------------------------#
 #session outcomes
-load(here("Scripts2","Data","pooledResults7LME.RData"))
+load(here("Scripts2","Data_Primary_Analysis","pooledResults7LME.RData"))
 
 # ---------------------------------------------------------------------------- #
 # Define functions used throughout script ----

@@ -15,8 +15,8 @@ pacman::p_load(tidyverse,purrr,here,stargazer)
 #--------------------------------------------------------------------------------#
 # loading the data ----
 #--------------------------------------------------------------------------------#
-load(here("Data","1_Import_Data_Dat3.RData"))
-load(here("Data","3_Clustering_627.RData"))
+load(here("Data_Sensitivity_Analysis","1_Import_Data_Dat3.RData"))
+load(here("Data_Sensitivity_Analysis","3_Clustering_627.RData"))
 
 #--------------------------------------------------------------------------------#
 # variables ----
@@ -271,7 +271,7 @@ dat$demographics$country_col <-
 
 dat.3.demographics.cleaned.627 <- dat
 
-save(dat.3.demographics.cleaned.627, file = here("Data","4_1_Demographic_Characteristics_627.RData"))
+save(dat.3.demographics.cleaned.627, file = here("Data_Sensitivity_Analysis","4_1_Demographic_Characteristics_627.RData"))
 
 
 # ---------------------------------------------------------------------------- #

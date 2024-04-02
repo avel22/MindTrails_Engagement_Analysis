@@ -17,7 +17,7 @@ source(here("0_Functions.R"))
 # loading the data ----
 #--------------------------------------------------------------------------------#
 #load RData from 1_Import_Data.R
-load(here("Data","1_Import_Data.RData"))
+load(here("Data_Sensitivity_Analysis","1_Import_Data.RData"))
 
 
 dat.used <- dat.3
@@ -661,5 +661,5 @@ final_completion <- training_assessment_completion %>% select(participant_id,tra
 #save as RData file to be used in later steps
 
 
-save(final_completion,completion,check_completion2, file = here("Data","2_1_Engagement_Metrics_Completion_Rate.RData"))
+save(final_completion,completion,check_completion2, file = here("Data_Sensitivity_Analysis","2_1_Engagement_Metrics_Completion_Rate.RData"))
 

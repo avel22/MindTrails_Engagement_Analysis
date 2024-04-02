@@ -16,8 +16,8 @@ pacman::p_load(tidyverse,purrr,here,stargazer,mice)
 # loading the data ----
 #--------------------------------------------------------------------------------#
 
-load(here("Data","4_1_Demographic_Characteristics_627.RData"))
-load(here("Data","3_Clustering_627.RData"))
+load(here("Data_Sensitivity_Analysis","4_1_Demographic_Characteristics_627.RData"))
+load(here("Data_Sensitivity_Analysis","3_Clustering_627.RData"))
 
 #--------------------------------------------------------------------------------#
 # functions ----
@@ -540,4 +540,4 @@ prop_scale_missing <- summary_df %>% group_by(outcome) %>% summarise(prop_missin
 # Save data as RData ----
 # ---------------------------------------------------------------------------- #
 #save as RData file to be used in later steps
-save(outcomes.scores.df,session_outcomes, file = here("Data","5_outcomes_df_for_imputation.RData"))
+save(outcomes.scores.df,session_outcomes, file = here("Data_Sensitivity_Analysis","5_outcomes_df_for_imputation.RData"))
