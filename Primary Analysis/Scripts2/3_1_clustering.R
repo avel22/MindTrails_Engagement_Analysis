@@ -148,9 +148,9 @@ pam_model_4 <-pam_model(4,eng_transformed = eng_df,eng_original = eng_num)
 p_clusters$pam_4 <- pam_model_4$pam_box$cluster
 
 #visualize clusters
-p1_pam <- fviz_cluster(object = pam_model_2$pam_eng, ellipse.type = "convex",geom="point",palette = "Set2") + theme_minimal() + ggtitle("PAM clustering with 2 clusters") 
-p2_pam <- fviz_cluster(object = pam_model_3$pam_eng, ellipse.type = "convex",geom="point",palette = "Set2") + theme_minimal() + ggtitle("PAM clustering with 3 clusters") 
-p3_pam <- fviz_cluster(object = pam_model_4$pam_eng, ellipse.type = "convex",geom="point",palette = "Set2") + theme_minimal() + ggtitle("PAM clustering with 4 clusters")
+p1_pam <- fviz_cluster(object = pam_model_2$pam_eng, ellipse.type = "convex",geom="point",palette = "Set2") + theme_minimal() + ggtitle("Partitioning Around Medoids clustering with 2 clusters") 
+p2_pam <- fviz_cluster(object = pam_model_3$pam_eng, ellipse.type = "convex",geom="point",palette = "Set2") + theme_minimal() + ggtitle("Partitioning Around Medoids clustering with 3 clusters") 
+p3_pam <- fviz_cluster(object = pam_model_4$pam_eng, ellipse.type = "convex",geom="point",palette = "Set2") + theme_minimal() + ggtitle("Partitioning Around Medoids clustering with 4 clusters")
 
 cowplot::plot_grid(p1_pam, p2_pam, p3_pam)
 dev.off()
@@ -220,9 +220,9 @@ p_clusters$hclust_4 <- hclust4$cluster
 
 
 #visualize clusters
-p1_hclust <- fviz_cluster(hclust2, ellipse.type = "convex",geom="point",palette = "Set2") + theme_minimal() + ggtitle("Hierarchical clustering with 2 clusters") 
-p2_hclust <- fviz_cluster(hclust3, ellipse.type = "convex",geom="point",palette = "Set2") + theme_minimal() + ggtitle("Hierarchical clustering with 3 clusters")
-p3_hclust <- fviz_cluster(hclust4, ellipse.type = "convex",geom="point",palette = "Set2") + theme_minimal() + ggtitle("Hierarchical clustering with 4 clusters")
+p1_hclust <- fviz_cluster(hclust2, ellipse.type = "convex",geom="point",palette = "Set2") + theme_minimal() + ggtitle("Agglomerative Hierarchical Clustering with 2 clusters") 
+p2_hclust <- fviz_cluster(hclust3, ellipse.type = "convex",geom="point",palette = "Set2") + theme_minimal() + ggtitle("Agglomerative Hierarchical Clustering with 3 clusters")
+p3_hclust <- fviz_cluster(hclust4, ellipse.type = "convex",geom="point",palette = "Set2") + theme_minimal() + ggtitle("Agglomerative Hierarchical Clustering with 4 clusters")
 
 cowplot::plot_grid(p1_hclust, p2_hclust, p3_hclust)
 dev.off()
@@ -301,6 +301,7 @@ eng_df_cluster$cluster_label <- as.factor(eng_df_cluster$cluster_label)
 table(eng_df_cluster$cluster_label)
 #Cluster count
 table(eng_df_cluster$cluster)
+
 
 #Label cluster as more time spent vs less time spent 
 
@@ -452,6 +453,70 @@ features <- c("Completion Rate", "Average time spent on scenarios across session
 
 wilcox_features_table$feature_name <- c("Completion Rate", "Average time spent on scenarios across sessions","Time spent on lemon exercise","Time spent on the anxiety imagery prime exercise",measure_names)
 
+
+#--------------------------------------------------------------------------------
+# Wilcoxon rank-sum tests for 2 groups plus effect size ----
+#--------------------------------------------------------------------------------
+wilcox_features <- tibble()
+
+wilcox_function <- function(eng_df_test, feature, wilcox_features) {
+  print(feature)
+  
+  # Ensure the dataframe is ungrouped
+  eng_df_test <- eng_df_test %>% ungroup() %>% as.data.frame()
+  
+  # Create the formula for the test
+  formula <- as.formula(paste("feature", "cluster", sep = "~"))
+  
+  # Perform the Wilcoxon test
+  test <- wilcox.test(formula, data = eng_df_test)
+  print(test)
+  
+  # Calculate the effect size using wilcox_effsize
+  effsize <- eng_df_test %>% wilcox_effsize(formula)
+  
+  # Convert magnitude to character to store the value "small", "moderate", or "large"
+  magnitude_value <- as.character(effsize$magnitude[1])
+  
+  # Create a dataframe with the test statistic, p-value, and effect size
+  wilcox_df <- tibble(
+    feature = feature,
+    W = test$statistic,
+    pvalue = round(test$p.value, 4),
+    effsize = round(effsize$effsize[1], 4),
+    magnitude = magnitude_value
+  )
+  
+  wilcox_features <- bind_rows(wilcox_features, wilcox_df)
+  return(wilcox_features)
+}
+
+for (col in colnames(eng_df_cluster[c(-1, -19, -20)])) {
+  eng_wilcox_df <- eng_df_cluster %>% select(all_of(col), cluster)
+  feature <- colnames(eng_wilcox_df)[1]
+  colnames(eng_wilcox_df) <- c("feature", "cluster")
+  wilcox_features <- wilcox_function(eng_wilcox_df, feature, wilcox_features)
+}
+
+wilcox_features_table <- wilcox_features
+
+features <- c("Completion Rate", "Average time spent on scenarios across sessions",
+              "Time spent on lemon exercise", "Time spent on the anxiety imagery prime exercise", measure_names)
+
+wilcox_features_table$feature_name <- features
+
+# edits for latex supplement table
+# Create the new dataframe with formatted columns
+formatted_table_wilcox_effect_size <- wilcox_features_table %>%
+  transmute(
+    `Engagement Marker` = feature_name,
+    `Wilcox Rank Sum Test` = formatC(W, format = "f", big.mark = ",", digits = 1),
+    `P-Value` = ifelse(pvalue == 0, "< .001", formatC(pvalue, format = "f", digits = 3)),
+    `Effect Size (r)` = paste0(formatC(effsize, format = "f", digits = 3), " (", magnitude, ")")
+  )
+
+# Display the formatted table
+print(formatted_table)
 #--------------------------------------------------------------------------------
 # Differences in the engagement measurements between the high- and low-engagement groups  ----
 #--------------------------------------------------------------------------------

@@ -30,7 +30,7 @@
 # loading the libraries ----
 #--------------------------------------------------------------------------------#
 #libraries 
-pacman::p_load(tidyverse,purrr,here,stargazer,forcats)
+pacman::p_load(tidyverse,purrr,here,stargazer,forcats,rstatix)
 
 #--------------------------------------------------------------------------------#
 # loading the data ----
@@ -79,6 +79,9 @@ shapiro_test_cluster2$p.value
 #Since both values are less than 0.05 the data significantly deviates from a normal distribution
 # 1. Mann-Whitney U test for age (since it's not normally distributed)
 age_mw <- wilcox.test(age ~ cluster, data = dem_char_compar)
+
+# Calculate the effect size using wilcox_effsize
+age_mw_effsize <- dem_char_compar %>% wilcox_effsize(age ~ cluster)
 
 # 2. Chi-squared test for gender
 # Transform the gender column
@@ -157,6 +160,8 @@ levels(dem_char_compar$educationGrp)
 # Convert the ordered factor levels of 'education' to numeric values
 dem_char_compar$education_numeric <- as.numeric(dem_char_compar$educationGrp)
 education_mw <- wilcox.test(education_numeric ~ cluster, data = dem_char_compar)
+# Calculate the effect size using wilcox_effsize
+education_mw_effsize <- dem_char_compar %>% wilcox_effsize(education_numeric ~ cluster)
 
 educationGrp_table = table(dem_char_compar$educationGrp, dem_char_compar$cluster)
 educationGrp_table
@@ -291,11 +296,18 @@ compare_means <- function(dataframe, score_column) {
   } else {
     test_result <- wilcox.test(dataframe[[score_column]] ~ dataframe$engagement_cluster)
     test_name <- "Wilcoxon rank-sum test"
-  }
   
-  return(list(test_name = test_name, test_result = test_result))
+  # Calculate effect size using wilcox_effsize
+  dataframe <- dataframe %>% ungroup() %>% as.data.frame()
+  effect_size_result <- dataframe %>% wilcox_effsize(as.formula(paste(score_column, "engagement_cluster", sep = " ~ ")))
+  
+  # Extract the effect size and magnitude
+  effect_size <- paste0(formatC(effect_size_result$effsize, format = "f", digits = 3), " (", effect_size_result$magnitude, ")")
 }
 
+  return(list(test_name = test_name, test_result = test_result, effect_size = effect_size))
+}
+  
 # List of dataframes and their corresponding score columns
 dfs <- list(dass_bl = "DASS21_MeanScore", 
             oasis_bl = "OA_MeanScore", 
@@ -311,8 +323,10 @@ results_assessments <- data.frame(
   Test = character(),
   Statistic = numeric(),
   p = numeric(),
+  Effect_Size = character(),
   stringsAsFactors = FALSE
 )
+
 
 # Loop through each dataframe and compile results
 for (df_name in names(dfs)) {
@@ -321,7 +335,8 @@ for (df_name in names(dfs)) {
     Score = dfs[[df_name]],
     Test = test_output$test_name,
     Statistic = test_output$test_result$statistic,
-    p = test_output$test_result$p.value
+    p = test_output$test_result$p.value,
+    Effect_Size = ifelse(is.na(test_output$effect_size), "", test_output$effect_size)
   ))
 }
 
@@ -329,10 +344,6 @@ results_assessments$p <- sapply(results_assessments$p, format_pvalue)
 results_assessments$Statistic <- sapply(results_assessments$Statistic, format_statistic)
 
 results_assessments
-
-results_dem_tests
-
-
 
 #--------------------------------------------------------------------------------#
 # PHQ-2 and AUDIT-C----
@@ -404,6 +415,7 @@ results_phq_acid <- data.frame(
   Test = character(),
   Statistic = numeric(),
   p = numeric(),
+  Effect_Size = character(),
   stringsAsFactors = FALSE
 )
 
@@ -414,7 +426,8 @@ for (df_name in names(dfs_phq_acid)) {
     Score = dfs_phq_acid[[df_name]],
     Test = test_output$test_name,
     Statistic = test_output$test_result$statistic,
-    p = test_output$test_result$p.value
+    p = test_output$test_result$p.value,
+    Effect_Size = ifelse(is.na(test_output$effect_size), "", test_output$effect_size)
   ))
 }
 

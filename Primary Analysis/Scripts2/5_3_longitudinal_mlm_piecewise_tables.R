@@ -305,3 +305,130 @@ fixed_random_table_oa_corr <- create_results_list(modelList_oa_lme_mod1,pooled_o
 fixed_random_table_dass21_corr <- create_results_list(modelList_dass21_lme_mod1,pooled_dass21_lme_mod1,3)
 
 
+
+# ---------------------------------------------------------------------------- #
+# effect sizes ----
+# ---------------------------------------------------------------------------- #
+
+# D. Formulas for Between-Group Effect Size
+
+# To compute the between-group effect sizes, we need the pooled SD ("sd_pooled_final") and 
+# the beta estimates from Table 3. 
+
+# Let’s refer to the beta estimates as follows:
+# - b_grp = beta estimate for the main effect of group (called “More Time Spent” in Table 3)
+# - b_int_tr = beta estimate for the group-by-timeTR interaction effect 
+#             (called “More Time Spent × timeTR” in Table 3)
+# - b_int_fu = beta estimate for the group-by-timeFU interaction effect 
+#             (called “More Time Spent × timeFU” in Table 3)
+
+# With this information, we can compute the between-group effect sizes at Session 5 and follow-up.
+
+# Formulas adjusted for baseline differences:
+# - btw_d_adj_s5 = (b_int_tr*5 + b_int_fu*0) / sd_pooled_final
+# - btw_d_adj_fu = (b_int_tr*5 + b_int_fu*1) / sd_pooled_final
+
+# Formulas unadjusted for baseline differences:
+# - btw_d_unadj_s5 = (b_grp + b_int_tr*5 + b_int_fu*0) / sd_pooled_final
+# - btw_d_unadj_fu = (b_grp + b_int_tr*5 + b_int_fu*1) / sd_pooled_final
+
+
+# load sd 
+load(here("Scripts2","Data_Primary_Analysis","5_5_final_sd_values.RData"))
+
+# Function to compute between-group effect sizes at Session 5 and follow-up
+compute_between_group_effect_size <- function(b_grp, b_int_tr, b_int_fu, sd_pooled_final) {
+  
+  # Compute adjusted between-group effect size at Session 5
+  btw_d_adj_s5 <- (b_int_tr * 5 + b_int_fu * 0) / sd_pooled_final
+  
+  # Compute adjusted between-group effect size at follow-up
+  btw_d_adj_fu <- (b_int_tr * 5 + b_int_fu * 1) / sd_pooled_final
+  
+  # Compute unadjusted between-group effect size at Session 5
+  btw_d_unadj_s5 <- (b_grp + b_int_tr * 5 + b_int_fu * 0) / sd_pooled_final
+  
+  # Compute unadjusted between-group effect size at follow-up
+  btw_d_unadj_fu <- (b_grp + b_int_tr * 5 + b_int_fu * 1) / sd_pooled_final
+  
+  # Return the results as a named list
+  return(list(
+    btw_d_adj_s5 = btw_d_adj_s5,
+    btw_d_adj_fu = btw_d_adj_fu,
+    btw_d_unadj_s5 = btw_d_unadj_s5,
+    btw_d_unadj_fu = btw_d_unadj_fu
+  ))
+}
+
+# oa
+b_grp_oa <- pooled_oa_lme_mod1$estimates[4]
+  
+b_int_tr_oa <- pooled_oa_lme_mod1$estimates[6]
+
+b_int_fu_oa <-pooled_oa_lme_mod1$estimates[7]
+  
+between_group_effect_size_oa <- compute_between_group_effect_size(b_grp_oa, b_int_tr_oa, b_int_fu_oa, sd_pooled_final_oa)
+
+# dass21
+b_grp_dass21 <- pooled_dass21_lme_mod1$estimates[4]
+
+b_int_tr_dass21 <- pooled_dass21_lme_mod1$estimates[6]
+  
+b_int_fu_dass21 <- pooled_dass21_lme_mod1$estimates[7]
+
+between_group_effect_size_dass21 <- compute_between_group_effect_size(b_grp_dass21, b_int_tr_dass21, b_int_fu_dass21, sd_pooled_final_dass21)
+
+
+# bbsiq
+b_grp_bbsiq <- pooled_bbsiq_lme_mod1$estimates[4]
+  
+b_int_tr_bbsiq <- pooled_bbsiq_lme_mod1$estimates[6]
+  
+b_int_fu_bbsiq <- pooled_bbsiq_lme_mod1$estimates[7]
+  
+between_group_effect_size_bbsiq <- compute_between_group_effect_size(b_grp_bbsiq, b_int_tr_bbsiq, b_int_fu_bbsiq, sd_pooled_final_bbsiq)
+
+# rr_neg
+b_grp_rr_neg <- pooled_rr_neg_lme$estimates[4]
+  
+b_int_tr_rr_neg <- pooled_rr_neg_lme$estimates[6]
+  
+b_int_fu_rr_neg <- pooled_rr_neg_lme$estimates[7]
+  
+between_group_effect_size_rr_neg <- compute_between_group_effect_size(b_grp_rr_neg, b_int_tr_rr_neg, b_int_fu_rr_neg, sd_pooled_final_rr_neg)
+
+# rr_pos
+b_grp_rr_pos <- pooled_rr_pos_lme_mod1$estimates[4]
+  
+b_int_tr_rr_pos <- pooled_rr_pos_lme_mod1$estimates[6]
+  
+b_int_fu_rr_pos <- pooled_rr_pos_lme_mod1$estimates[7]
+  
+between_group_effect_size_rr_pos <- compute_between_group_effect_size(b_grp_rr_pos, b_int_tr_rr_pos, b_int_fu_rr_pos, sd_pooled_final_rr_pos)
+
+# Specify the file name where you want to save the variables
+save_file <- here("Scripts2","Data_Primary_Analysis","5_3_between_group_effect_sizes.RData")
+
+# Save the specified variables and pooled tables to the file
+save(
+  # oa variables
+  b_grp_oa, b_int_tr_oa, b_int_fu_oa, between_group_effect_size_oa, pooled_oa_lme_mod1,
+  
+  # dass21 variables
+  b_grp_dass21, b_int_tr_dass21, b_int_fu_dass21, between_group_effect_size_dass21, pooled_dass21_lme_mod1,
+  
+  # bbsiq variables
+  b_grp_bbsiq, b_int_tr_bbsiq, b_int_fu_bbsiq, between_group_effect_size_bbsiq, pooled_bbsiq_lme_mod1,
+  
+  # rr_neg variables
+  b_grp_rr_neg, b_int_tr_rr_neg, b_int_fu_rr_neg, between_group_effect_size_rr_neg, pooled_rr_neg_lme,
+  
+  # rr_pos variables
+  b_grp_rr_pos, b_int_tr_rr_pos, b_int_fu_rr_pos, between_group_effect_size_rr_pos, pooled_rr_pos_lme_mod1,
+  
+  # Final pooled SD values
+  sd_pooled_final_oa, sd_pooled_final_dass21, sd_pooled_final_bbsiq, sd_pooled_final_rr_neg, sd_pooled_final_rr_pos,
+  
+  file = save_file
+)
+
