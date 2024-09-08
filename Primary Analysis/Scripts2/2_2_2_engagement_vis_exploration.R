@@ -13,7 +13,7 @@ pacman::p_load(tidyverse,purrr,here,tools,reshape2,lubridate,hash,caret,corrplot
 #--------------------------------------------------------------------------------#
 # loading the engagement metrics
 #--------------------------------------------------------------------------------#
-load(here("Scripts2","Data_Primary_Analysis","E_M_1.RData"))
+load(here("Scripts2","Data_Primary_Analysis","E_M_1_1.RData"))
 
 #--------------------------------------------------------------------------------#
 # summary of engagement metrics
@@ -52,12 +52,24 @@ engagement_metrics_winsor[is.na(engagement_metrics_winsor)]<-0
 #--------------------------------------------------------------------------------#
 # correlation plot
 #--------------------------------------------------------------------------------#
+# improve correlation plot for visibility
+mod_measure_names <- colnames(engagement_metrics_winsor[grep("T4_",names(engagement_metrics_winsor))])
+mod_measure_names1 <- gsub("T4_min_mean_assessment_time*.", "",mod_measure_names)
+mod_measures_names2 <- gsub("_winsor","",mod_measure_names1)
+mod_measures_names3 <- gsub("_"," ",mod_measures_names2)
+
+measure_names <- c("Anxiety Identity","Anxiety Triggers","BBSIQ","Depression and Alc.
+Use (Comorbid)","Credibility","Anxiety Symptoms (DASS-21
+AS)","Demographics","Mechanisms","Mental Health History","Anxiety Symptoms (OASIS)","Affect","Interpretation Bias (RR)","Technology Use","Wellness")
+
+colnames(engagement_metrics_winsor) <- c("participant_id","Completion Rate","Time Between Sessions", "Time Spent on Scenarios Accross Sessions","Imagery Practice Exercise","Anxiety Imagery Prime Exercise",measure_names)
+
+
 corr_table <- cor(engagement_metrics_winsor[,-1])
 corr_table2 <- corr_table
 
 #changed column names for visual display in correlation plot
-colnames(corr_table2) <- 1:length(colnames(corr_table))
-
+#colnames(corr_table2) <- 1:length(colnames(corr_table))
 
 #correlation plot to visualize correlation matrix between variables
 corrplot(corr_table2, is.corr = T, method = "number")
@@ -70,9 +82,8 @@ print(highlyCorrelated)
 corr_table_df <- as.data.frame(corr_table)
 remove_cols <- colnames(corr_table_df[highlyCorrelated])
 
-engagement_metrics2<- engagement_metrics_winsor %>% select(-all_of(remove_cols))
 
-corr_table_df[ corr_table_df<0.7] <- ""
+engagement_metrics2<- engagement_metrics_winsor %>% select(-all_of(remove_cols))
 
 #--------------------------------------------------------------------------------#
 # low variance

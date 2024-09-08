@@ -4,12 +4,11 @@
 ### May 2022
 ### The purpose of this script is to cluster participants based on engagement metrics and generate engagement labels
 
-
 #--------------------------------------------------------------------------------
 # loading libraries ----
 #--------------------------------------------------------------------------------
 #libraries 
-pacman::p_load(tidyverse,here,Hmisc,cluster,factoextra,mclust,mixtools,Rtsne,NbClust,reshape2,dendextend,clValid,cowplot,rstatix, hrbrthemes,viridis)
+pacman::p_load(tidyverse,here,Hmisc,cluster,factoextra,mclust,mixtools,Rtsne,NbClust,reshape2,dendextend,clValid,cowplot,rstatix, hrbrthemes,viridis, fpc)
 
 #--------------------------------------------------------------------------------
 # loading the engagement metrics  ----
@@ -173,6 +172,13 @@ km3 <- kmean_model(eng_num_log_scale[-1], 3)
 p_clusters$km_3 <- km3$cluster
 km4 <- kmean_model(eng_num_log_scale[-1], 4)
 p_clusters$km_4 <- km4$cluster
+
+# We used the km2 model that created the following partition
+#1   2 
+#386 311
+# to create this partition first run the kmean_model function, then set the seed to 1234 and finally run the km2 line of code
+#set.seed(1234)
+#km2 <- kmean_model(eng_num_log_scale[-1], 2)
 
 #visualize clusters
 p1_km <- fviz_cluster(km2, data = eng_num_log_scale[-1], ellipse.type = "convex",geom="point",palette = "Set2") + theme_minimal() + ggtitle("K-means clustering with 2 clusters") 
@@ -404,8 +410,6 @@ png(here("Scripts2","Tables_Figures","Figures","JAMIA_EDITS","training_imagine.p
 plot_imagine
 dev.off()
 
-
-
 png(here("Scripts2","Tables_Figures","Figures","JAMIA_EDITS","time_training_box2.png"), units="in", width=9, height=5, res=300)
 ggpubr::ggarrange(plot_scenarios,plot_lemon,plot_imagine,ncol = 2, nrow = 2)
 dev.off()
@@ -578,9 +582,6 @@ sink(here("Scripts2","Tables_Figures","Tables","eng_stats_wilcoxon.txt"))
 stargazer(eng_features_table, type = "latex", title="Descriptive statistics of engagement metrics by groups", digits=2, summary = F,rownames = F)
 sink()
 
-
-
-
 #--------------------------------------------------------------------------------
 # Kruskal-Wallis test by rank for more than 2 groups ----
 #--------------------------------------------------------------------------------
@@ -631,3 +632,255 @@ participant_cluster <- eng_df_cluster %>% select(participant_id,cluster)
 cluster_summary <- eng_df_cluster
 
 save(participant_cluster,cluster_summary, file = here("Scripts2","Data_Primary_Analysis","participant_cluster.RData"))
+
+
+#--------------------------------------------------------------------------------
+# k-means validation ----
+#--------------------------------------------------------------------------------
+# compare the resulting partitions from the kmeans implementations to validate if they are similar or not
+
+load(here("Scripts2","Data_Primary_Analysis","participant_cluster.RData"))
+
+# Create a new dataframe based on participant_cluster
+participant_cluster_comparison <- participant_cluster
+
+# Extract and add cluster_internal to the dataframe
+participant_cluster_comparison$cluster_internal <- internal_cluster@clusterObjs[["kmeans"]][["2"]]$cluster
+
+# Extract and add cluster_stability to the dataframe
+participant_cluster_comparison$cluster_stability <- stability_cluster@clusterObjs[["kmeans"]][["2"]]$cluster
+
+
+# Add cluster_nb to the dataframe
+participant_cluster_comparison$cluster_nb <- nb$Best.partition
+
+# Create a count table for each clustering column
+count_table <- data.frame(
+  Cluster = table(participant_cluster_comparison$cluster),
+  Cluster_Internal = table(participant_cluster_comparison$cluster_internal),
+  Cluster_Stability = table(participant_cluster_comparison$cluster_stability),
+  Cluster_NB = table(participant_cluster_comparison$cluster_nb)
+)
+
+# Display the count table
+print(count_table)
+
+#add clustering to engagement features
+eng_df_cluster_comparison <- eng_num %>%
+  cbind(cluster_kmeans = participant_cluster_comparison$cluster,
+        cluster_internal = participant_cluster_comparison$cluster_internal,
+        cluster_stability = participant_cluster_comparison$cluster_stability,
+        cluster_nb = participant_cluster_comparison$cluster_nb)
+
+
+# Define the function to create the plot
+plot_measures_by_cluster <- function(cluster_column, eng_df_cluster, measure_pattern = "T4_") {
+  # Convert the cluster column to a factor
+  eng_df_cluster <- eng_df_cluster %>%
+    mutate(!!cluster_column := as.factor(!!sym(cluster_column)))
+  
+  # Select relevant columns
+  eng_df_cluster_m <- eng_df_cluster %>% 
+    select(participant_id, cluster = !!sym(cluster_column), 
+           colnames(eng_df_cluster[grep(measure_pattern, names(eng_df_cluster))])) %>%
+    group_by(cluster) # Group by the cluster column
+  
+  # Print the table with cluster counts
+  cluster_counts <- eng_df_cluster_m %>%
+    summarise(count = n()) %>%
+    arrange(cluster)
+  print(cluster_counts)
+  
+  # Clean up the measure names
+  mod_measure_names <- colnames(eng_df_cluster[grep(measure_pattern, names(eng_df_cluster))])
+  mod_measure_names1 <- gsub("T4_min_mean_assessment_time*.", "", mod_measure_names)
+  mod_measures_names2 <- gsub("_winsor", "", mod_measure_names1)
+  mod_measures_names3 <- gsub("_", " ", mod_measures_names2)
+  
+  # Define more readable measure names
+  measure_names <- c("Anxiety Identity", "Anxiety Triggers", "Depression and Alc. Use (Comorbid)",
+                     "Credibility", "Anxiety Symptoms (DASS-21 AS)", "Demographics",
+                     "Mechanisms", "Mental Health History", "Anxiety Symptoms (OASIS)",
+                     "Affect", "Interpretation Bias (RR)", "Technology Use", "Wellness")
+  
+  # Update column names in the dataframe
+  colnames(eng_df_cluster_m) <- c("participant_id", "cluster", measure_names)
+  
+  # Reshape the dataframe for plotting
+  eng_df_cluster_m.m <- melt(as.data.frame(eng_df_cluster_m), 
+                             id.vars = c('participant_id',"cluster"), 
+                             measure.vars = colnames(eng_df_cluster_m)[-c(1,2,3)])
+  
+  # Create the plot
+  plot_measures <- ggplot(eng_df_cluster_m.m, aes(x = log(value), y = variable, fill = cluster_label)) + 
+    geom_boxplot(aes(fill = cluster)) +
+    labs(title = paste("Log of time spent on measures -", cluster_column), 
+         x = "log(time spent (minutes))", 
+         y = "Measure", 
+         fill = "Engagement Group") + 
+    scale_fill_brewer(palette = "Dark2") + 
+    guides(fill = guide_legend(reverse = TRUE))
+  
+  return(plot_measures)
+}
+
+# Example of how to use the function for different clustering columns
+plot_internal_kmeans <- plot_measures_by_cluster("cluster_kmeans",eng_df_cluster_comparison)
+plot_internal_kmeans
+plot_internal <- plot_measures_by_cluster("cluster_internal", eng_df_cluster_comparison)
+plot_internal
+plot_stability <- plot_measures_by_cluster("cluster_stability", eng_df_cluster_comparison)
+plot_stability
+plot_nb <- plot_measures_by_cluster("cluster_nb", eng_df_cluster_comparison)
+plot_nb
+
+# Add new labeled columns to participant_cluster_comparison
+participant_cluster_comparison <- participant_cluster_comparison %>%
+  mutate(cluster_label = ifelse(cluster == 1, "Less Time Spent", "More Time Spent"),
+         cluster_internal_label = ifelse(cluster_internal == 1, "More Time Spent", "Less Time Spent"),
+         cluster_stability_label = ifelse(cluster_stability == 1, "Less Time Spent", "More Time Spent"),
+         cluster_nb_label = ifelse(cluster_nb == 1, "Less Time Spent", "More Time Spent"))
+
+# Add a new column to check if the participant stays in the same group
+participant_cluster_comparison <- participant_cluster_comparison %>%
+  mutate(consistency_check = 
+           ifelse(cluster_label == cluster_internal_label & 
+                    cluster_label == cluster_stability_label & 
+                    cluster_label == cluster_nb_label, 
+                  "Consistent", "Inconsistent"))
+
+# View the updated dataframe
+head(participant_cluster_comparison)
+
+# Optional: Summarize the number of consistent and inconsistent participants
+consistency_summary <- participant_cluster_comparison %>%
+  summarise(
+    Consistent = sum(consistency_check == "Consistent"),
+    Inconsistent = sum(consistency_check == "Inconsistent")
+  )
+
+print(consistency_summary)
+
+# Add columns to check consistency between `cluster` and each other clustering method
+participant_cluster_comparison <- participant_cluster_comparison %>%
+  mutate(consistency_internal = ifelse(cluster_label == cluster_internal_label, "Consistent", "Inconsistent"),
+         consistency_stability = ifelse(cluster_label == cluster_stability_label, "Consistent", "Inconsistent"),
+         consistency_nb = ifelse(cluster_label == cluster_nb_label, "Consistent", "Inconsistent"),
+         overall_consistency = ifelse(consistency_internal == "Consistent" & 
+                                        consistency_stability == "Consistent" & 
+                                        consistency_nb == "Consistent", 
+                                      "Overall Consistent", "Overall Inconsistent"))
+
+# View the updated dataframe
+head(participant_cluster_comparison)
+
+# Optional: Summarize the consistency counts
+consistency_summary <- participant_cluster_comparison %>%
+  summarise(
+    Consistent_Internal = sum(consistency_internal == "Consistent"),
+    Inconsistent_Internal = sum(consistency_internal == "Inconsistent"),
+    Consistent_Stability = sum(consistency_stability == "Consistent"),
+    Inconsistent_Stability = sum(consistency_stability == "Inconsistent"),
+    Consistent_NB = sum(consistency_nb == "Consistent"),
+    Inconsistent_NB = sum(consistency_nb == "Inconsistent"),
+    Overall_Consistent = sum(overall_consistency == "Overall Consistent"),
+    Overall_Inconsistent = sum(overall_consistency == "Overall Inconsistent")
+  )
+
+# Transpose the summary table
+consistency_summary_transposed <- as.data.frame(t(consistency_summary))
+
+# Rename the columns for clarity
+colnames(consistency_summary_transposed) <- c("Count")
+
+# View the transposed summary
+print(consistency_summary_transposed)
+
+#--------------------------------------------------------------------------------
+# duda hart test one vs two clusters ----
+#--------------------------------------------------------------------------------
+#Duda-Hart test for whether a data set should be split into two clusters.
+
+load(here("Scripts2","Data_Primary_Analysis","participant_cluster.RData"))
+
+table(cluster_summary$cluster)
+
+# Select only the 'participant_id' and 'cluster' columns from cluster_summary
+cluster_summary_subset <- cluster_summary[, c("participant_id", "cluster")]
+
+# Perform the merge based on 'participant_id', need to run eng_num_log_scale from further above in the code
+merged_df <- merge(eng_num_log_scale, cluster_summary_subset, by = "participant_id")
+
+merged_df_features <- merged_df[c(-1,-19)]
+
+# Convert participant_id to character if needed
+merged_df$participant_id <- as.character(merged_df$participant_id)
+
+# Re-assign names
+names(merged_df$cluster) <- merged_df$participant_id
+
+# Verify the result
+str(merged_df$cluster)
+
+duda_hart_result <- dudahart2(merged_df_features, merged_df$cluster, alpha = 0.05)
+
+# Print the result
+print(duda_hart_result)
+
+#--------------------------------------------------------------------------------
+# completion rate clusters analysis ----
+#--------------------------------------------------------------------------------
+# the goal of this section is to understand if the given partitions from the different algorithms with 2-4 clusters create a partition such that most if not all participants have a low completion rate, indicating that they stopped at baseline
+#add clustering to engagement features
+eng_df_cluster_completion_rate_comparison <- eng_num%>% select("participant_id","completionRate") %>%
+  cbind(p_clusters)
+
+# List of columns to analyze
+columns_to_analyze <- c("pam_2", "pam_3", "pam_4", "km_2", "km_3", "km_4", "hclust_2", "hclust_3", "hclust_4")
+
+# Function to calculate the mean completion rate for each grouping in a column
+calculate_completion_rate <- function(df, group_col, completion_col) {
+  aggregate(df[[completion_col]], list(df[[group_col]]), mean, na.rm = TRUE)
+}
+
+# Apply the function to each column and store results in a list
+completion_rates <- lapply(columns_to_analyze, function(col) {
+  calculate_completion_rate(eng_df_cluster_completion_rate_comparison, col, "completionRate")
+})
+
+# Name the list elements for easier reference
+names(completion_rates) <- columns_to_analyze
+
+# Display the completion rates for each grouping
+completion_rates
+
+#number of participants by completion rate, 300 participants who did not move on to session two
+table(eng_df_cluster_completion_rate_comparison$completionRate)
+
+# ---------------------------------------------------------------------------- #
+# Lower bound of SSE test ----
+#   (see Steinley & Brusco, 2011, pp. 288-289; https://psycnet.apa.org/doi/10.1037/a0023346)
+# ---------------------------------------------------------------------------- #
+# We used the km2 model that created the following partition
+#1   2 
+#386 311
+# to create this partition first run the kmean_model function, then set the seed to 1234 and finally run the km2 line of code
+#set.seed(1234)
+#km2 <- kmean_model(eng_num_log_scale[-1], 2)
+
+# Define reference distributions
+
+lbr_u <- .25        # Lower bound for dividing uniform distribution in half
+lbr_n <- 1 - 2 / pi # Lower bound for dividing normal distribution in half (.36)
+
+# Compute lower bound ratio for present sample
+
+(sse2 <- km2$tot.withinss)
+(sst  <- km2$totss)
+
+(lbr <- sse2 / sst)
+
+# Compare sample LBR to reference distribution (use normal distribution). If TRUE,
+# then at least 2 clusters exist.
+
+lbr < lbr_n

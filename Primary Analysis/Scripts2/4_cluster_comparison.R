@@ -106,6 +106,22 @@ gender_chisq <- chisq.test(gender_table)
 # Since no value is less than 5 we can use the Chi Squared Test
 gender_chisq$expected
 
+# effect size
+
+# Get the chi-squared statistic
+chi_squared_statistic_gender <- gender_chisq$statistic
+
+# Calculate Cramér's V
+n_gender <- sum(gender_table)  # Total number of observations
+k_gender <- ncol(gender_table)  # Number of columns
+r_gender <- nrow(gender_table)  # Number of rows
+
+# Cramér's V formula
+cramers_v_gender <- sqrt(chi_squared_statistic_gender / (n_gender * min(k_gender-1, r_gender-1)))
+
+# Print Cramér's V
+cramers_v_gender
+
 
 # 3. Fisher test for race_col
 dem_char_compar$race_col[dem_char_compar$race_col == "Prefer not to answer"] <- NA
@@ -118,6 +134,20 @@ race_chisq <- chisq.test(race_table)
 race_chisq
 race_chisq$expected
 
+# Get the chi-squared statistic
+chi_squared_statistic_race <- race_chisq$statistic
+
+# Calculate Cramér's V
+n_race <- sum(race_table)  # Total number of observations
+k_race <- ncol(race_table)  # Number of columns
+r_race <- nrow(race_table)  # Number of rows
+
+# Cramér's V formula
+cramers_v_race <- sqrt(chi_squared_statistic_race / (n_race * min(k_race-1, r_race-1)))
+
+# Print Cramér's V
+cramers_v_race
+
 race_fisher <- fisher.test(race_table,simulate.p.value = TRUE, B = 10000000)
 race_fisher
 
@@ -129,6 +159,21 @@ ethnicity_table <- table(dem_char_compar$ethnicity, dem_char_compar$cluster)
 ethnicity_table
 ethnicity_chisq <- chisq.test(ethnicity_table)
 ethnicity_chisq$expected
+
+
+chi_squared_statistic_ethnicity <- ethnicity_chisq$statistic
+
+# Calculate Cramér's V
+n_ethnicity <- sum(ethnicity_table)  # Total number of observations
+k_ethnicity <- ncol(ethnicity_table)  # Number of columns
+r_ethnicity <- nrow(ethnicity_table)  # Number of rows
+
+# Cramér's V formula
+cramers_v_ethnicity <- sqrt(chi_squared_statistic_ethnicity / (n_ethnicity * min(k_ethnicity-1, r_ethnicity-1)))
+
+# Print Cramér's V
+cramers_v_ethnicity
+
 
 # 5. Mann-Whitney U test for education
 # To simplify conceptual overlap for creating an ordered variable, group

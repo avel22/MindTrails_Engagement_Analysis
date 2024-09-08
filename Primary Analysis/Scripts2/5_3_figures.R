@@ -12,7 +12,7 @@
 # loading the libraries ----
 #--------------------------------------------------------------------------------#
 #libraries 
-pacman::p_load(tidyverse,purrr,here,mitml,ggplot2, gridExtra,stargazer,lme4,psycho,afex,nlme,optimx,emmeans,gtsummary)
+pacman::p_load(tidyverse,purrr,here,mitml,ggplot2, gridExtra,stargazer,lme4,psycho,afex,nlme,optimx,emmeans,gtsummary,grDevices,extrafont)
 
 #--------------------------------------------------------------------------------#
 # loading the  data ----
@@ -194,7 +194,46 @@ create_plot <- function(pred_means, hidden_pts, title, y_title, scale_min,
     theme(legend.position = legend_position)
 }
 
+# Define function to plot estimated means and standard errors. Colors obtained
+# from Color Brewer 2.0 three-class Dark2 palette
+# (https://colorbrewer2.org/#type=qualitative&scheme=Dark2&n=3). Checked for
+# vision deficiency using HCL Wizard (http://hclwizard.org:3000/cvdemulator/).
 
+font_import()  # Import all system fonts
+loadfonts()    # Load fonts for all devices
+fonts()
+create_plot_arial <- function(pred_means, hidden_pts, title, y_title, scale_min, 
+                        scale_max, legend_position) {
+  ggplot(pred_means, 
+         aes(x = assessment, y = mean, 
+             group = eng_cluster_label, color = eng_cluster_label, linetype = eng_cluster_label)) +
+    geom_line() +
+    geom_point(data = pred_means[!(pred_means$assessment %in% hidden_pts), ]) +
+    geom_errorbar(aes(ymin = mean - se, ymax = mean + se),
+                  pred_means[!(pred_means$assessment %in% hidden_pts), ],
+                  width = .3) +
+    labs(title = title, 
+         x = "Assessment",
+         y = y_title) +
+    scale_linetype_manual(name = "Engagement Group",
+                          values = c("Less Time Spent" = "longdash",
+                                     "More Time Spent" = "solid"))+
+    scale_color_manual(name = "Engagement Group",
+                       values = c("Less Time Spent" = "#1b9e77", 
+                                  "More Time Spent" = "#7570b3"
+                       )) +
+    scale_y_continuous(breaks = scale_min:scale_max, 
+                       limits = c(scale_min, scale_max)) +
+    theme_classic() +
+    theme(plot.title = element_text(hjust = 0.5, family = "Arial", size = 12),
+          legend.title = element_text(size = 12, family = "Arial"),
+          legend.text = element_text(size = 10, family = "Arial"),
+          legend.key.width = unit(2, "cm"),
+          axis.title.x = element_text(margin = margin(t = 10, r = 0, b = 0, l = 0), family = "Arial", size = 10),
+          axis.title.y = element_text(margin = margin(t = 0, r = 10, b = 0, l = 0), family = "Arial", size = 10),
+          axis.text.x = element_text(angle = 45, hjust = 1, family = "Arial", size = 8),
+          legend.position = legend_position)
+}
 
 
 # ---------------------------------------------------------------------------- #
@@ -231,23 +270,23 @@ pred_means_bbsiq <- pred_means_bbsiq %>% mutate(eng_cluster_label = ifelse(eng_c
 # Create plots
 
 p_OA <- 
-  create_plot(pred_means_OA, NA, "Anxiety Symptoms (OASIS)", 
+  create_plot_arial(pred_means_OA, NA, "Anxiety Symptoms (OASIS)", 
               "Average Item Score", 0, 4, c(0.8, 0.8))
 
 p_dass21 <-
-  create_plot(pred_means_dass21, c("Session 1", "Session 2","Session 4"), "Anxiety Symptoms (DASS-21 AS)", 
+  create_plot_arial(pred_means_dass21, c("Session 1", "Session 2","Session 4"), "Anxiety Symptoms (DASS-21 AS)", 
               "Average Item Score", 0, 3, c(0.8, 0.8))
 
 p_rr_neg <- 
-  create_plot(pred_means_rr_neg, c("Session 1", "Session 2","Session 4"), "Negative Interpretation Bias (RR)", 
+  create_plot_arial(pred_means_rr_neg, c("Session 1", "Session 2","Session 4"), "Negative Interpretation Bias (RR)", 
               "Average Item Score", 1, 4, c(0.8, 0.8))
 
 p_rr_pos<-
-  create_plot(pred_means_rr_pos, c("Session 1", "Session 2","Session 4"), "Positive Interpretation Bias (RR)", 
+  create_plot_arial(pred_means_rr_pos, c("Session 1", "Session 2","Session 4"), "Positive Interpretation Bias (RR)", 
               "Average Item Score", 1, 4, c(0.8, 0.8))
 
 p_bbsiq <- 
-  create_plot(pred_means_bbsiq, c("Session 1", "Session 2","Session 4"), "Negative Interpretation Bias (BBSIQ)", 
+  create_plot_arial(pred_means_bbsiq, c("Session 1", "Session 2","Session 4"), "Negative Interpretation Bias (BBSIQ)", 
               "Average Item Score", 0, 4, c(0.8, 0.8))
 
 # extract a legend that is laid out horizontally
@@ -303,3 +342,9 @@ png(here("Scripts2","Tables_Figures","Figures","JAMIA_EDITS","bbsiq_means_outcom
 p_bbsiq
 dev.off()
 
+# ---------------------------------------------------------------------------- #
+# Create figures for engagement clusters for outcomes PLOS Edits ----
+# ---------------------------------------------------------------------------- #
+tiff(here("Scripts2","Tables_Figures","Figures","PLOS_EDITS","Fig2_test.tiff"), units="in", width=10, height=8, res=300)
+est_means_outcomes
+dev.off()
